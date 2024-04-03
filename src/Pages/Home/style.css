@@ -1,0 +1,125 @@
+.homeContainer {
+  width: 100%;
+}
+.heroSection {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    rgba(223, 243, 255, 1),
+    rgba(225, 238, 246, 0.67),
+    rgb(255 255 255 / 0%)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heroSection .homeBg1 {
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+.heroSection .homeBg2 {
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+}
+.navBar {
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 0;
+  position: relative;
+  z-index: 2;
+}
+.Clogo {
+  width: 293px;
+  height: 54px;
+}
+.Clogo img {
+  width: 100%;
+  height: 100%;
+}
+.navLanguage {
+  width: 89px;
+  height: 54px;
+  background: #020b21;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+.navLanguage p {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #fff;
+  margin: 0 8px;
+}
+.navLanguage .LanDropIcon {
+  transition: all 0.5s;
+}
+.LanDrop {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s;
+  overflow: hidden;
+  position: absolute;
+  top: 55px;
+  left: 0px;
+  border-radius: 7px;
+  overflow: hidden;
+}
+.LanDrop > div {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  width: 100%;
+  height: 30px;
+  background: #020b21;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-top: 0.2px solid #80808059;
+}
+.LanDrop > div p {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #fff;
+}
+.LanDrop > div :hover {
+  background: #020b21af;
+}
+.homeMainBox {
+  width: 65%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+}
+.homeMainSubBox {
+  width: 50%;
+}
+.applyInfoBox {
+  display: flex;
+  flex-direction: column;
+}
+.homeBoldText {
+  font-size: 50px !important;
+  color: #133139;
+  font-family: Archivo !important;
+}
+.homeSubText {
+  font-size: 20px;
+  color: #262626;
+}
