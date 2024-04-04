@@ -10,10 +10,17 @@ import Clogo from "../../Assets/Images/CLogo.png"
 import ClogoSvg from "../../Assets/Images/CLogoSvg.svg"
 import earthLogo from "../../Assets/Images/earthIcon.png"
 import dropIcon from "../../Assets/Images/WDropIcon.png"
+import Bs1 from "../../Assets/Images/Bs1.png"
+import Bs2 from "../../Assets/Images/Bs1.png"
+import Bs3 from "../../Assets/Images/bs3.png"
 
 //Data
 
 //components
+import { AppBtn } from '../../Components/AppButton';
+
+
+
 
 export default function Home() {
   const [langDrop, setLangDrop] = useState(false)
@@ -27,6 +34,16 @@ export default function Home() {
     "ZH",
     "HI"
   ]
+
+
+  const businessCard = ({ img, title, subText }) => {
+    return (
+      <Box className="businessCard">
+        <img src={img} />
+        <Typography>{title}<span>{subText}</span></Typography>
+      </Box>
+    )
+  }
 
 
 
@@ -59,14 +76,45 @@ export default function Home() {
           </Box>
 
           <Box className="homeMainBox">
-            <Box className="applyInfoBox homeMainSubBox">
+            <Box mr={5} className="applyInfoBox homeMainSubBox">
               <Typography className='homeBoldText'>We provide <br /> funds for all your business needs</Typography>
               <Typography className='homeSubText'>Give us a call, request a callback or drop us an email, we’re here to help.</Typography>
-
+              <Box className="BusinessCardBox">
+                {businessCard({
+                  img: Bs1,
+                  title: "Business loan up to",
+                  subText: " ₹15 Crore"
+                })}
+                {businessCard({
+                  img: Bs2,
+                  title: "Interest rate as low as",
+                  subText: " 1%"
+                })}
+                {businessCard({
+                  img: Bs3,
+                  title: "Money in your Bank in",
+                  subText: " 48 hrs"
+                })}
+              </Box>
+              <AppBtn btnText="Apply Now" />
             </Box>
 
 
-            <Box className="applyInputBox homeMainSubBox"></Box>
+            <Box ml={5} className="applyInputBox homeMainSubBox">
+              <Typography className='applyHeaderText'>Fill to get your <span>loan eligibility <br /> </span>
+                in minutes!</Typography>
+              <Box>
+
+
+
+              </Box>
+
+
+
+
+
+
+            </Box>
 
 
           </Box>

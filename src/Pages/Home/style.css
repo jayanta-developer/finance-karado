@@ -32,7 +32,7 @@
   z-index: -1;
 }
 .navBar {
-  width: 65%;
+  width: 70%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -102,7 +102,7 @@
   background: #020b21af;
 }
 .homeMainBox {
-  width: 65%;
+  width: 70%;
   margin-top: 50px;
   display: flex;
   flex-direction: row;
@@ -122,4 +122,52 @@
 .homeSubText {
   font-size: 20px;
   color: #262626;
+}
+.BusinessCardBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.businessCard {
+  width: 30.3%;
+  height: 142px;
+  border-radius: 18px;
+  background: #ffffffa8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 9px;
+}
+.businessCard p {
+  font-size: 18px !important;
+  color: #5a5a5a;
+  text-align: center;
+  margin-top: 6px !important;
+}
+.businessCard span {
+  font-size: 18px !important;
+  font-family: Archivo !important;
+  color: #5a5a5a;
+  font-weight: 600 !important;
+}
+.applyInputBox {
+  border-radius: 18px;
+  background: #fdfdfd2e;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  padding: 24px;
+}
+.applyHeaderText {
+  font-family: Archivo !important;
+  font-size: 24px !important;
+}
+.applyHeaderText span {
+  color: #305ccd;
+  font-family: Archivo !important;
+  font-size: 24px !important;
 }

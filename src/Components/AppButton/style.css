@@ -1,0 +1,17 @@
+.appBtn {
+  width: 222px;
+  height: 64px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #305ccd;
+  cursor: pointer;
+  color: #fff;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+}
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root:hover {
+  background: #305ccdd2;
+}
