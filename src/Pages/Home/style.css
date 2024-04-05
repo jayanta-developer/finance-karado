@@ -17,7 +17,7 @@
 }
 .heroSection .homeBg1 {
   width: 100%;
-  height: 30%;
+  height: 25%;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -25,7 +25,7 @@
 }
 .heroSection .homeBg2 {
   width: 100%;
-  height: 70%;
+  height: 75%;
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -44,6 +44,7 @@
 .Clogo {
   width: 293px;
   height: 54px;
+  cursor: pointer;
 }
 .Clogo img {
   width: 100%;
@@ -103,7 +104,7 @@
 }
 .homeMainBox {
   width: 70%;
-  margin-top: 50px;
+  margin-top: 17px;
   display: flex;
   flex-direction: row;
 }
@@ -115,7 +116,7 @@
   flex-direction: column;
 }
 .homeBoldText {
-  font-size: 50px !important;
+  font-size: 39px !important;
   color: #133139;
   font-family: Archivo !important;
 }
@@ -144,13 +145,13 @@
   padding: 9px;
 }
 .businessCard p {
-  font-size: 18px !important;
+  font-size: 14px !important;
   color: #5a5a5a;
   text-align: center;
   margin-top: 6px !important;
 }
 .businessCard span {
-  font-size: 18px !important;
+  font-size: 14px !important;
   font-family: Archivo !important;
   color: #5a5a5a;
   font-weight: 600 !important;
@@ -161,13 +162,139 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   padding: 24px;
+  position: relative;
 }
 .applyHeaderText {
   font-family: Archivo !important;
   font-size: 24px !important;
+  margin-bottom: 16px !important;
 }
 .applyHeaderText span {
   color: #305ccd;
   font-family: Archivo !important;
   font-size: 24px !important;
+}
+.input2Box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.inputBox {
+  width: 100%;
+  height: 39px;
+  margin-bottom: 14px;
+  border: 1px solid #b1b1b1;
+  border-radius: 5px;
+  position: relative;
+}
+.inputBox img {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.inputBox input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 16px;
+  border-radius: 5px;
+}
+.inputBox input:focus {
+  outline: none;
+}
+.input2Box .inputBox {
+  width: 50%;
+  margin-bottom: 0px;
+}
+.otpBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  border: none;
+}
+.otpBox input {
+  width: 33px;
+  height: 33px;
+  border-radius: 5px;
+  border: 1px solid #b1b1b1;
+  padding-left: 8px;
+}
+.check {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0;
+}
+.check p {
+  font-size: 16px !important;
+  color: #2a2a2a;
+  margin-left: 16px !important;
+}
+.check input {
+  cursor: pointer;
+}
+.findtText {
+  font-size: 20px !important;
+  color: #133139;
+  position: absolute;
+  bottom: -47px;
+  left: 0px;
+}
+.findtText span {
+  font-weight: 600 !important;
+}
+.findtText samp {
+  font-weight: 600 !important;
+  color: #305ccd;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.sendOtpBtn {
+  width: 82px;
+  height: 21px;
+  border-radius: 5px;
+  background: #305ccd;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.sendOtpBtn p {
+  font-size: 12px;
+  color: #fff;
+}
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+}
+
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+}
+
+/* Desktop view */
+@media only screen and (min-width: 1460px) {
+  .homeBoldText {
+    font-size: 50px !important;
+  }
+  .homeMainBox {
+    margin-top: 50px;
+  }
+  .inputBox {
+    height: 48px;
+    margin-bottom: 20px;
+  }
+  .businessCard p {
+    font-size: 18px !important;
+  }
+  .businessCard span {
+    font-size: 18px !important;
+  }
 }

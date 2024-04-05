@@ -1,6 +1,5 @@
 .appBtn {
-  width: 222px;
-  height: 64px;
+  height: 39px;
   border-radius: 6px;
   display: flex;
   justify-content: center;
@@ -10,8 +9,24 @@
   color: #fff;
   font-size: 17px !important;
   font-weight: 700 !important;
+  text-transform: none !important;
 }
 
 .css-1e6y48t-MuiButtonBase-root-MuiButton-root:hover {
   background: #305ccdd2;
+}
+
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+}
+
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+}
+
+/* Desktop view */
+@media only screen and (min-width: 1460px) {
+  .appBtn {
+    height: 48px;
+  }
 }

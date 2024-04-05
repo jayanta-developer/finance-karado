@@ -13,6 +13,11 @@ import dropIcon from "../../Assets/Images/WDropIcon.png"
 import Bs1 from "../../Assets/Images/Bs1.png"
 import Bs2 from "../../Assets/Images/Bs1.png"
 import Bs3 from "../../Assets/Images/bs3.png"
+import userIcon from "../../Assets/Images/userIcon.png"
+import emailIcon from "../../Assets/Images/mailIcon.png"
+import gstIcon from "../../Assets/Images/gstIcon.png"
+import panIcon from "../../Assets/Images/panIcon.png"
+import rupayIcon from "../../Assets/Images/repeIcon.png"
 
 //Data
 
@@ -96,38 +101,70 @@ export default function Home() {
                   subText: " 48 hrs"
                 })}
               </Box>
-              <AppBtn btnText="Apply Now" />
+              <AppBtn btnText="Apply Now" width="222px" />
             </Box>
-
 
             <Box ml={5} className="applyInputBox homeMainSubBox">
               <Typography className='applyHeaderText'>Fill to get your <span>loan eligibility <br /> </span>
                 in minutes!</Typography>
-              <Box>
 
-
-
+              <Box className="input2Box">
+                <Box className="inputBox">
+                  <input placeholder="Name *" />
+                  <img src={userIcon} />
+                </Box>
+                <Box className="inputBox">
+                  <input type="email" placeholder="Email ID *" />
+                  <img src={emailIcon} />
+                </Box>
               </Box>
 
+              <Box className="inputBox">
+                <input placeholder="GST Number *" />
+                <img src={gstIcon} />
+              </Box>
 
+              <Box className="inputBox">
+                <input placeholder="Pan No *" />
+                <img src={panIcon} />
+              </Box>
+              <Box className="inputBox">
+                <input placeholder="Mobile No *" />
+                <Box className="sendOtpBtn">
+                  <p>Send OTP</p>
+                </Box>
+              </Box>
 
+              <Box className="inputBox otpBox">
+                <input type="number" />
+                <input type="number" />
+                <input type="number" />
+                <input type="number" />
+              </Box>
 
+              <Box className="inputBox">
+                <input placeholder="Loan Amount *" />
+                <img src={rupayIcon} />
+              </Box>
+              <AppBtn btnText="Check loan Eligibility" width="100%" />
 
+              <Box className="check">
+                <input type="checkBox" />
+                <Typography>I agree to the Terms & Privacy Policy</Typography>
+              </Box>
 
+              <Box className="check">
+                <input type="checkBox" />
+                <Typography>Send me updates on WhatsApp</Typography>
+              </Box>
+
+              <Typography className='findtText'>
+                Let's find you the <span>Best</span> <samp>Finance</samp>
+              </Typography>
             </Box>
 
-
           </Box>
-
-
-
-
-
-
         </Box>
-
-
-
       </Box>
     </>
 
