@@ -18,6 +18,9 @@ import emailIcon from "../../Assets/Images/mailIcon.png"
 import gstIcon from "../../Assets/Images/gstIcon.png"
 import panIcon from "../../Assets/Images/panIcon.png"
 import rupayIcon from "../../Assets/Images/repeIcon.png"
+import featuresBgLine from "../../Assets/Images/featuresBgLine.png"
+import featuresBgImg from "../../Assets/Images/portrait-indian-asian-young-family-four-sitting-white-flour-against-white-background-looking-camera 1 copy copy 1.png"
+import tik from "../../Assets/Images/tik.png"
 
 //Data
 
@@ -46,6 +49,17 @@ export default function Home() {
       <Box className="businessCard">
         <img src={img} />
         <Typography>{title}<span>{subText}</span></Typography>
+      </Box>
+    )
+  }
+
+
+  const trustCard = ({ num, title, subTitle, color, margin }) => {
+    return (
+      <Box sx={{ background: color, marginTop: margin || "0px" }} className="trustCard">
+        <Typography>{num}</Typography>
+        <span>{title}</span>
+        <samp>{subTitle}</samp>
       </Box>
     )
   }
@@ -162,9 +176,67 @@ export default function Home() {
                 Let's find you the <span>Best</span> <samp>Finance</samp>
               </Typography>
             </Box>
-
           </Box>
         </Box>
+
+
+        <Box className="TrustSection">
+          <Typography className='sectionBlueLabel'>Trust Indicators</Typography>
+          <Typography className='sectionBoldLabel'>Powered by Open, Trusted by 30,00,000+ Businesses</Typography>
+          <Box className="trustCardBox">
+            {trustCard({ num: "120+", title: "Global customer", subTitle: "A global customer base from over 120 countries", color: "#DFF3FF" })}
+            {trustCard({ num: "120+", title: "Active users", subTitle: "Almost over 250 thousand active users", color: "#E0E9FF", margin: "35px" })}
+            {trustCard({ num: "120+", title: "Global customer", subTitle: "A global customer base from over 120 countries", color: "#FFD9D3" })}
+            {trustCard({ num: "120+", title: "Global customer", subTitle: "A global customer base from over 120 countries", color: "#D9FEE2", margin: "35px" })}
+          </Box>
+        </Box>
+
+        <Box className="featuresBox">
+          <Box className="featureInnerBox">
+            <img className='featuresBgLine' src={featuresBgLine} />
+            <img className='featuresBgImg' src={featuresBgImg} />
+            <Box className="loanTextBox">
+              <Typography className='sectionBlueLabel'>Loan Features</Typography>
+              <Typography className='sectionBoldLabel'>We have best team and best process</Typography>
+              <Typography className='homeSubText'>Give us a call, request a callback or drop us an email, we’re here to help. There are many variations of passages of Lorem Ipsum available,</Typography>
+
+              <Box className="tikTextBox">
+                <img src={tik} />
+                <Typography className='homeSubText'>Wise busy past both park when an ye no. Nay likely her length sooner thrown sex lively income.</Typography>
+              </Box>
+              <Box className="tikTextBox">
+                <img src={tik} />
+                <Typography className='homeSubText'>Wise busy past both park when an ye no.</Typography>
+              </Box>
+              <Box className="tikTextBox">
+                <img src={tik} />
+                <Typography className='homeSubText'>Nay likely her length sooner thrown sex lively income.</Typography>
+              </Box>
+              <Box className="tikTextBox">
+                <img src={tik} />
+                <Typography className='homeSubText'>Wise busy past both park when an ye no. Nay likely her length sooner thrown sex lively income.</Typography>
+              </Box>
+              <Box className="tikTextBox">
+                <img src={tik} />
+                <Typography className='homeSubText'>Wise busy past both park when an ye no.</Typography>
+              </Box>
+              <Box mb={4} className="tikTextBox">
+                <img src={tik} />
+                <Typography className='homeSubText'>Nay likely her length sooner thrown sex lively income.</Typography>
+              </Box>
+              <AppBtn btnText="Apply Now" />
+            </Box>
+          </Box>
+        </Box>
+
+
+        <Box className="calculatorSection">
+          <Typography className='sectionBlueLabel'>Calculator</Typography>
+          <Typography className='sectionBoldLabel'>Calculate and confirm your loans</Typography>
+          <Box className="calculatorBox"></Box>
+
+        </Box>
+
       </Box>
     </>
 

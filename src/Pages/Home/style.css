@@ -1,9 +1,13 @@
 .homeContainer {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .heroSection {
   width: 100%;
   height: 100vh;
+  min-height: 800px;
   position: relative;
   background: linear-gradient(
     to bottom,
@@ -270,6 +274,137 @@
 .sendOtpBtn p {
   font-size: 12px;
   color: #fff;
+}
+
+.TrustSection {
+  width: 70%;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sectionBlueLabel {
+  font-family: Archivo !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  text-align: center;
+  color: #305ccd;
+}
+.sectionBoldLabel {
+  width: 50%;
+  font-size: 26px !important;
+  text-align: center;
+  font-family: Archivo !important;
+}
+.trustCardBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+}
+.trustCard {
+  width: 25%;
+  height: 188px;
+  padding: 20px;
+  border-radius: 40px 40px 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.trustCard p {
+  font-size: 22px !important;
+  font-family: Archivo !important;
+}
+.trustCard span {
+  font-size: 19px !important;
+  font-family: Archivo !important;
+  color: #121212;
+  margin: 7px 0;
+}
+.trustCard samp {
+  font-size: 15px !important;
+  font-weight: 600;
+}
+
+.featuresBox {
+  width: 70%;
+  margin: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.featureInnerBox {
+  width: 100%;
+  height: 650px;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.featuresBgLine {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 200px;
+  left: 0px;
+}
+.featuresBgImg {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 41%;
+  height: 86%;
+}
+.loanTextBox {
+  width: 60%;
+  height: 80%;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  /* border: 1px solid; */
+}
+.loanTextBox .sectionBlueLabel {
+  text-align: start;
+  margin-bottom: 10px !important;
+}
+.loanTextBox .sectionBoldLabel {
+  text-align: start;
+  width: 66%;
+}
+.loanTextBox .homeSubText {
+  margin: 10px 0;
+}
+.tikTextBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* margin-bottom: 16px; */
+}
+.tikTextBox img {
+  width: 24px;
+  height: 13px;
+  margin: 0 16px;
+}
+
+.calculatorSection {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.calculatorSection .sectionBoldLabel {
+  width: 100%;
+}
+.calculatorBox {
+  width: 100%;
+  height: 520px;
+  background: #305ccd;
+  border-radius: 30px;
+  margin-top: 20px;
+  padding: 24px;
 }
 /* Tabe view */
 @media only screen and (min-width: 768px) {
