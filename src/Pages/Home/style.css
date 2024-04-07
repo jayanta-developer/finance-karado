@@ -405,6 +405,80 @@
   border-radius: 30px;
   margin-top: 20px;
   padding: 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.calculatorBox .controller {
+  width: 60%;
+}
+.calculatorBox .metter {
+  width: 40%;
+  border-radius: 21px;
+  border: #ffffff21 1px solid;
+  box-shadow: rgb(17 41 67 / 20%) 0px 8px 24px;
+}
+.yearsBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.calHeaderText {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #fff;
+  font-family: Archivo;
+}
+.yearsBox .yearsBoxItem {
+  width: 110px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+.yearsBox .yearsBoxItem p {
+  color: #000000;
+}
+.yearsBoxItemActive {
+  background: #305ccd !important;
+  border: 1px solid #ffffff94;
+}
+.yearsBoxItemActive p {
+  color: #fff !important;
+}
+.controller .subText {
+  font-size: 12px !important;
+  color: #fff;
+  margin: 9px 0;
+}
+.lineBarBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.valueBox {
+  width: 170px;
+  height: 28px;
+  border: 1px solid #ffffffd2;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.lineBarLabel {
+  font-size: 12px !important;
+  color: #fff;
 }
 /* Tabe view */
 @media only screen and (min-width: 768px) {

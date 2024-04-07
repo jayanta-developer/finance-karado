@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import "./style.css"
+import { styled } from '@mui/material/styles';
 
 
 //images
@@ -26,6 +27,8 @@ import tik from "../../Assets/Images/tik.png"
 
 //components
 import { AppBtn } from '../../Components/AppButton';
+import Slider, { SliderThumb } from '@mui/material/Slider';
+import Tooltip from '@mui/material/Tooltip';
 
 
 
@@ -33,6 +36,7 @@ import { AppBtn } from '../../Components/AppButton';
 export default function Home() {
   const [langDrop, setLangDrop] = useState(false)
   const [langDropVal, setLangDropVal] = useState("EN")
+  const [time, setTime] = useState(0)
 
 
   const languageList = [
@@ -62,6 +66,17 @@ export default function Home() {
         <samp>{subTitle}</samp>
       </Box>
     )
+  }
+
+
+  function ValueLabelComponent(props) {
+    const { children, value } = props;
+
+    return (
+      <Tooltip enterTouchDelay={0} placement="top" title={value}>
+        {children}
+      </Tooltip>
+    );
   }
 
 
@@ -233,11 +248,43 @@ export default function Home() {
         <Box className="calculatorSection">
           <Typography className='sectionBlueLabel'>Calculator</Typography>
           <Typography className='sectionBoldLabel'>Calculate and confirm your loans</Typography>
-          <Box className="calculatorBox"></Box>
+          <Box className="calculatorBox">
 
+            <Box className="controller">
+              <Typography className='calHeaderText'>Loan Calculator</Typography>
+              <Typography className='subText'>Loan Term</Typography>
+
+              <Box className="yearsBox">
+                <Box onClick={() => setTime(0)} className={time === 0 ? "yearsBoxItem yearsBoxItemActive" : "yearsBoxItem"}><p>Yearly</p></Box>
+                <Box onClick={() => setTime(1)} className={time === 1 ? "yearsBoxItem yearsBoxItemActive" : "yearsBoxItem"}><p>Monthly</p></Box>
+                <Box onClick={() => setTime(2)} className={time === 2 ? "yearsBoxItem yearsBoxItemActive" : "yearsBoxItem"}><p>Weekly</p></Box>
+              </Box>
+
+
+              <Typography className='lineBarLabel'>Loan Amount</Typography>
+              <Box className="lineBarBox">
+                <Slider
+                  valueLabelDisplay="auto"
+                  slots={{
+                    valueLabel: ValueLabelComponent,
+                  }}
+                  aria-label="custom thumb label"
+                  defaultValue={20}
+                />
+                <Box className="valueBox">
+                  <Typography className='lineBarLabel'>20,590</Typography>
+                  <Typography className='lineBarLabel'>₹</Typography>
+                </Box>
+              </Box>
+
+
+            </Box>
+
+            <Box className="metter"></Box>
+
+          </Box>
         </Box>
-
-      </Box>
+      </Box >
     </>
 
   )
