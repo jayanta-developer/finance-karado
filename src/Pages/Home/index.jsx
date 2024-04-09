@@ -246,6 +246,7 @@ export default function Home() {
 
 
         <Box className="calculatorSection">
+          <img className='featuresBgLine' src={featuresBgLine} />
           <Typography className='sectionBlueLabel'>Calculator</Typography>
           <Typography className='sectionBoldLabel'>Calculate and confirm your loans</Typography>
           <Box className="calculatorBox">
@@ -275,6 +276,57 @@ export default function Home() {
                   <Typography className='lineBarLabel'>20,590</Typography>
                   <Typography className='lineBarLabel'>₹</Typography>
                 </Box>
+              </Box>
+
+              <Typography className='lineBarLabel'>Interest Rate</Typography>
+              <Box className="lineBarBox">
+                <Slider
+                  valueLabelDisplay="auto"
+                  slots={{
+                    valueLabel: ValueLabelComponent,
+                  }}
+                  aria-label="custom thumb label"
+                  defaultValue={20}
+                />
+                <Box className="valueBox">
+                  <Typography className='lineBarLabel'>8</Typography>
+                  <Typography className='lineBarLabel'>%</Typography>
+                </Box>
+              </Box>
+
+              <Typography className='lineBarLabel'>Loan Duration</Typography>
+              <Box className="lineBarBox">
+                <Slider
+                  valueLabelDisplay="auto"
+                  slots={{
+                    valueLabel: ValueLabelComponent,
+                  }}
+                  aria-label="custom thumb label"
+                  defaultValue={20}
+                />
+                <Box className="valueBox">
+                  <Typography className='lineBarLabel'>5</Typography>
+                  <Typography className='lineBarLabel'>Y</Typography>
+                </Box>
+              </Box>
+
+
+              <Box className="dateBox">
+
+                <Box className="dateInputBox">
+                  <Typography className='lineBarLabel'>Start Date</Typography>
+                  <Box>
+                    <p className='lineBarLabel'>Select Date</p>
+                  </Box>
+                </Box>
+
+                <Box className="dateInputBox">
+                  <Typography className='lineBarLabel'>End Date</Typography>
+                  <Box>
+                    <p className='lineBarLabel'>Select Date</p>
+                  </Box>
+                </Box>
+
               </Box>
 
 
