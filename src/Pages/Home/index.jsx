@@ -2,7 +2,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import "./style.css"
 import { styled } from '@mui/material/styles';
-
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 //images
 import background1 from "../../Assets/Images/topBackground.png"
@@ -332,7 +333,47 @@ export default function Home() {
 
             </Box>
 
-            <Box className="metter"></Box>
+            <Box className="metter">
+              <Box mt={2} className="greenCircul">
+                <CircularProgressbar value={66} />
+                <Typography>Total Amount</Typography>
+                <span>$27,535*</span>
+              </Box>
+              <Box mt={3} className="emiIndecatorBox">
+                <Box className="emiIndecatorItem">
+                  <Box sx={{ background: "#2BE158" }}></Box>
+                  <Typography className='lineBarLabel'>EMI Amount</Typography>
+                </Box>
+                <Box className="emiIndecatorItem">
+                  <Box sx={{ background: "#FFFFFF" }}></Box>
+                  <Typography className='lineBarLabel'>Interest Payable</Typography>
+                </Box>
+              </Box>
+
+              <Box className="metterTextRow">
+                <Typography className='lineBarLabel'>EMI Amount (Principal + Interest)</Typography>
+                <Typography className='lineBarLabel'> ₹27,535*</Typography>
+              </Box>
+              <Box className="metterTextRow">
+                <Typography className='lineBarLabel'>Interest Payable</Typography>
+                <Typography className='lineBarLabel'>₹2,040*</Typography>
+              </Box>
+              <Box className="metterTextRow">
+                <Typography className='lineBarLabel'>Loan Duration</Typography>
+                <Typography className='lineBarLabel'>5 Year</Typography>
+              </Box>
+              <Box className="borderLine"></Box>
+              <Box className="metterTextRow trowMargin">
+                <Typography className='lineBarLabel'>Your EMI Amount</Typography>
+                <Typography className='lineBarLabel'>₹5,507*</Typography>
+              </Box>
+              <AppBtn btnText="Apply Now" bgColor="#2BE158" width="80%" />
+
+
+
+
+
+            </Box>
 
           </Box>
         </Box>
