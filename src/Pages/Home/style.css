@@ -403,7 +403,7 @@
 }
 .calculatorBox {
   width: 100%;
-  height: 540px;
+  /* height: 540px; */
   background: #305ccd;
   border-radius: 30px;
   margin-top: 20px;
@@ -424,6 +424,7 @@
   flex-direction: column;
   align-items: center;
   z-index: 1;
+  padding-bottom: 20px;
 }
 .yearsBox {
   width: 100%;

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import "./style.css"
 import { styled } from '@mui/material/styles';
@@ -30,6 +30,7 @@ import tik from "../../Assets/Images/tik.png"
 import { AppBtn } from '../../Components/AppButton';
 import Slider, { SliderThumb } from '@mui/material/Slider';
 import Tooltip from '@mui/material/Tooltip';
+import Footer from '../../Components/Footer';
 
 
 
@@ -377,6 +378,7 @@ export default function Home() {
 
           </Box>
         </Box>
+        <Footer />
       </Box >
     </>
 
