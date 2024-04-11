@@ -25,6 +25,7 @@ import featuresBgImg from "../../Assets/Images/portrait-indian-asian-young-famil
 import tik from "../../Assets/Images/tik.png"
 
 //Data
+import { chooseData } from "../../Assets/Data"
 
 //components
 import { AppBtn } from '../../Components/AppButton';
@@ -369,15 +370,36 @@ export default function Home() {
                 <Typography className='lineBarLabel'>₹5,507*</Typography>
               </Box>
               <AppBtn btnText="Apply Now" bgColor="#2BE158" width="80%" />
-
-
-
-
-
             </Box>
+          </Box>
+        </Box>
+
+
+        <Box className="chooseUsBox">
+          <Typography className='sectionBlueLabel'>Why Choose us</Typography>
+          <Typography className='sectionBoldLabel'>Why Choose Open <br /> Capital?</Typography>
+
+          <Box className="chooseCardBox">
+            <img className='featuresBgLine' src={featuresBgLine} />
+            {chooseData?.map((el, i) => (
+              <Box key={i} className="chooseCard">
+                <img src={el.img} />
+                <Typography>{el.text}</Typography>
+                <sapn>{el.subText}</sapn>
+              </Box>
+            ))
+
+            }
+
+
 
           </Box>
         </Box>
+
+
+
+
+
         <Footer />
       </Box >
     </>
