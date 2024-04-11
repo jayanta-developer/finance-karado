@@ -385,7 +385,7 @@ export default function Home() {
               <Box key={i} className="chooseCard">
                 <img src={el.img} />
                 <Typography>{el.text}</Typography>
-                <sapn>{el.subText}</sapn>
+                <span>{el.subText}</span>
               </Box>
             ))
 
