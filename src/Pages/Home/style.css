@@ -125,7 +125,7 @@
   font-family: Archivo !important;
 }
 .homeSubText {
-  font-size: 20px;
+  font-size: 13px !important;
   color: #262626;
 }
 .BusinessCardBox {
@@ -633,6 +633,135 @@
 .chooseCard span {
   font-size: 13px !important;
   font-weight: 700 !important;
+}
+.eligibility {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  gap: 45px;
+  padding: 65px 0;
+}
+.eligibilityImg {
+  width: 45%;
+}
+.eligibilityTextBox {
+  width: 55%;
+}
+.eligibilityImg img {
+  width: 100%;
+}
+.eligibilityTextBox {
+  display: flex;
+  flex-direction: column;
+}
+.eligibility .sectionBoldLabel {
+  width: 100%;
+  text-align: start;
+}
+.appSubHeaderText {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #262626;
+}
+.eligibility .appSubHeaderText {
+  margin: 10px 0 !important;
+}
+.rowBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.rowBox p {
+  font-size: 15px !important;
+  margin-left: 10px !important;
+}
+
+.appSubHeaderText span {
+  font-size: 13px !important;
+  color: #262626;
+  font-weight: 400 !important;
+}
+.marginText {
+  margin-bottom: 5px !important;
+}
+.questionSection {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  gap: 45px;
+  padding: 65px 0;
+}
+.questionImgBox {
+  width: 40%;
+}
+.questionImgBox img {
+  width: 100%;
+}
+.questionBox {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.questionSection .sectionBoldLabel {
+  text-align: start;
+  width: 100%;
+}
+.questionSection .sectionBlueLabel {
+  text-align: start;
+}
+.colapsBox {
+  width: 100%;
+  height: 85px;
+  transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.colapsBoxActive {
+  height: 170px;
+}
+.colapsDrop {
+  width: 100%;
+  min-height: 85px;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+  padding: 0 20px;
+  border-bottom: 1px solid #000;
+}
+.colapsDropActive {
+  border-radius: 8px;
+  background-color: #f7f7f7;
+  border: none;
+}
+.colapsDrop p {
+  font-size: 18px !important;
+  color: #464646;
+  font-weight: 600 !important;
+}
+.colapsDrop img {
+  position: absolute;
+  top: 39px;
+  right: 25px;
+  transition: all 0.5s;
+}
+.colapsTextArea p {
+  color: #323232;
+  font-size: 13px !important;
+  line-height: 18.5px;
+}
+.colapsDrop:hover p {
+  color: #021929;
+}
+
+.colapsTextArea {
+  padding: 15px 30px;
 }
 /* Tabe view */
 @media only screen and (min-width: 768px) {

@@ -23,6 +23,10 @@ import rupayIcon from "../../Assets/Images/repeIcon.png"
 import featuresBgLine from "../../Assets/Images/featuresBgLine.png"
 import featuresBgImg from "../../Assets/Images/portrait-indian-asian-young-family-four-sitting-white-flour-against-white-background-looking-camera 1 copy copy 1.png"
 import tik from "../../Assets/Images/tik.png"
+import eligibilityImg from "../../Assets/Images/eligibilityimg.png"
+import blackStar from "../../Assets/Images/blackStar.png"
+import questionimg from "../../Assets/Images/questions.png"
+import dropIconB from "../../Assets/Images/dropIcon.png"
 
 //Data
 import { chooseData } from "../../Assets/Data"
@@ -40,6 +44,13 @@ export default function Home() {
   const [langDrop, setLangDrop] = useState(false)
   const [langDropVal, setLangDropVal] = useState("EN")
   const [time, setTime] = useState(0)
+
+  const [drop1, setDrop1] = useState(false)
+  const [drop2, setDrop2] = useState(false)
+  const [drop3, setDrop3] = useState(false)
+  const [drop4, setDrop4] = useState(false)
+  const [drop5, setDrop5] = useState(false)
+
 
 
   const languageList = [
@@ -388,13 +399,121 @@ export default function Home() {
                 <span>{el.subText}</span>
               </Box>
             ))
-
             }
+          </Box>
+        </Box>
+
+        <Box className="eligibility">
+          <Box className="eligibilityImg">
+            <img src={eligibilityImg} />
+          </Box>
+          <Box className="eligibilityTextBox">
+            <Typography className='sectionBoldLabel marginText'>Eligibility & Documentation</Typography>
+            <Typography className='homeSubText'>Give us a call, request a callback or drop us an email, we’re here to help. There are many variations of passages of Lorem Ipsum available,</Typography>
+            <Typography className='appSubHeaderText'>The following documents are required:</Typography>
+            <Box className="rowBox">
+              <img src={blackStar} />
+              <Typography>PAN card photocopy or Form 60</Typography>
+            </Box>
+            <Box className="rowBox">
+              <img src={blackStar} />
+              <Typography>Colour photograph</Typography>
+            </Box>
+            <Box className="rowBox">
+              <img src={blackStar} />
+              <Typography>Latest payslip/Form 16/IT return copy as proof of income</Typography>
+            </Box>
+            <Typography className='appSubHeaderText'>The following documents are required:</Typography>
+            <Box className="rowBox">
+              <img src={blackStar} />
+              <Typography>Passport</Typography>
+            </Box>
+            <Box className="rowBox">
+              <img src={blackStar} />
+              <Typography>Ration Card</Typography>
+            </Box>
+            <Box className="rowBox">
+              <img src={blackStar} />
+              <Typography>Electricity bill</Typography>
+            </Box>
+            <Box className="rowBox">
+              <img src={blackStar} />
+              <Typography>Landline telephone bill</Typography>
+            </Box>
+            <Typography className='homeSubText '>Please note that this list is only indicative. Documents required may vary on a case-to-case basis.</Typography>
+            <Typography className='appSubHeaderText'>Disclaimer:  <span>The credit card decision would be communicated within 21 working days</span></Typography>
+          </Box>
+        </Box>
+
+
+        <Box className="questionSection">
+          <Box className="questionBox">
+            <Typography className='sectionBlueLabel'>FAQS</Typography>
+            <Typography className='sectionBoldLabel'>Got questions for us?</Typography>
+
+            <Box className={drop1 ? "colapsBox colapsBoxActive" : "colapsBox"} onClick={() => setDrop1(!drop1)} >
+              <Box className={drop1 ? "colapsDrop colapsDropActive" : "colapsDrop"}>
+                <Typography>Justo nunc ad in vulputate posuere massa mauris?</Typography>
+                <img src={dropIconB} style={{ transform: drop1 ? "rotate(0deg)" : "rotate(-180deg)" }} />
+              </Box>
+              <Box className="colapsTextArea">
+                <p>Nisl tortor torquent sociosqu dictumst egestas felis senectus aliquet fringilla accumsan cursus. Auctor efficitur si mollis viverra penatibus ultrices potenti. Velit est finibus commodo bibendum auctor eleifend sociosqu etiam sem aenean nisl.</p>
+              </Box>
+            </Box>
+
+            <Box className={drop2 ? "colapsBox colapsBoxActive" : "colapsBox"} onClick={() => setDrop2(!drop2)} >
+              <Box className={drop2 ? "colapsDrop colapsDropActive" : "colapsDrop"}>
+                <Typography>Primis scelerisque placerat mattis netus imperdiet ex finibus?</Typography>
+                <img src={dropIconB} style={{ transform: drop2 ? "rotate(0deg)" : "rotate(-180deg)" }} />
+              </Box>
+              <Box className="colapsTextArea">
+                <p>Nisl tortor torquent sociosqu dictumst egestas felis senectus aliquet fringilla accumsan cursus. Auctor efficitur si mollis viverra penatibus ultrices potenti. Velit est finibus commodo bibendum auctor eleifend sociosqu etiam sem aenean nisl.</p>
+              </Box>
+            </Box>
+
+            <Box className={drop3 ? "colapsBox colapsBoxActive" : "colapsBox"} onClick={() => setDrop3(!drop3)} >
+              <Box className={drop3 ? "colapsDrop colapsDropActive" : "colapsDrop"}>
+                <Typography>Primis scelerisque placerat mattis netus imperdiet ex finibus?</Typography>
+                <img src={dropIconB} style={{ transform: drop3 ? "rotate(0deg)" : "rotate(-180deg)" }} />
+              </Box>
+              <Box className="colapsTextArea">
+                <p>Nisl tortor torquent sociosqu dictumst egestas felis senectus aliquet fringilla accumsan cursus. Auctor efficitur si mollis viverra penatibus ultrices potenti. Velit est finibus commodo bibendum auctor eleifend sociosqu etiam sem aenean nisl.</p>
+              </Box>
+            </Box>
+
+            <Box className={drop4 ? "colapsBox colapsBoxActive" : "colapsBox"} onClick={() => setDrop4(!drop4)} >
+              <Box className={drop4 ? "colapsDrop colapsDropActive" : "colapsDrop"}>
+                <Typography>Primis scelerisque placerat mattis netus imperdiet ex finibus?</Typography>
+                <img src={dropIconB} style={{ transform: drop4 ? "rotate(0deg)" : "rotate(-180deg)" }} />
+              </Box>
+              <Box className="colapsTextArea">
+                <p>Nisl tortor torquent sociosqu dictumst egestas felis senectus aliquet fringilla accumsan cursus. Auctor efficitur si mollis viverra penatibus ultrices potenti. Velit est finibus commodo bibendum auctor eleifend sociosqu etiam sem aenean nisl.</p>
+              </Box>
+            </Box>
+
+            <Box className={drop5 ? "colapsBox colapsBoxActive" : "colapsBox"} onClick={() => setDrop5(!drop5)} >
+              <Box className={drop5 ? "colapsDrop colapsDropActive" : "colapsDrop"}>
+                <Typography>Primis scelerisque placerat mattis netus imperdiet ex finibus?</Typography>
+                <img src={dropIconB} style={{ transform: drop5 ? "rotate(0deg)" : "rotate(-180deg)" }} />
+              </Box>
+              <Box className="colapsTextArea">
+                <p>Nisl tortor torquent sociosqu dictumst egestas felis senectus aliquet fringilla accumsan cursus. Auctor efficitur si mollis viverra penatibus ultrices potenti. Velit est finibus commodo bibendum auctor eleifend sociosqu etiam sem aenean nisl.</p>
+              </Box>
+            </Box>
+
 
 
 
           </Box>
+
+          <Box className="questionImgBox">
+            <img src={questionimg} />
+          </Box>
+
+
+
         </Box>
+
 
 
 
