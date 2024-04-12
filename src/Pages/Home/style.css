@@ -569,16 +569,16 @@
   font-size: 15px !important;
   color: #fff;
   position: absolute;
-  top: 78px;
-  left: 55px;
+  top: 37%;
+  left: 25%;
 }
 .greenCircul span {
   font-size: 25px !important;
   color: #fff;
   font-weight: 600;
   position: absolute;
-  top: 103px;
-  left: 57px;
+  top: 50%;
+  left: 24%;
 }
 .metterTextRow {
   width: 80%;
