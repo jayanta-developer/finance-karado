@@ -133,7 +133,7 @@ export default function Home() {
           </Box>
 
           <Box className="homeMainBox">
-            <Box mr={5} className="applyInfoBox homeMainSubBox">
+            <Box className="applyInfoBox homeMainSubBox">
               <Typography className='homeBoldText'>We provide <br /> funds for all your business needs</Typography>
               <Typography className='homeSubText'>Give us a call, request a callback or drop us an email, we’re here to help.</Typography>
               <Box className="BusinessCardBox">
@@ -153,10 +153,12 @@ export default function Home() {
                   subText: " 48 hrs"
                 })}
               </Box>
-              <AppBtn btnText="Apply Now" width="222px" />
+              <Box className="topBtnBox">
+                <AppBtn btnText="Apply Now" width="222px" />
+              </Box>
             </Box>
 
-            <Box ml={5} className="applyInputBox homeMainSubBox">
+            <Box className="applyInputBox homeMainSubBox">
               <Typography className='applyHeaderText'>Fill to get your <span>loan eligibility <br /> </span>
                 in minutes!</Typography>
 
@@ -355,6 +357,7 @@ export default function Home() {
 
 
             <Box className="metter">
+              <Box className="metterBg"></Box>
               <Box mt={2} className="greenCircul">
                 <CircularProgressbar value={66} />
                 <Typography>Total Amount</Typography>

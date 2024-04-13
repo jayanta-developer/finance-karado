@@ -32,10 +32,10 @@
   display: flex;
   flex-direction: row;
   justify-content: end;
-  gap: 8%;
+  gap: 3%;
 }
 .footerClogo {
-  width: 300px;
+  width: 200px;
   margin-bottom: 20px;
   cursor: pointer;
 }
@@ -67,7 +67,7 @@
   margin-bottom: 15px;
 }
 .footerTextBox {
-  width: 24%;
+  width: 29%;
 }
 .lFBox > div {
   width: 100%;
@@ -80,4 +80,21 @@
 }
 .footer .featuresBgLine {
   z-index: 0;
+}
+
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+}
+
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+  .footermainSection {
+    gap: 8%;
+  }
+  .footerTextBox {
+    width: 24%;
+  }
+  .footerClogo {
+    width: 300px;
+  }
 }

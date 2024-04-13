@@ -7,7 +7,6 @@
 }
 .heroSection {
   width: 100%;
-  height: 100vh;
   min-height: 800px;
   position: relative;
   background: linear-gradient(
@@ -37,7 +36,7 @@
   z-index: -1;
 }
 .navBar {
-  width: 70%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -108,13 +107,13 @@
   background: #020b21af;
 }
 .homeMainBox {
-  width: 70%;
+  width: 90%;
   margin-top: 17px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 .homeMainSubBox {
-  width: 50%;
+  width: 100%;
 }
 .applyInfoBox {
   display: flex;
@@ -171,6 +170,7 @@
   padding: 24px;
   position: relative;
   padding-bottom: 5px;
+  margin-top: 40px;
 }
 .applyHeaderText {
   font-size: 24px !important;
@@ -191,7 +191,7 @@
 }
 .inputBox {
   width: 100%;
-  height: 39px;
+  height: 40px;
   margin-bottom: 14px;
   border: 1px solid #b1b1b1;
   border-radius: 5px;
@@ -246,11 +246,13 @@
   cursor: pointer;
 }
 .findtText {
+  width: 100%;
   font-size: 20px !important;
   color: #133139;
   position: absolute;
   bottom: -50px;
   left: 0px;
+  text-align: center;
 }
 .findtText span {
   font-weight: 600 !important;
@@ -263,7 +265,7 @@
 }
 .sendOtpBtn {
   width: 82px;
-  height: 21px;
+  height: 27px;
   border-radius: 5px;
   background: #305ccd;
   cursor: pointer;
@@ -271,7 +273,7 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 8px;
+  top: 16px;
   right: 17px;
 }
 .sendOtpBtn p {
@@ -280,7 +282,7 @@
 }
 
 .TrustSection {
-  width: 70%;
+  width: 90%;
   padding: 100px 0;
   display: flex;
   flex-direction: column;
@@ -331,8 +333,8 @@
 }
 
 .featuresBox {
-  width: 70%;
-  margin: 100px 0;
+  width: 90%;
+  margin-bottom: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -358,7 +360,7 @@
   bottom: 0px;
   right: 0px;
   width: 41%;
-  height: 86%;
+  height: 70%;
 }
 .loanTextBox {
   width: 60%;
@@ -393,7 +395,7 @@
 }
 
 .calculatorSection {
-  width: 70%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -405,24 +407,23 @@
 }
 .calculatorBox {
   width: 100%;
-  /* height: 540px; */
   background: #305ccd;
   border-radius: 30px;
   margin-top: 20px;
   padding: 24px;
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  gap: 20px;
   position: relative;
 }
 .calculatorBox .featuresBgLine {
   z-index: 0;
 }
 .calculatorBox .controller {
-  width: 60%;
+  width: 50%;
 }
 .calculatorBox .metter {
-  width: 40%;
+  width: 50%;
   border-radius: 21px;
   border: #ffffff21 1px solid;
   box-shadow: rgb(17 41 67 / 20%) 0px 8px 24px;
@@ -431,7 +432,16 @@
   align-items: center;
   z-index: 1;
   padding-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.metterBg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
   backdrop-filter: blur(2px);
+  z-index: -1;
 }
 .yearsBox {
   width: 100%;
@@ -511,7 +521,7 @@
 }
 .dateInputBox > div {
   width: 100%;
-  height: 45px;
+  height: 50px;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -577,7 +587,7 @@
   color: #fff;
   position: absolute;
   top: 37%;
-  left: 25%;
+  left: 24%;
 }
 .greenCircul span {
   font-size: 25px !important;
@@ -585,10 +595,10 @@
   font-weight: 600;
   position: absolute;
   top: 50%;
-  left: 24%;
+  left: 23%;
 }
 .metterTextRow {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -605,7 +615,7 @@
 }
 
 .chooseUsBox {
-  width: 70%;
+  width: 90%;
   padding: 50px 0;
 }
 .chooseCardBox {
@@ -642,7 +652,7 @@
   font-weight: 700 !important;
 }
 .eligibility {
-  width: 70%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   gap: 45px;
@@ -693,7 +703,7 @@
   margin-bottom: 5px !important;
 }
 .questionSection {
-  width: 70%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   gap: 45px;
@@ -749,6 +759,7 @@
   border: none;
 }
 .colapsDrop p {
+  width: 90%;
   font-size: 18px !important;
   color: #464646;
   font-weight: 600 !important;
@@ -773,7 +784,7 @@
 }
 
 .AppProcessSection {
-  width: 70%;
+  width: 90%;
   padding-bottom: 50px;
   display: flex;
   flex-direction: column;
@@ -795,9 +806,7 @@
 }
 .stepItem {
   width: 30%;
-  max-width: 293px;
-  min-width: 290px;
-  height: 250px;
+  height: 190px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -819,7 +828,7 @@
 }
 .stepItem span {
   width: 54%;
-  font-size: 20px !important;
+  font-size: 15px !important;
   font-weight: 600 !important;
   text-align: center;
   margin: 10px 0 !important;
@@ -830,37 +839,24 @@
   text-align: center;
 }
 .StoriesSection {
-  width: 70%;
+  width: 90%;
   padding: 50px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
-/* .storiesBg {
-  position: absolute;
-  top: 10px;
-  left: 0px;
-  width: 100%;
-  height: 90%;
-  background: #b8b8b8;
-  z-index: -1;
-  border-radius: 12px;
-  transform: skew(0deg, 349deg);
-} */
 .storiesBg {
   position: absolute;
   bottom: 1093px;
   left: 0px;
   width: 100%;
-  height: 690px;
+  height: 558px;
   z-index: -1;
 }
 .storiesCard {
   width: 32%;
-  /* width: 400px; */
-  min-width: 288px;
-  height: 300px;
+  height: 230px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -891,6 +887,9 @@
   display: flex;
   justify-content: end;
 }
+.storiesCard .starBox img {
+  width: 40%;
+}
 .storiesCard .cote {
   width: 100%;
   display: flex;
@@ -899,26 +898,150 @@
 }
 .storiesCard p {
   font-weight: 500 !important;
-  font-size: 17px !important;
+  font-size: 12px !important;
   margin-bottom: 17px !important;
   line-height: 20px;
 }
 .storiesCard span {
   font-weight: 700 !important;
-  font-size: 15px !important;
+  font-size: 13px !important;
   margin-bottom: 3px !important;
 }
 .storiesCard samp {
   font-weight: 400 !important;
-  font-size: 16px !important;
+  font-size: 14px !important;
+}
+.topBtnBox {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.loanTextBox .appBtn {
+  width: 90% !important;
 }
 
 /* Tabe view */
 @media only screen and (min-width: 768px) {
+  .inputBox {
+    height: 60px;
+  }
+  .inputBox img {
+    top: 20px;
+  }
 }
 
 /* Desktop view */
 @media only screen and (min-width: 1000px) {
+  .heroSection {
+    height: 100vh;
+  }
+  .navBar {
+    width: 70%;
+  }
+  .homeMainBox {
+    width: 70%;
+    flex-direction: row;
+  }
+  .applyInfoBox {
+    margin-right: 40px;
+  }
+  .applyInputBox {
+    margin-top: 0;
+    margin-left: 40px;
+  }
+  .homeMainSubBox {
+    width: 50%;
+  }
+  .topBtnBox {
+    justify-content: start;
+  }
+  .inputBox {
+    height: 40px;
+  }
+  .inputBox img {
+    top: 12px;
+  }
+  .sendOtpBtn {
+    top: 9px;
+  }
+  .findtText {
+    text-align: start;
+  }
+  .TrustSection {
+    width: 70%;
+  }
+  .featuresBox {
+    width: 70%;
+    margin: 100px 0;
+  }
+  .featuresBgImg {
+    height: 86%;
+  }
+  .calculatorSection {
+    width: 70%;
+  }
+  .calculatorBox {
+    gap: 40px;
+  }
+  .calculatorBox .controller {
+    width: 60%;
+  }
+  .calculatorBox .metter {
+    width: 40%;
+  }
+  .metterTextRow {
+    width: 80%;
+  }
+  .dateInputBox > div {
+    height: 60px;
+  }
+  .AppProcessSection {
+    width: 70%;
+  }
+  .stepItem {
+    width: 30%;
+    max-width: 293px;
+    min-width: 290px;
+    height: 250px;
+  }
+  .stepItem span {
+    font-size: 20px !important;
+  }
+  .chooseUsBox {
+    width: 70%;
+  }
+  .eligibility {
+    width: 70%;
+  }
+  .StoriesSection {
+    width: 70%;
+  }
+  .storiesCard {
+    min-width: 288px;
+    height: 300px;
+  }
+  .storiesCard p {
+    font-size: 17px !important;
+  }
+  .storiesCard span {
+    font-weight: 700 !important;
+    font-size: 15px !important;
+  }
+  .storiesCard samp {
+    font-size: 16px !important;
+  }
+  .storiesCard .starBox img {
+    width: unset;
+  }
+  .questionSection {
+    width: 70%;
+  }
+  .loanTextBox .appBtn {
+    width: unset !important;
+  }
+  .storiesBg {
+    height: 690px;
+  }
 }
 
 /* Desktop view */
@@ -933,32 +1056,16 @@
     height: 48px;
     margin-bottom: 20px;
   }
+  .inputBox img {
+    top: 15px;
+  }
+  .sendOtpBtn {
+    top: 13px;
+  }
   .businessCard p {
     font-size: 18px !important;
   }
   .businessCard span {
     font-size: 18px !important;
   }
-}
-.slider {
-  margin: 0 20px;
-  overflow: "hidden";
-  padding: 2rem 0;
-}
-
-.slider img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.react-multi-carousel-list {
-  padding: 0rem 0 2rem 0;
-}
-
-.custom-dot-list-style button {
-  border: none;
-  background: rgb(255, 68, 68);
-}
-.react-multi-carousel-dot.react-multi-carousel-dot--active button {
-  background: rgb(255, 68, 68) !important;
 }
