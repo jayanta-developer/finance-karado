@@ -17,7 +17,6 @@
 }
 .footerBottomBox p {
   color: #fff;
-  font-family: Archivo;
   font-size: 14px !important;
 }
 .footerBg {
@@ -78,4 +77,7 @@
 }
 .lFBox > div img {
   margin-right: 10px;
+}
+.footer .featuresBgLine {
+  z-index: 0;
 }

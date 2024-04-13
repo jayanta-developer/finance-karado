@@ -5,6 +5,7 @@ import { styled } from '@mui/material/styles';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
+
 //images
 import background1 from "../../Assets/Images/topBackground.png"
 import background2 from "../../Assets/Images/bottomBackground.png"
@@ -27,11 +28,19 @@ import eligibilityImg from "../../Assets/Images/eligibilityimg.png"
 import blackStar from "../../Assets/Images/blackStar.png"
 import questionimg from "../../Assets/Images/questions.png"
 import dropIconB from "../../Assets/Images/dropIcon.png"
+import step1 from "../../Assets/Images/step1.png"
+import step2 from "../../Assets/Images/step2.png"
+import step3 from "../../Assets/Images/step3.png"
+import stars from "../../Assets/Images/stars.png";
+import cote from "../../Assets/Images/cote.png";
+
+import storesBg from "../../Assets/Images/RectangleBg.png"
 
 //Data
 import { chooseData } from "../../Assets/Data"
 
 //components
+import AppSlider from "../../Components/Slider"
 import { AppBtn } from '../../Components/AppButton';
 import Slider, { SliderThumb } from '@mui/material/Slider';
 import Tooltip from '@mui/material/Tooltip';
@@ -260,10 +269,10 @@ export default function Home() {
 
 
         <Box className="calculatorSection">
-          <img className='featuresBgLine' src={featuresBgLine} />
           <Typography className='sectionBlueLabel'>Calculator</Typography>
           <Typography className='sectionBoldLabel'>Calculate and confirm your loans</Typography>
           <Box className="calculatorBox">
+            <img className='featuresBgLine' src={featuresBgLine} />
 
             <Box className="controller">
               <Typography className='calHeaderText'>Loan Calculator</Typography>
@@ -340,11 +349,10 @@ export default function Home() {
                     <p className='lineBarLabel'>Select Date</p>
                   </Box>
                 </Box>
-
               </Box>
-
-
             </Box>
+
+
 
             <Box className="metter">
               <Box mt={2} className="greenCircul">
@@ -381,6 +389,36 @@ export default function Home() {
                 <Typography className='lineBarLabel'>₹5,507*</Typography>
               </Box>
               <AppBtn btnText="Apply Now" bgColor="#2BE158" width="80%" />
+            </Box>
+          </Box>
+        </Box>
+
+
+        <Box className="AppProcessSection">
+          <Typography className='sectionBlueLabel'>Process</Typography>
+          <Typography className='sectionBoldLabel'>Application Process</Typography>
+          <Typography className='homeSubText'>Give us a call, request a callback or drop us an email, we’re here to help. There are many variations of passages of Lorem Ipsum available,</Typography>
+
+          <Box className="stepBox">
+            <Box className="stepItem">
+              <img className='stepBg' src={step1} />
+              <Typography>Steps1</Typography>
+              <span>Project Discovery Call</span>
+              <samp>Give us a call, request a callback or drop us an email, we’re here to help. </samp>
+            </Box>
+
+            <Box className="stepItem">
+              <img className='stepBg' src={step2} />
+              <Typography>Steps2</Typography>
+              <span>Project Discovery Call</span>
+              <samp>Give us a call, request a callback or drop us an email, we’re here to help. </samp>
+            </Box>
+
+            <Box className="stepItem">
+              <img className='stepBg' src={step3} />
+              <Typography>Steps3</Typography>
+              <span>Project Discovery Call</span>
+              <samp>Give us a call, request a callback or drop us an email, we’re here to help. </samp>
             </Box>
           </Box>
         </Box>
@@ -423,7 +461,7 @@ export default function Home() {
               <img src={blackStar} />
               <Typography>Latest payslip/Form 16/IT return copy as proof of income</Typography>
             </Box>
-            <Typography className='appSubHeaderText'>The following documents are required:</Typography>
+            <Typography className='appSubHeaderText'>Residence proof (any one of the following):</Typography>
             <Box className="rowBox">
               <img src={blackStar} />
               <Typography>Passport</Typography>
@@ -444,6 +482,59 @@ export default function Home() {
             <Typography className='appSubHeaderText'>Disclaimer:  <span>The credit card decision would be communicated within 21 working days</span></Typography>
           </Box>
         </Box>
+
+
+
+        <img className='storiesBg' src={storesBg} />
+        <Box className="StoriesSection">
+          {/* <Box className="storiesBg"></Box> */}
+          <Typography className='sectionBlueLabel'>Testimonials</Typography>
+          <Typography className='sectionBoldLabel'>Customer Stories</Typography>
+          <Box className="croselBox">
+            {/* <AppSlider /> */}
+            <Box className="storiesCard">
+              <Box className="bgBox"></Box>
+              <Box className="starBox">
+                <img src={stars} />
+              </Box>
+              <Box className="cote"><img src={cote} /></Box>
+              <Typography>
+                The lab-grown diamond portal market is expected to reach $5.46 billion by 2026, according to a report by Grand View Research. The market is growing.
+              </Typography>
+              <span>Minik Nielsen</span>
+              <samp>Customer</samp>
+            </Box>
+
+            <Box className="storiesCard">
+              <Box className="bgBox"></Box>
+              <Box className="starBox">
+                <img src={stars} />
+              </Box>
+              <Box className="cote"><img src={cote} /></Box>
+              <Typography>
+                The lab-grown diamond portal market is expected to reach $5.46 billion by 2026, according to a report by Grand View Research. The market is growing.
+              </Typography>
+              <span>Minik Nielsen</span>
+              <samp>Customer</samp>
+            </Box>
+
+            <Box className="storiesCard">
+              <Box className="bgBox"></Box>
+              <Box className="starBox">
+                <img src={stars} />
+              </Box>
+              <Box className="cote"><img src={cote} /></Box>
+              <Typography>
+                The lab-grown diamond portal market is expected to reach $5.46 billion by 2026, according to a report by Grand View Research. The market is growing.
+              </Typography>
+              <span>Minik Nielsen</span>
+              <samp>Customer</samp>
+            </Box>
+
+
+          </Box>
+        </Box>
+
 
 
         <Box className="questionSection">
@@ -500,23 +591,11 @@ export default function Home() {
                 <p>Nisl tortor torquent sociosqu dictumst egestas felis senectus aliquet fringilla accumsan cursus. Auctor efficitur si mollis viverra penatibus ultrices potenti. Velit est finibus commodo bibendum auctor eleifend sociosqu etiam sem aenean nisl.</p>
               </Box>
             </Box>
-
-
-
-
           </Box>
-
           <Box className="questionImgBox">
             <img src={questionimg} />
           </Box>
-
-
-
         </Box>
-
-
-
-
 
 
         <Footer />

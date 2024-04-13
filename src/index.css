@@ -3,14 +3,14 @@
   margin: 0;
   padding: 0;
   user-select: none;
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Archivo" !important;
 }
 
-@font-face {
+/* @font-face {
   font-family: "Archivo";
   src: url("./Assets/Fonts/Archivo_Black/ArchivoBlack-Regular.ttf")
     format("truetype");
-}
+} */
 
 /* ScrollBar.css */
 /* Horizontal Scrollbar */

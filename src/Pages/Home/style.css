@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 .heroSection {
   width: 100%;
@@ -119,10 +120,13 @@
   display: flex;
   flex-direction: column;
 }
+.applyInfoBox button {
+  box-shadow: rgb(0 0 0 / 15%) 5px 8px 4px;
+}
 .homeBoldText {
   font-size: 39px !important;
+  font-weight: 900 !important;
   color: #133139;
-  font-family: Archivo !important;
 }
 .homeSubText {
   font-size: 13px !important;
@@ -139,14 +143,14 @@
 }
 .businessCard {
   width: 30.3%;
-  height: 142px;
+  /* height: 142px; */
   border-radius: 18px;
   background: #ffffffa8;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 9px;
+  padding: 15px 9px;
 }
 .businessCard p {
   font-size: 14px !important;
@@ -156,7 +160,6 @@
 }
 .businessCard span {
   font-size: 14px !important;
-  font-family: Archivo !important;
   color: #5a5a5a;
   font-weight: 600 !important;
 }
@@ -167,15 +170,15 @@
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   padding: 24px;
   position: relative;
+  padding-bottom: 5px;
 }
 .applyHeaderText {
-  font-family: Archivo !important;
   font-size: 24px !important;
   margin-bottom: 16px !important;
+  font-weight: 800 !important;
 }
 .applyHeaderText span {
   color: #305ccd;
-  font-family: Archivo !important;
   font-size: 24px !important;
 }
 .input2Box {
@@ -246,7 +249,7 @@
   font-size: 20px !important;
   color: #133139;
   position: absolute;
-  bottom: -47px;
+  bottom: -50px;
   left: 0px;
 }
 .findtText span {
@@ -284,17 +287,16 @@
   align-items: center;
 }
 .sectionBlueLabel {
-  font-family: Archivo !important;
   font-size: 15px !important;
-  font-weight: 600 !important;
+  font-weight: 800 !important;
   text-align: center;
   color: #305ccd;
 }
 .sectionBoldLabel {
   width: 50%;
   font-size: 26px !important;
+  font-weight: 900 !important;
   text-align: center;
-  font-family: Archivo !important;
 }
 .trustCardBox {
   width: 100%;
@@ -315,11 +317,11 @@
 }
 .trustCard p {
   font-size: 22px !important;
-  font-family: Archivo !important;
+  font-weight: 900 !important;
 }
 .trustCard span {
   font-size: 19px !important;
-  font-family: Archivo !important;
+  font-weight: 800 !important;
   color: #121212;
   margin: 7px 0;
 }
@@ -411,6 +413,10 @@
   display: flex;
   flex-direction: row;
   gap: 40px;
+  position: relative;
+}
+.calculatorBox .featuresBgLine {
+  z-index: 0;
 }
 .calculatorBox .controller {
   width: 60%;
@@ -425,6 +431,7 @@
   align-items: center;
   z-index: 1;
   padding-bottom: 20px;
+  backdrop-filter: blur(2px);
 }
 .yearsBox {
   width: 100%;
@@ -435,9 +442,8 @@
 }
 .calHeaderText {
   font-size: 20px !important;
-  font-weight: 600 !important;
+  font-weight: 800 !important;
   color: #fff;
-  font-family: Archivo;
 }
 .yearsBox .yearsBoxItem {
   width: 110px;
@@ -507,11 +513,12 @@
   width: 100%;
   height: 45px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   border: 1px solid #ffffffb6;
   border-radius: 5px;
   margin-top: 10px;
+  padding: 0 16px;
 }
 .dateInputBox p {
 }
@@ -691,6 +698,7 @@
   flex-direction: row;
   gap: 45px;
   padding: 65px 0;
+  margin-top: 100px;
 }
 .questionImgBox {
   width: 40%;
@@ -763,6 +771,148 @@
 .colapsTextArea {
   padding: 15px 30px;
 }
+
+.AppProcessSection {
+  width: 70%;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.AppProcessSection .sectionBoldLabel {
+  width: 100%;
+}
+.AppProcessSection .homeSubText {
+  width: 60%;
+  text-align: center;
+}
+.stepBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 25px;
+}
+.stepItem {
+  width: 30%;
+  max-width: 293px;
+  min-width: 290px;
+  height: 250px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.stepItem .stepBg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  z-index: -1;
+}
+.stepItem p {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #305ccd;
+  text-align: center;
+}
+.stepItem span {
+  width: 54%;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  text-align: center;
+  margin: 10px 0 !important;
+}
+.stepItem samp {
+  width: 53%;
+  font-size: 12px !important;
+  text-align: center;
+}
+.StoriesSection {
+  width: 70%;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+/* .storiesBg {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 100%;
+  height: 90%;
+  background: #b8b8b8;
+  z-index: -1;
+  border-radius: 12px;
+  transform: skew(0deg, 349deg);
+} */
+.storiesBg {
+  position: absolute;
+  bottom: 1093px;
+  left: 0px;
+  width: 100%;
+  height: 690px;
+  z-index: -1;
+}
+.storiesCard {
+  width: 32%;
+  /* width: 400px; */
+  min-width: 288px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+.bgBox {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 100%;
+  height: 90%;
+  background: #ffffff;
+  z-index: -1;
+  border-radius: 12px;
+  transform: skew(0deg, 349deg);
+}
+.croselBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 65px;
+}
+.storiesCard .starBox {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.storiesCard .cote {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  margin: 15px 0;
+}
+.storiesCard p {
+  font-weight: 500 !important;
+  font-size: 17px !important;
+  margin-bottom: 17px !important;
+  line-height: 20px;
+}
+.storiesCard span {
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  margin-bottom: 3px !important;
+}
+.storiesCard samp {
+  font-weight: 400 !important;
+  font-size: 16px !important;
+}
+
 /* Tabe view */
 @media only screen and (min-width: 768px) {
 }
@@ -789,4 +939,26 @@
   .businessCard span {
     font-size: 18px !important;
   }
+}
+.slider {
+  margin: 0 20px;
+  overflow: "hidden";
+  padding: 2rem 0;
+}
+
+.slider img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.react-multi-carousel-list {
+  padding: 0rem 0 2rem 0;
+}
+
+.custom-dot-list-style button {
+  border: none;
+  background: rgb(255, 68, 68);
+}
+.react-multi-carousel-dot.react-multi-carousel-dot--active button {
+  background: rgb(255, 68, 68) !important;
 }
