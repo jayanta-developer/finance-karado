@@ -1,6 +1,5 @@
 .footer {
   width: 100%;
-  height: 440px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -17,7 +16,7 @@
 }
 .footerBottomBox p {
   color: #fff;
-  font-size: 14px !important;
+  font-size: 8px !important;
 }
 .footerBg {
   position: absolute;
@@ -30,9 +29,10 @@
   width: 100%;
   padding: 100px 0 50px 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: end;
-  gap: 3%;
+  gap: 45px;
+  padding: 20px;
 }
 .footerClogo {
   width: 200px;
@@ -67,7 +67,7 @@
   margin-bottom: 15px;
 }
 .footerTextBox {
-  width: 29%;
+  width: 100%;
 }
 .lFBox > div {
   width: 100%;
@@ -84,6 +84,21 @@
 
 /* Tabe view */
 @media only screen and (min-width: 768px) {
+  .footer {
+    height: 440px;
+  }
+  .footermainSection {
+    flex-direction: row;
+    padding: 100px 0 50px;
+    gap: 3%;
+  }
+  .footerTextBox {
+    width: 29%;
+  }
+  .footerBottomBox p {
+    color: #fff;
+    font-size: 14px !important;
+  }
 }
 
 /* Desktop view */

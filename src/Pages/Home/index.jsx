@@ -81,9 +81,9 @@ export default function Home() {
   }
 
 
-  const trustCard = ({ num, title, subTitle, color, margin }) => {
+  const trustCard = ({ num, title, subTitle, color, marginClass }) => {
     return (
-      <Box sx={{ background: color, marginTop: margin || "0px" }} className="trustCard">
+      <Box sx={{ background: color }} className={`trustCard ${marginClass}`}>
         <Typography>{num}</Typography>
         <span>{title}</span>
         <samp>{subTitle}</samp>
@@ -111,7 +111,7 @@ export default function Home() {
           <img className='homeBg1' src={background1} />
           <img className='homeBg2' src={background2} />
 
-          <Box className="navBar">
+          <Box className="navBar AppBox">
             <Box className="Clogo">
               <img src={Clogo} />
             </Box>
@@ -132,7 +132,7 @@ export default function Home() {
             </Box>
           </Box>
 
-          <Box className="homeMainBox">
+          <Box className="homeMainBox AppBox">
             <Box className="applyInfoBox homeMainSubBox">
               <Typography className='homeBoldText'>We provide <br /> funds for all your business needs</Typography>
               <Typography className='homeSubText'>Give us a call, request a callback or drop us an email, we’re here to help.</Typography>
@@ -220,18 +220,18 @@ export default function Home() {
         </Box>
 
 
-        <Box className="TrustSection">
+        <Box className="TrustSection AppBox">
           <Typography className='sectionBlueLabel'>Trust Indicators</Typography>
           <Typography className='sectionBoldLabel'>Powered by Open, Trusted by 30,00,000+ Businesses</Typography>
           <Box className="trustCardBox">
             {trustCard({ num: "120+", title: "Global customer", subTitle: "A global customer base from over 120 countries", color: "#DFF3FF" })}
-            {trustCard({ num: "120+", title: "Active users", subTitle: "Almost over 250 thousand active users", color: "#E0E9FF", margin: "35px" })}
+            {trustCard({ num: "120+", title: "Active users", subTitle: "Almost over 250 thousand active users", color: "#E0E9FF", marginClass: "topMargin" })}
             {trustCard({ num: "120+", title: "Global customer", subTitle: "A global customer base from over 120 countries", color: "#FFD9D3" })}
-            {trustCard({ num: "120+", title: "Global customer", subTitle: "A global customer base from over 120 countries", color: "#D9FEE2", margin: "35px" })}
+            {trustCard({ num: "120+", title: "Global customer", subTitle: "A global customer base from over 120 countries", color: "#D9FEE2", marginClass: "topMargin" })}
           </Box>
         </Box>
 
-        <Box className="featuresBox">
+        <Box className="featuresBox AppBox">
           <Box className="featureInnerBox">
             <img className='featuresBgLine' src={featuresBgLine} />
             <img className='featuresBgImg' src={featuresBgImg} />
@@ -270,7 +270,7 @@ export default function Home() {
         </Box>
 
 
-        <Box className="calculatorSection">
+        <Box className="calculatorSection AppBox">
           <Typography className='sectionBlueLabel'>Calculator</Typography>
           <Typography className='sectionBoldLabel'>Calculate and confirm your loans</Typography>
           <Box className="calculatorBox">
@@ -397,7 +397,7 @@ export default function Home() {
         </Box>
 
 
-        <Box className="AppProcessSection">
+        <Box className="AppProcessSection AppBox">
           <Typography className='sectionBlueLabel'>Process</Typography>
           <Typography className='sectionBoldLabel'>Application Process</Typography>
           <Typography className='homeSubText'>Give us a call, request a callback or drop us an email, we’re here to help. There are many variations of passages of Lorem Ipsum available,</Typography>
@@ -427,7 +427,7 @@ export default function Home() {
         </Box>
 
 
-        <Box className="chooseUsBox">
+        <Box className="chooseUsBox AppBox">
           <Typography className='sectionBlueLabel'>Why Choose us</Typography>
           <Typography className='sectionBoldLabel'>Why Choose Open <br /> Capital?</Typography>
 
@@ -444,7 +444,7 @@ export default function Home() {
           </Box>
         </Box>
 
-        <Box className="eligibility">
+        <Box className="eligibility AppBox">
           <Box className="eligibilityImg">
             <img src={eligibilityImg} />
           </Box>
@@ -489,7 +489,7 @@ export default function Home() {
 
 
         <img className='storiesBg' src={storesBg} />
-        <Box className="StoriesSection">
+        <Box className="StoriesSection AppBox">
           {/* <Box className="storiesBg"></Box> */}
           <Typography className='sectionBlueLabel'>Testimonials</Typography>
           <Typography className='sectionBoldLabel'>Customer Stories</Typography>
@@ -540,7 +540,7 @@ export default function Home() {
 
 
 
-        <Box className="questionSection">
+        <Box className="questionSection AppBox">
           <Box className="questionBox">
             <Typography className='sectionBlueLabel'>FAQS</Typography>
             <Typography className='sectionBoldLabel'>Got questions for us?</Typography>

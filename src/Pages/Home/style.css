@@ -5,9 +5,12 @@
   align-items: center;
   position: relative;
 }
+.AppBox {
+  width: 95%;
+}
 .heroSection {
   width: 100%;
-  min-height: 800px;
+  min-height: 1045px;
   position: relative;
   background: linear-gradient(
     to bottom,
@@ -36,7 +39,6 @@
   z-index: -1;
 }
 .navBar {
-  width: 90%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -46,8 +48,7 @@
   z-index: 2;
 }
 .Clogo {
-  width: 293px;
-  height: 54px;
+  width: 180px;
   cursor: pointer;
 }
 .Clogo img {
@@ -56,7 +57,7 @@
 }
 .navLanguage {
   width: 89px;
-  height: 54px;
+  height: 40px;
   background: #020b21;
   border-radius: 7px;
   display: flex;
@@ -107,7 +108,6 @@
   background: #020b21af;
 }
 .homeMainBox {
-  width: 90%;
   margin-top: 17px;
   display: flex;
   flex-direction: column;
@@ -123,12 +123,12 @@
   box-shadow: rgb(0 0 0 / 15%) 5px 8px 4px;
 }
 .homeBoldText {
-  font-size: 39px !important;
+  font-size: 19px !important;
   font-weight: 900 !important;
   color: #133139;
 }
 .homeSubText {
-  font-size: 13px !important;
+  font-size: 12px !important;
   color: #262626;
 }
 .BusinessCardBox {
@@ -167,19 +167,19 @@
   background: #fdfdfd2e;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-  padding: 24px;
+  padding: 13px;
   position: relative;
   padding-bottom: 5px;
   margin-top: 40px;
 }
 .applyHeaderText {
-  font-size: 24px !important;
+  font-size: 19px !important;
   margin-bottom: 16px !important;
   font-weight: 800 !important;
 }
 .applyHeaderText span {
   color: #305ccd;
-  font-size: 24px !important;
+  font-size: 19px !important;
 }
 .input2Box {
   width: 100%;
@@ -250,7 +250,7 @@
   font-size: 20px !important;
   color: #133139;
   position: absolute;
-  bottom: -50px;
+  bottom: -31px;
   left: 0px;
   text-align: center;
 }
@@ -264,8 +264,8 @@
   cursor: pointer;
 }
 .sendOtpBtn {
-  width: 82px;
-  height: 27px;
+  width: 78px;
+  height: 25px;
   border-radius: 5px;
   background: #305ccd;
   cursor: pointer;
@@ -273,7 +273,7 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 16px;
+  top: 6px;
   right: 17px;
 }
 .sendOtpBtn p {
@@ -282,8 +282,7 @@
 }
 
 .TrustSection {
-  width: 90%;
-  padding: 100px 0;
+  padding: 35px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -295,21 +294,21 @@
   color: #305ccd;
 }
 .sectionBoldLabel {
-  width: 50%;
-  font-size: 26px !important;
+  width: 100%;
+  font-size: 19px !important;
   font-weight: 900 !important;
   text-align: center;
 }
 .trustCardBox {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   gap: 16px;
   margin-top: 24px;
 }
 .trustCard {
-  width: 25%;
+  width: 100%;
   height: 188px;
   padding: 20px;
   border-radius: 40px 40px 40px 0;
@@ -317,6 +316,7 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .trustCard p {
   font-size: 22px !important;
   font-weight: 900 !important;
@@ -333,8 +333,7 @@
 }
 
 .featuresBox {
-  width: 90%;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -360,14 +359,15 @@
   bottom: 0px;
   right: 0px;
   width: 41%;
-  height: 70%;
+  height: 30%;
 }
 .loanTextBox {
-  width: 60%;
+  width: 100%;
   height: 80%;
   position: absolute;
-  top: 50px;
-  left: 50px;
+  top: 15px;
+  left: 0px;
+  padding: 0 16px;
   /* border: 1px solid; */
 }
 .loanTextBox .sectionBlueLabel {
@@ -395,11 +395,10 @@
 }
 
 .calculatorSection {
-  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   position: relative;
 }
 .calculatorSection .sectionBoldLabel {
@@ -410,9 +409,9 @@
   background: #305ccd;
   border-radius: 30px;
   margin-top: 20px;
-  padding: 24px;
+  padding: 15px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px;
   position: relative;
 }
@@ -420,10 +419,10 @@
   z-index: 0;
 }
 .calculatorBox .controller {
-  width: 50%;
+  width: 100%;
 }
 .calculatorBox .metter {
-  width: 50%;
+  width: 100%;
   border-radius: 21px;
   border: #ffffff21 1px solid;
   box-shadow: rgb(17 41 67 / 20%) 0px 8px 24px;
@@ -521,7 +520,7 @@
 }
 .dateInputBox > div {
   width: 100%;
-  height: 50px;
+  height: 37px;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -615,7 +614,6 @@
 }
 
 .chooseUsBox {
-  width: 90%;
   padding: 50px 0;
 }
 .chooseCardBox {
@@ -626,7 +624,7 @@
   position: relative;
   background: #ebebeb36;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 15px;
   padding: 40px 20px 40px 20px;
   border-radius: 20px;
 }
@@ -637,7 +635,7 @@
   text-align: start;
 }
 .chooseCard {
-  width: 23%;
+  width: 48%;
   background: #fff;
   border-radius: 19px;
   margin-bottom: 20px;
@@ -652,17 +650,16 @@
   font-weight: 700 !important;
 }
 .eligibility {
-  width: 90%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 45px;
-  padding: 65px 0;
+  padding: 0px 0;
 }
 .eligibilityImg {
-  width: 45%;
+  width: 100%;
 }
 .eligibilityTextBox {
-  width: 55%;
+  width: 100%;
 }
 .eligibilityImg img {
   width: 100%;
@@ -703,21 +700,19 @@
   margin-bottom: 5px !important;
 }
 .questionSection {
-  width: 90%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   gap: 45px;
-  padding: 65px 0;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .questionImgBox {
-  width: 40%;
+  width: 100%;
 }
 .questionImgBox img {
   width: 100%;
 }
 .questionBox {
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -725,6 +720,7 @@
 .questionSection .sectionBoldLabel {
   text-align: start;
   width: 100%;
+  margin-bottom: 30px !important;
 }
 .questionSection .sectionBlueLabel {
   text-align: start;
@@ -784,7 +780,6 @@
 }
 
 .AppProcessSection {
-  width: 90%;
   padding-bottom: 50px;
   display: flex;
   flex-direction: column;
@@ -794,19 +789,19 @@
   width: 100%;
 }
 .AppProcessSection .homeSubText {
-  width: 60%;
+  width: 90%;
   text-align: center;
 }
 .stepBox {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   margin-top: 25px;
 }
 .stepItem {
-  width: 30%;
-  height: 190px;
+  width: 100%;
+  height: 300px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -821,25 +816,24 @@
   z-index: -1;
 }
 .stepItem p {
-  font-size: 12px !important;
+  font-size: 17px !important;
   font-weight: 600 !important;
   color: #305ccd;
   text-align: center;
 }
 .stepItem span {
   width: 54%;
-  font-size: 15px !important;
+  font-size: 24px !important;
   font-weight: 600 !important;
   text-align: center;
   margin: 10px 0 !important;
 }
 .stepItem samp {
   width: 53%;
-  font-size: 12px !important;
+  font-size: 14px !important;
   text-align: center;
 }
 .StoriesSection {
-  width: 90%;
   padding: 50px 0;
   display: flex;
   flex-direction: column;
@@ -848,14 +842,14 @@
 }
 .storiesBg {
   position: absolute;
-  bottom: 1093px;
+  bottom: 1814px;
   left: 0px;
   width: 100%;
-  height: 558px;
+  height: 848px;
   z-index: -1;
 }
 .storiesCard {
-  width: 32%;
+  width: 100%;
   height: 230px;
   display: flex;
   flex-direction: column;
@@ -877,10 +871,10 @@
 .croselBox {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   gap: 20px;
-  margin-top: 65px;
+  margin-top: 8px;
 }
 .storiesCard .starBox {
   width: 100%;
@@ -916,30 +910,175 @@
   display: flex;
   justify-content: end;
 }
+.topBtnBox Button {
+  width: 100% !important;
+}
 .loanTextBox .appBtn {
-  width: 90% !important;
+  width: 55% !important;
+  position: relative;
+  bottom: -82px;
 }
 
 /* Tabe view */
 @media only screen and (min-width: 768px) {
+  .Clogo {
+    width: 293px;
+    height: 54px;
+  }
+  .AppBox {
+    width: 90%;
+  }
   .inputBox {
     height: 60px;
   }
   .inputBox img {
     top: 20px;
   }
+  .navLanguage {
+    height: 54px;
+  }
+  .homeBoldText {
+    font-size: 39px !important;
+  }
+  .homeSubText {
+    font-size: 13px !important;
+  }
+  .topBtnBox Button {
+    width: 222px !important;
+  }
+  .applyHeaderText {
+    font-size: 24px !important;
+  }
+  .applyHeaderText span {
+    font-size: 24px !important;
+  }
+  .applyInputBox {
+    padding: 24px;
+  }
+  .heroSection {
+    min-height: 800px;
+  }
+  .findtText {
+    bottom: -50px;
+  }
+  .TrustSection {
+    padding: 100px 0;
+  }
+  .sectionBoldLabel {
+    width: 50%;
+    font-size: 26px !important;
+  }
+  .trustCardBox {
+    flex-direction: row;
+  }
+  .trustCard {
+    width: 25%;
+    height: 188px;
+    padding: 20px;
+  }
+  .topMargin {
+    margin-top: 35px;
+  }
+  .featureInnerBox {
+    width: 100%;
+    height: 650px;
+  }
+  .featuresBgImg {
+    bottom: 0px;
+    right: 0px;
+    width: 41%;
+    height: 70%;
+  }
+  .calculatorBox {
+    flex-direction: row;
+    padding: 24px;
+  }
+  .calculatorBox .controller {
+    width: 50%;
+  }
+  .calculatorBox .metter {
+    width: 50%;
+  }
+  .dateInputBox > div {
+    height: 50px;
+  }
+  .featuresBox {
+    margin-bottom: 100px;
+  }
+  .calculatorSection {
+    margin-bottom: 50px;
+  }
+  .stepBox {
+    flex-direction: row;
+  }
+  .stepItem {
+    width: 30%;
+    height: 190px;
+  }
+  .stepItem p {
+    font-size: 12px !important;
+  }
+  .stepItem span {
+    font-size: 15px !important;
+  }
+  .stepItem samp {
+    font-size: 12px !important;
+  }
+  .chooseCardBox {
+    margin-top: 50px;
+  }
+  .chooseCard {
+    width: 23%;
+  }
+  .eligibility {
+    flex-direction: row;
+  }
+  .eligibilityImg {
+    width: 45%;
+  }
+  .eligibilityTextBox {
+    width: 55%;
+  }
+  .eligibility {
+    padding: 65px 0;
+  }
+  .croselBox {
+    flex-direction: row;
+    margin-top: 65px;
+  }
+  .storiesCard {
+    width: 32%;
+    height: 230px;
+  }
+  .questionSection {
+    margin-top: 20px;
+    flex-direction: row;
+    padding: 65px 0;
+  }
+  .questionImgBox {
+    width: 40%;
+  }
+
+  .questionBox {
+    width: 60%;
+  }
+  .questionSection .sectionBoldLabel {
+    margin-bottom: 0px !important;
+  }
+  .storiesBg {
+    bottom: 1011px;
+  }
 }
 
 /* Desktop view */
 @media only screen and (min-width: 1000px) {
+  .AppBox {
+    width: 70%;
+  }
   .heroSection {
     height: 100vh;
   }
-  .navBar {
-    width: 70%;
-  }
   .homeMainBox {
-    width: 70%;
     flex-direction: row;
   }
   .applyInfoBox {
@@ -962,23 +1101,19 @@
     top: 12px;
   }
   .sendOtpBtn {
+    width: 82px;
+    height: 27px;
     top: 9px;
   }
   .findtText {
     text-align: start;
   }
-  .TrustSection {
-    width: 70%;
-  }
+
   .featuresBox {
-    width: 70%;
     margin: 100px 0;
   }
   .featuresBgImg {
     height: 86%;
-  }
-  .calculatorSection {
-    width: 70%;
   }
   .calculatorBox {
     gap: 40px;
@@ -995,9 +1130,6 @@
   .dateInputBox > div {
     height: 60px;
   }
-  .AppProcessSection {
-    width: 70%;
-  }
   .stepItem {
     width: 30%;
     max-width: 293px;
@@ -1007,15 +1139,7 @@
   .stepItem span {
     font-size: 20px !important;
   }
-  .chooseUsBox {
-    width: 70%;
-  }
-  .eligibility {
-    width: 70%;
-  }
-  .StoriesSection {
-    width: 70%;
-  }
+
   .storiesCard {
     min-width: 288px;
     height: 300px;
@@ -1033,14 +1157,26 @@
   .storiesCard .starBox img {
     width: unset;
   }
-  .questionSection {
-    width: 70%;
-  }
   .loanTextBox .appBtn {
+    position: relative;
+    bottom: 0;
     width: unset !important;
   }
   .storiesBg {
     height: 690px;
+    bottom: 1095px;
+  }
+  .loanTextBox {
+    width: 60%;
+    height: 80%;
+    top: 50px;
+    left: 50px;
+  }
+  .AppProcessSection .homeSubText {
+    width: 60%;
+  }
+  .questionSection {
+    margin-top: 100px;
   }
 }
 
