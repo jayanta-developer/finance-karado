@@ -56,7 +56,7 @@
   height: 100%;
 }
 .navLanguage {
-  width: 89px;
+  width: 140px;
   height: 40px;
   background: #020b21;
   border-radius: 7px;
@@ -93,7 +93,7 @@
   align-items: center;
   padding: 0 16px;
   width: 100%;
-  height: 30px;
+  min-height: 30px;
   background: #020b21;
   cursor: pointer;
   transition: all 0.5s;
@@ -1068,6 +1068,9 @@
   .storiesBg {
     bottom: 1011px;
   }
+  .sendOtpBtn {
+    top: 17px;
+  }
 }
 
 /* Desktop view */
@@ -1103,7 +1106,7 @@
   .sendOtpBtn {
     width: 82px;
     height: 27px;
-    top: 9px;
+    top: 6px;
   }
   .findtText {
     text-align: start;

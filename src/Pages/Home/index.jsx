@@ -7,30 +7,29 @@ import 'react-circular-progressbar/dist/styles.css';
 
 
 //images
-import background1 from "../../Assets/Images/topBackground.png"
-import background2 from "../../Assets/Images/bottomBackground.png"
-import Clogo from "../../Assets/Images/CLogo.png"
-import ClogoSvg from "../../Assets/Images/CLogoSvg.svg"
-import earthLogo from "../../Assets/Images/earthIcon.png"
-import dropIcon from "../../Assets/Images/WDropIcon.png"
-import Bs1 from "../../Assets/Images/Bs1.png"
-import Bs2 from "../../Assets/Images/Bs1.png"
-import Bs3 from "../../Assets/Images/bs3.png"
-import userIcon from "../../Assets/Images/userIcon.png"
-import emailIcon from "../../Assets/Images/mailIcon.png"
-import gstIcon from "../../Assets/Images/gstIcon.png"
-import panIcon from "../../Assets/Images/panIcon.png"
-import rupayIcon from "../../Assets/Images/repeIcon.png"
-import featuresBgLine from "../../Assets/Images/featuresBgLine.png"
-import featuresBgImg from "../../Assets/Images/portrait-indian-asian-young-family-four-sitting-white-flour-against-white-background-looking-camera 1 copy copy 1.png"
-import tik from "../../Assets/Images/tik.png"
-import eligibilityImg from "../../Assets/Images/eligibilityimg.png"
-import blackStar from "../../Assets/Images/blackStar.png"
-import questionimg from "../../Assets/Images/questions.png"
-import dropIconB from "../../Assets/Images/dropIcon.png"
-import step1 from "../../Assets/Images/step1.png"
+import background1 from "../../Assets/Images/topBackground.png";
+import background2 from "../../Assets/Images/bottomBackground.png";
+import Clogo from "../../Assets/Images/CLogo.png";
+import earthLogo from "../../Assets/Images/earthIcon.png";
+import dropIcon from "../../Assets/Images/WDropIcon.png";
+import Bs1 from "../../Assets/Images/Bs1.png";
+import Bs2 from "../../Assets/Images/Bs1.png";
+import Bs3 from "../../Assets/Images/bs3.png";
+import userIcon from "../../Assets/Images/userIcon.png";
+import emailIcon from "../../Assets/Images/mailIcon.png";
+import gstIcon from "../../Assets/Images/gstIcon.png";
+import panIcon from "../../Assets/Images/panIcon.png";
+import rupayIcon from "../../Assets/Images/repeIcon.png";
+import featuresBgLine from "../../Assets/Images/featuresBgLine.png";
+import featuresBgImg from "../../Assets/Images/portrait-indian-asian-young-family-four-sitting-white-flour-against-white-background-looking-camera 1 copy copy 1.png";
+import tik from "../../Assets/Images/tik.png";
+import eligibilityImg from "../../Assets/Images/eligibilityimg.png";
+import blackStar from "../../Assets/Images/blackStar.png";
+import questionimg from "../../Assets/Images/questions.png";
+import dropIconB from "../../Assets/Images/dropIcon.png";
+import step1 from "../../Assets/Images/step1.png";
 import step2 from "../../Assets/Images/step2.png"
-import step3 from "../../Assets/Images/step3.png"
+import step3 from "../../Assets/Images/step3.png";
 import stars from "../../Assets/Images/stars.png";
 import cote from "../../Assets/Images/cote.png";
 
@@ -45,13 +44,15 @@ import { AppBtn } from '../../Components/AppButton';
 import Slider, { SliderThumb } from '@mui/material/Slider';
 import Tooltip from '@mui/material/Tooltip';
 import Footer from '../../Components/Footer';
+import { useTranslation } from 'react-i18next';
 
 
 
 
 export default function Home() {
+  const [t, i18n] = useTranslation("global")
   const [langDrop, setLangDrop] = useState(false)
-  const [langDropVal, setLangDropVal] = useState("EN")
+  const [langDropVal, setLangDropVal] = useState("English")
   const [time, setTime] = useState(0)
 
   const [drop1, setDrop1] = useState(false)
@@ -63,12 +64,12 @@ export default function Home() {
 
 
   const languageList = [
-    "EN",
-    "ES",
-    "FR",
-    "ZH",
-    "HI"
+    "Hindi", "English", "Marathi", "Gujarati", "Malyalam", "Telugu", " Kannada"
   ]
+
+  const handelChangeLanguage = (lang) => {
+    i18n.changeLanguage(lang)
+  }
 
 
   const businessCard = ({ img, title, subText }) => {
@@ -120,10 +121,13 @@ export default function Home() {
               <img src={earthLogo} />
               <Typography>{langDropVal}</Typography>
               <img className='LanDropIcon' src={dropIcon} style={{ rotate: langDrop ? "180deg" : "0deg" }} />
-              <Box className="LanDrop" sx={{ height: langDrop ? "150px" : "0px" }}>
+              <Box className="LanDrop" sx={{ height: langDrop ? "210px" : "0px" }}>
                 {
                   languageList?.map((el, index) => (
-                    <Box key={index} onClick={() => setLangDropVal(el)}>
+                    <Box key={index} onClick={() => {
+                      setLangDropVal(el)
+                      handelChangeLanguage(el)
+                    }}>
                       <p>{el}</p>
                     </Box>
                   ))
@@ -134,33 +138,34 @@ export default function Home() {
 
           <Box className="homeMainBox AppBox">
             <Box className="applyInfoBox homeMainSubBox">
-              <Typography className='homeBoldText'>We provide <br /> funds for all your business needs</Typography>
-              <Typography className='homeSubText'>Give us a call, request a callback or drop us an email, we’re here to help.</Typography>
+              {/* <Typography className='homeBoldText'>We provide <br /> funds for all your business needs</Typography> */}
+              <Typography className='homeBoldText'>{t("header.pageHeader")}</Typography>
+              <Typography className='homeSubText'>{t("header.pageSubHeader")}</Typography>
               <Box className="BusinessCardBox">
                 {businessCard({
                   img: Bs1,
-                  title: "Business loan up to",
-                  subText: " ₹15 Crore"
+                  title: t("businessCard1.title"),
+                  subText: t("businessCard1.subText"),
                 })}
                 {businessCard({
                   img: Bs2,
-                  title: "Interest rate as low as",
-                  subText: " 1%"
+                  title: t("businessCard2.title"),
+                  subText: t("businessCard2.subText"),
                 })}
                 {businessCard({
                   img: Bs3,
-                  title: "Money in your Bank in",
-                  subText: " 48 hrs"
+                  title: t("businessCard3.title"),
+                  subText: t("businessCard3.subText"),
                 })}
               </Box>
               <Box className="topBtnBox">
-                <AppBtn btnText="Apply Now" width="222px" />
+                <AppBtn btnText={t("button.applyBtn")} width="222px" />
               </Box>
             </Box>
 
             <Box className="applyInputBox homeMainSubBox">
-              <Typography className='applyHeaderText'>Fill to get your <span>loan eligibility <br /> </span>
-                in minutes!</Typography>
+              <Typography className='applyHeaderText'>{t("form.header1")}<span>{t("form.header2")}<br /> </span>
+                {t("form.header3")}</Typography>
 
               <Box className="input2Box">
                 <Box className="inputBox">
@@ -185,7 +190,7 @@ export default function Home() {
               <Box className="inputBox">
                 <input placeholder="Mobile No *" />
                 <Box className="sendOtpBtn">
-                  <p>Send OTP</p>
+                  <p>{t("button.otpSend")}</p>
                 </Box>
               </Box>
 
@@ -200,20 +205,20 @@ export default function Home() {
                 <input placeholder="Loan Amount *" />
                 <img src={rupayIcon} />
               </Box>
-              <AppBtn btnText="Check loan Eligibility" width="100%" />
+              <AppBtn btnText={t("button.eligibilityBtn")} width="100%" />
 
               <Box className="check">
                 <input type="checkBox" />
-                <Typography>I agree to the Terms & Privacy Policy</Typography>
+                <Typography>{t("form.check1")}</Typography>
               </Box>
 
               <Box className="check">
                 <input type="checkBox" />
-                <Typography>Send me updates on WhatsApp</Typography>
+                <Typography>{t("form.check2")}</Typography>
               </Box>
 
               <Typography className='findtText'>
-                Let's find you the <span>Best</span> <samp>Finance</samp>
+                {t("form.fromBottomText1")}<span>{t("form.fromBottomText2")}</span> <samp>{t("form.fromBottomText3")}</samp>
               </Typography>
             </Box>
           </Box>
@@ -221,13 +226,13 @@ export default function Home() {
 
 
         <Box className="TrustSection AppBox">
-          <Typography className='sectionBlueLabel'>Trust Indicators</Typography>
-          <Typography className='sectionBoldLabel'>Powered by Open, Trusted by 30,00,000+ Businesses</Typography>
+          <Typography className='sectionBlueLabel'>{t("Trust.trustHeader")}</Typography>
+          <Typography className='sectionBoldLabel'>{t("Trust.trustSubHeader")}</Typography>
           <Box className="trustCardBox">
-            {trustCard({ num: "120+", title: "Global customer", subTitle: "A global customer base from over 120 countries", color: "#DFF3FF" })}
-            {trustCard({ num: "120+", title: "Active users", subTitle: "Almost over 250 thousand active users", color: "#E0E9FF", marginClass: "topMargin" })}
-            {trustCard({ num: "120+", title: "Global customer", subTitle: "A global customer base from over 120 countries", color: "#FFD9D3" })}
-            {trustCard({ num: "120+", title: "Global customer", subTitle: "A global customer base from over 120 countries", color: "#D9FEE2", marginClass: "topMargin" })}
+            {trustCard({ num: "120+", title: t("Trust.trustCardHeader1"), subTitle: t("Trust.trustCardHeaderSub1"), color: "#DFF3FF" })}
+            {trustCard({ num: "120+", title: t("Trust.trustCardHeader2"), subTitle: t("Trust.trustCardHeaderSub2"), color: "#E0E9FF", marginClass: "topMargin" })}
+            {trustCard({ num: "120+", title: t("Trust.trustCardHeader1"), subTitle: t("Trust.trustCardHeaderSub1"), color: "#FFD9D3" })}
+            {trustCard({ num: "120+", title: t("Trust.trustCardHeader1"), subTitle: t("Trust.trustCardHeaderSub1"), color: "#D9FEE2", marginClass: "topMargin" })}
           </Box>
         </Box>
 
@@ -236,35 +241,35 @@ export default function Home() {
             <img className='featuresBgLine' src={featuresBgLine} />
             <img className='featuresBgImg' src={featuresBgImg} />
             <Box className="loanTextBox">
-              <Typography className='sectionBlueLabel'>Loan Features</Typography>
-              <Typography className='sectionBoldLabel'>We have best team and best process</Typography>
-              <Typography className='homeSubText'>Give us a call, request a callback or drop us an email, we’re here to help. There are many variations of passages of Lorem Ipsum available,</Typography>
+              <Typography className='sectionBlueLabel'>{t("Loan.loanHeader")}</Typography>
+              <Typography className='sectionBoldLabel'>{t("Loan.loanSubHeader")}</Typography>
+              <Typography className='homeSubText'>{t("Loan.loanSubHeader2")}</Typography>
 
               <Box className="tikTextBox">
                 <img src={tik} />
-                <Typography className='homeSubText'>Wise busy past both park when an ye no. Nay likely her length sooner thrown sex lively income.</Typography>
+                <Typography className='homeSubText'>{t("Loan.loanLabel1")}</Typography>
               </Box>
               <Box className="tikTextBox">
                 <img src={tik} />
-                <Typography className='homeSubText'>Wise busy past both park when an ye no.</Typography>
+                <Typography className='homeSubText'>{t("Loan.loanLabel2")}</Typography>
               </Box>
               <Box className="tikTextBox">
                 <img src={tik} />
-                <Typography className='homeSubText'>Nay likely her length sooner thrown sex lively income.</Typography>
+                <Typography className='homeSubText'>{t("Loan.loanLabel3")}</Typography>
               </Box>
               <Box className="tikTextBox">
                 <img src={tik} />
-                <Typography className='homeSubText'>Wise busy past both park when an ye no. Nay likely her length sooner thrown sex lively income.</Typography>
+                <Typography className='homeSubText'>{t("Loan.loanLabel4")}</Typography>
               </Box>
               <Box className="tikTextBox">
                 <img src={tik} />
-                <Typography className='homeSubText'>Wise busy past both park when an ye no.</Typography>
+                <Typography className='homeSubText'>{t("Loan.loanLabel5")}</Typography>
               </Box>
               <Box mb={4} className="tikTextBox">
                 <img src={tik} />
-                <Typography className='homeSubText'>Nay likely her length sooner thrown sex lively income.</Typography>
+                <Typography className='homeSubText'>{t("Loan.loanLabel6")}</Typography>
               </Box>
-              <AppBtn btnText="Apply Now" />
+              <AppBtn btnText={t("button.applyBtn")} />
             </Box>
           </Box>
         </Box>

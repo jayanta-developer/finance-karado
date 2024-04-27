@@ -1,0 +1,51 @@
+{
+  "header": {
+    "pageHeader": "We provide funds for all your business needs",
+    "pageSubHeader": "We provide funds for all your business needs"
+  },
+  "businessCard1": {
+    "title": "Business loan up to",
+    "subText": " ₹15 Crore"
+  },
+  "businessCard2": {
+    "title": "Interest rate as low as",
+    "subText": " 1%"
+  },
+  "businessCard3": {
+    "title": "Money in your Bank in",
+    "subText": " 48 hrs"
+  },
+  "button": {
+    "eligibilityBtn": "Check loan Eligibility",
+    "applyBtn": "Apply Now"
+  },
+  "form": {
+    "header1": "Fill to get your ",
+    "header2": "loan eligibility ",
+    "header3": "in minutes! ",
+    "check1": "I agree to the Terms & Privacy Policy",
+    "check2": "Send me updates on WhatsApp",
+    "fromBottomText1": "Let's find you the ",
+    "fromBottomText2": "Best",
+    "fromBottomText3": "Finance"
+  },
+  "Trust": {
+    "trustHeader": "Trust Indicators",
+    "trustSubHeader": "Powered by Open, Trusted by 30,00,000+ Businesses",
+    "trustCardHeader1": "Global customer",
+    "trustCardHeaderSub1": "Almost over 250 thousand active users",
+    "trustCardHeader2": "Active users ",
+    "trustCardHeaderSub2": "A global customer base from over 120 countries"
+  },
+  "Loan": {
+    "loanHeader": "Loan Features",
+    "loanSubHeader": "We have best team and best process",
+    "loanSubHeader2": "Give us a call, request a callback or drop us an email, we’re here to help. There are many variations of passages of Lorem Ipsum available,",
+    "loanLabel1": "Wise busy past both park when an ye no. Nay likely her length sooner thrown sex lively income.",
+    "loanLabel2": "Wise busy past both park when an ye no.",
+    "loanLabel3": "Nay likely her length sooner thrown sex lively income.",
+    "loanLabel4": "Wise busy past both park when an ye no. Nay likely her length sooner thrown sex lively income.",
+    "loanLabel5": "Wise busy past both park when an ye no.",
+    "loanLabel6": "Nay likely her length sooner thrown sex lively income."
+  }
+}
