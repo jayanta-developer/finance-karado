@@ -36,7 +36,7 @@ import cote from "../../Assets/Images/cote.png";
 import storesBg from "../../Assets/Images/RectangleBg.png"
 
 //Data
-import { chooseData } from "../../Assets/Data"
+import { ChooseData } from "../../Assets/Data"
 
 //components
 import AppSlider from "../../Components/Slider"
@@ -50,6 +50,7 @@ import { useTranslation } from 'react-i18next';
 
 
 export default function Home() {
+  const choose_Data = ChooseData()
   const [t, i18n] = useTranslation("global")
   const [langDrop, setLangDrop] = useState(false)
   const [langDropVal, setLangDropVal] = useState("English")
@@ -64,7 +65,7 @@ export default function Home() {
 
 
   const languageList = [
-    "Hindi", "English", "Marathi", "Gujarati", "Malyalam", "Telugu", " Kannada"
+    "English", "Hindi", "Marathi", "Gujarati", "Malyalam", "Telugu", " Kannada"
   ]
 
   const handelChangeLanguage = (lang) => {
@@ -276,23 +277,23 @@ export default function Home() {
 
 
         <Box className="calculatorSection AppBox">
-          <Typography className='sectionBlueLabel'>Calculator</Typography>
-          <Typography className='sectionBoldLabel'>Calculate and confirm your loans</Typography>
+          <Typography className='sectionBlueLabel'>{t("Calculator.calHeader")}</Typography>
+          <Typography className='sectionBoldLabel'>{t("Calculator.calSubHeader")}</Typography>
           <Box className="calculatorBox">
             <img className='featuresBgLine' src={featuresBgLine} />
 
             <Box className="controller">
-              <Typography className='calHeaderText'>Loan Calculator</Typography>
-              <Typography className='subText'>Loan Term</Typography>
+              <Typography className='calHeaderText'>{t("Calculator.calBoxHeader")}</Typography>
+              <Typography className='subText'>{t("Calculator.calBoxSubHeader")}</Typography>
 
               <Box className="yearsBox">
-                <Box onClick={() => setTime(0)} className={time === 0 ? "yearsBoxItem yearsBoxItemActive" : "yearsBoxItem"}><p>Yearly</p></Box>
-                <Box onClick={() => setTime(1)} className={time === 1 ? "yearsBoxItem yearsBoxItemActive" : "yearsBoxItem"}><p>Monthly</p></Box>
-                <Box onClick={() => setTime(2)} className={time === 2 ? "yearsBoxItem yearsBoxItemActive" : "yearsBoxItem"}><p>Weekly</p></Box>
+                <Box onClick={() => setTime(0)} className={time === 0 ? "yearsBoxItem yearsBoxItemActive" : "yearsBoxItem"}><p>{t("Calculator.calYear")}</p></Box>
+                <Box onClick={() => setTime(1)} className={time === 1 ? "yearsBoxItem yearsBoxItemActive" : "yearsBoxItem"}><p>{t("Calculator.calMonth")}</p></Box>
+                <Box onClick={() => setTime(2)} className={time === 2 ? "yearsBoxItem yearsBoxItemActive" : "yearsBoxItem"}><p>{t("Calculator.calWeek")}</p></Box>
               </Box>
 
 
-              <Typography className='lineBarLabel'>Loan Amount</Typography>
+              <Typography className='lineBarLabel'>{t("Calculator.calLine1")}</Typography>
               <Box className="lineBarBox">
                 <Slider
                   valueLabelDisplay="auto"
@@ -308,7 +309,7 @@ export default function Home() {
                 </Box>
               </Box>
 
-              <Typography className='lineBarLabel'>Interest Rate</Typography>
+              <Typography className='lineBarLabel'>{t("Calculator.calLine2")}</Typography>
               <Box className="lineBarBox">
                 <Slider
                   valueLabelDisplay="auto"
@@ -324,7 +325,7 @@ export default function Home() {
                 </Box>
               </Box>
 
-              <Typography className='lineBarLabel'>Loan Duration</Typography>
+              <Typography className='lineBarLabel'>{t("Calculator.calLine3")}</Typography>
               <Box className="lineBarBox">
                 <Slider
                   valueLabelDisplay="auto"
@@ -344,16 +345,16 @@ export default function Home() {
               <Box className="dateBox">
 
                 <Box className="dateInputBox">
-                  <Typography className='lineBarLabel'>Start Date</Typography>
+                  <Typography className='lineBarLabel'>{t("Calculator.startD")}</Typography>
                   <Box>
-                    <p className='lineBarLabel'>Select Date</p>
+                    <p className='lineBarLabel'>{t("Calculator.selectD")}</p>
                   </Box>
                 </Box>
 
                 <Box className="dateInputBox">
-                  <Typography className='lineBarLabel'>End Date</Typography>
+                  <Typography className='lineBarLabel'>{t("Calculator.startD")}</Typography>
                   <Box>
-                    <p className='lineBarLabel'>Select Date</p>
+                    <p className='lineBarLabel'>{t("Calculator.selectD")}</p>
                   </Box>
                 </Box>
               </Box>
@@ -365,80 +366,80 @@ export default function Home() {
               <Box className="metterBg"></Box>
               <Box mt={2} className="greenCircul">
                 <CircularProgressbar value={66} />
-                <Typography>Total Amount</Typography>
+                <Typography>{t("Calculator.TAmount")}</Typography>
                 <span>$27,535*</span>
               </Box>
               <Box mt={3} className="emiIndecatorBox">
                 <Box className="emiIndecatorItem">
                   <Box sx={{ background: "#2BE158" }}></Box>
-                  <Typography className='lineBarLabel'>EMI Amount</Typography>
+                  <Typography className='lineBarLabel'>{t("Calculator.EAmount")}</Typography>
                 </Box>
                 <Box className="emiIndecatorItem">
                   <Box sx={{ background: "#FFFFFF" }}></Box>
-                  <Typography className='lineBarLabel'>Interest Payable</Typography>
+                  <Typography className='lineBarLabel'>{t("Calculator.IPayable")}</Typography>
                 </Box>
               </Box>
 
               <Box className="metterTextRow">
-                <Typography className='lineBarLabel'>EMI Amount (Principal + Interest)</Typography>
+                <Typography className='lineBarLabel'>{t("Calculator.EMIA")}</Typography>
                 <Typography className='lineBarLabel'> ₹27,535*</Typography>
               </Box>
               <Box className="metterTextRow">
-                <Typography className='lineBarLabel'>Interest Payable</Typography>
+                <Typography className='lineBarLabel'>{t("Calculator.IPayable")}</Typography>
                 <Typography className='lineBarLabel'>₹2,040*</Typography>
               </Box>
               <Box className="metterTextRow">
-                <Typography className='lineBarLabel'>Loan Duration</Typography>
+                <Typography className='lineBarLabel'>{t("Calculator.LDuration")}</Typography>
                 <Typography className='lineBarLabel'>5 Year</Typography>
               </Box>
               <Box className="borderLine"></Box>
               <Box className="metterTextRow trowMargin">
-                <Typography className='lineBarLabel'>Your EMI Amount</Typography>
+                <Typography className='lineBarLabel'>{t("Calculator.YEAmount")}</Typography>
                 <Typography className='lineBarLabel'>₹5,507*</Typography>
               </Box>
-              <AppBtn btnText="Apply Now" bgColor="#2BE158" width="80%" />
+              <AppBtn btnText={t("button.applyBtn")} bgColor="#2BE158" width="80%" />
             </Box>
           </Box>
         </Box>
 
 
         <Box className="AppProcessSection AppBox">
-          <Typography className='sectionBlueLabel'>Process</Typography>
-          <Typography className='sectionBoldLabel'>Application Process</Typography>
-          <Typography className='homeSubText'>Give us a call, request a callback or drop us an email, we’re here to help. There are many variations of passages of Lorem Ipsum available,</Typography>
+          <Typography className='sectionBlueLabel'>{t("Process.PHeader")}</Typography>
+          <Typography className='sectionBoldLabel'>{t("Process.PSubHeader")}</Typography>
+          <Typography className='homeSubText'>{t("Process.PSubHeader2")}</Typography>
 
           <Box className="stepBox">
             <Box className="stepItem">
               <img className='stepBg' src={step1} />
-              <Typography>Steps1</Typography>
-              <span>Project Discovery Call</span>
-              <samp>Give us a call, request a callback or drop us an email, we’re here to help. </samp>
+              <Typography>{t("Process.Steps1")}</Typography>
+              <span>{t("Process.StepsHeader1")}</span>
+              <samp>{t("Process.StepsSubHeader1")}</samp>
             </Box>
 
             <Box className="stepItem">
               <img className='stepBg' src={step2} />
-              <Typography>Steps2</Typography>
-              <span>Project Discovery Call</span>
-              <samp>Give us a call, request a callback or drop us an email, we’re here to help. </samp>
+              <Typography>{t("Process.Steps2")}</Typography>
+              <span>{t("Process.StepsHeader2")}</span>
+              <samp>{t("Process.StepsSubHeader2")}</samp>
             </Box>
 
             <Box className="stepItem">
               <img className='stepBg' src={step3} />
-              <Typography>Steps3</Typography>
-              <span>Project Discovery Call</span>
-              <samp>Give us a call, request a callback or drop us an email, we’re here to help. </samp>
+              <Typography>{t("Process.Steps3")}</Typography>
+              <span>{t("Process.StepsHeader3")}</span>
+              <samp>{t("Process.StepsSubHeader3")}</samp>
             </Box>
           </Box>
         </Box>
 
 
         <Box className="chooseUsBox AppBox">
-          <Typography className='sectionBlueLabel'>Why Choose us</Typography>
-          <Typography className='sectionBoldLabel'>Why Choose Open <br /> Capital?</Typography>
+          <Typography className='sectionBlueLabel'>{t("Choose.chooseHeader")}</Typography>
+          <Typography className='sectionBoldLabel'>{t("Choose.chooseSubHeader")}<br />{t("Choose.chooseSubHeader2")}</Typography>
 
           <Box className="chooseCardBox">
             <img className='featuresBgLine' src={featuresBgLine} />
-            {chooseData?.map((el, i) => (
+            {choose_Data?.map((el, i) => (
               <Box key={i} className="chooseCard">
                 <img src={el.img} />
                 <Typography>{el.text}</Typography>
@@ -454,40 +455,40 @@ export default function Home() {
             <img src={eligibilityImg} />
           </Box>
           <Box className="eligibilityTextBox">
-            <Typography className='sectionBoldLabel marginText'>Eligibility & Documentation</Typography>
-            <Typography className='homeSubText'>Give us a call, request a callback or drop us an email, we’re here to help. There are many variations of passages of Lorem Ipsum available,</Typography>
-            <Typography className='appSubHeaderText'>The following documents are required:</Typography>
+            <Typography className='sectionBoldLabel marginText'>{t("Eligibility.EHeader")}</Typography>
+            <Typography className='homeSubText'>{t("Eligibility.EHeaderSub")}</Typography>
+            <Typography className='appSubHeaderText'>{t("Eligibility.ELabelA1")}</Typography>
             <Box className="rowBox">
               <img src={blackStar} />
-              <Typography>PAN card photocopy or Form 60</Typography>
+              <Typography>{t("Eligibility.ELA2")}</Typography>
             </Box>
             <Box className="rowBox">
               <img src={blackStar} />
-              <Typography>Colour photograph</Typography>
+              <Typography>{t("Eligibility.ELA3")}</Typography>
             </Box>
             <Box className="rowBox">
               <img src={blackStar} />
-              <Typography>Latest payslip/Form 16/IT return copy as proof of income</Typography>
+              <Typography>{t("Eligibility.ELA4")}</Typography>
             </Box>
-            <Typography className='appSubHeaderText'>Residence proof (any one of the following):</Typography>
+            <Typography className='appSubHeaderText'>{t("Eligibility.ELabelB1")}</Typography>
             <Box className="rowBox">
               <img src={blackStar} />
-              <Typography>Passport</Typography>
-            </Box>
-            <Box className="rowBox">
-              <img src={blackStar} />
-              <Typography>Ration Card</Typography>
+              <Typography>{t("Eligibility.ELB2")}</Typography>
             </Box>
             <Box className="rowBox">
               <img src={blackStar} />
-              <Typography>Electricity bill</Typography>
+              <Typography>{t("Eligibility.ELB3")}</Typography>
             </Box>
             <Box className="rowBox">
               <img src={blackStar} />
-              <Typography>Landline telephone bill</Typography>
+              <Typography>{t("Eligibility.ELB4")}</Typography>
             </Box>
-            <Typography className='homeSubText '>Please note that this list is only indicative. Documents required may vary on a case-to-case basis.</Typography>
-            <Typography className='appSubHeaderText'>Disclaimer:  <span>The credit card decision would be communicated within 21 working days</span></Typography>
+            <Box className="rowBox">
+              <img src={blackStar} />
+              <Typography>{t("Eligibility.ELB5")}</Typography>
+            </Box>
+            <Typography className='homeSubText '>{t("Eligibility.ENoteText")}</Typography>
+            <Typography className='appSubHeaderText'>{t("Eligibility.EDis")}:  <span>{t("Eligibility.EDisLabel")}</span></Typography>
           </Box>
         </Box>
 
@@ -495,22 +496,18 @@ export default function Home() {
 
         <img className='storiesBg' src={storesBg} />
         <Box className="StoriesSection AppBox">
-          {/* <Box className="storiesBg"></Box> */}
-          <Typography className='sectionBlueLabel'>Testimonials</Typography>
-          <Typography className='sectionBoldLabel'>Customer Stories</Typography>
+          <Typography className='sectionBlueLabel'>{t("Testimonials.THeader")}</Typography>
+          <Typography className='sectionBoldLabel'>{t("Testimonials.Tcs")}</Typography>
           <Box className="croselBox">
-            {/* <AppSlider /> */}
             <Box className="storiesCard">
               <Box className="bgBox"></Box>
               <Box className="starBox">
                 <img src={stars} />
               </Box>
               <Box className="cote"><img src={cote} /></Box>
-              <Typography>
-                The lab-grown diamond portal market is expected to reach $5.46 billion by 2026, according to a report by Grand View Research. The market is growing.
-              </Typography>
-              <span>Minik Nielsen</span>
-              <samp>Customer</samp>
+              <Typography>{t("Testimonials.TCardLabe1")}</Typography>
+              <span>{t("Testimonials.TCardL1")}</span>
+              <samp>{t("Testimonials.TCBL1")}</samp>
             </Box>
 
             <Box className="storiesCard">
@@ -519,11 +516,9 @@ export default function Home() {
                 <img src={stars} />
               </Box>
               <Box className="cote"><img src={cote} /></Box>
-              <Typography>
-                The lab-grown diamond portal market is expected to reach $5.46 billion by 2026, according to a report by Grand View Research. The market is growing.
-              </Typography>
-              <span>Minik Nielsen</span>
-              <samp>Customer</samp>
+              <Typography>{t("Testimonials.TCardLabe1")}</Typography>
+              <span>{t("Testimonials.TCardL1")}</span>
+              <samp>{t("Testimonials.TCBL1")}</samp>
             </Box>
 
             <Box className="storiesCard">
@@ -532,14 +527,10 @@ export default function Home() {
                 <img src={stars} />
               </Box>
               <Box className="cote"><img src={cote} /></Box>
-              <Typography>
-                The lab-grown diamond portal market is expected to reach $5.46 billion by 2026, according to a report by Grand View Research. The market is growing.
-              </Typography>
-              <span>Minik Nielsen</span>
-              <samp>Customer</samp>
+              <Typography>{t("Testimonials.TCardLabe1")}</Typography>
+              <span>{t("Testimonials.TCardL1")}</span>
+              <samp>{t("Testimonials.TCBL1")}</samp>
             </Box>
-
-
           </Box>
         </Box>
 
@@ -547,56 +538,56 @@ export default function Home() {
 
         <Box className="questionSection AppBox">
           <Box className="questionBox">
-            <Typography className='sectionBlueLabel'>FAQS</Typography>
-            <Typography className='sectionBoldLabel'>Got questions for us?</Typography>
+            <Typography className='sectionBlueLabel'>{t("FAQS.FAQS")}</Typography>
+            <Typography className='sectionBoldLabel'>{t("FAQS.FHeader")}</Typography>
 
             <Box className={drop1 ? "colapsBox colapsBoxActive" : "colapsBox"} onClick={() => setDrop1(!drop1)} >
               <Box className={drop1 ? "colapsDrop colapsDropActive" : "colapsDrop"}>
-                <Typography>Justo nunc ad in vulputate posuere massa mauris?</Typography>
+                <Typography>{t("FAQS.FAQSLabel1")}</Typography>
                 <img src={dropIconB} style={{ transform: drop1 ? "rotate(0deg)" : "rotate(-180deg)" }} />
               </Box>
               <Box className="colapsTextArea">
-                <p>Nisl tortor torquent sociosqu dictumst egestas felis senectus aliquet fringilla accumsan cursus. Auctor efficitur si mollis viverra penatibus ultrices potenti. Velit est finibus commodo bibendum auctor eleifend sociosqu etiam sem aenean nisl.</p>
+                <p>{t("FAQS.FAQSLabelSub")}</p>
               </Box>
             </Box>
 
             <Box className={drop2 ? "colapsBox colapsBoxActive" : "colapsBox"} onClick={() => setDrop2(!drop2)} >
               <Box className={drop2 ? "colapsDrop colapsDropActive" : "colapsDrop"}>
-                <Typography>Primis scelerisque placerat mattis netus imperdiet ex finibus?</Typography>
+                <Typography>{t("FAQS.FAQSLabel2")}</Typography>
                 <img src={dropIconB} style={{ transform: drop2 ? "rotate(0deg)" : "rotate(-180deg)" }} />
               </Box>
               <Box className="colapsTextArea">
-                <p>Nisl tortor torquent sociosqu dictumst egestas felis senectus aliquet fringilla accumsan cursus. Auctor efficitur si mollis viverra penatibus ultrices potenti. Velit est finibus commodo bibendum auctor eleifend sociosqu etiam sem aenean nisl.</p>
+                <p>{t("FAQS.FAQSLabelSub")}</p>
               </Box>
             </Box>
 
             <Box className={drop3 ? "colapsBox colapsBoxActive" : "colapsBox"} onClick={() => setDrop3(!drop3)} >
               <Box className={drop3 ? "colapsDrop colapsDropActive" : "colapsDrop"}>
-                <Typography>Primis scelerisque placerat mattis netus imperdiet ex finibus?</Typography>
+                <Typography>{t("FAQS.FAQSLabel2")}</Typography>
                 <img src={dropIconB} style={{ transform: drop3 ? "rotate(0deg)" : "rotate(-180deg)" }} />
               </Box>
               <Box className="colapsTextArea">
-                <p>Nisl tortor torquent sociosqu dictumst egestas felis senectus aliquet fringilla accumsan cursus. Auctor efficitur si mollis viverra penatibus ultrices potenti. Velit est finibus commodo bibendum auctor eleifend sociosqu etiam sem aenean nisl.</p>
+                <p>{t("FAQS.FAQSLabelSub")}</p>
               </Box>
             </Box>
 
             <Box className={drop4 ? "colapsBox colapsBoxActive" : "colapsBox"} onClick={() => setDrop4(!drop4)} >
               <Box className={drop4 ? "colapsDrop colapsDropActive" : "colapsDrop"}>
-                <Typography>Primis scelerisque placerat mattis netus imperdiet ex finibus?</Typography>
+                <Typography>{t("FAQS.FAQSLabel2")}</Typography>
                 <img src={dropIconB} style={{ transform: drop4 ? "rotate(0deg)" : "rotate(-180deg)" }} />
               </Box>
               <Box className="colapsTextArea">
-                <p>Nisl tortor torquent sociosqu dictumst egestas felis senectus aliquet fringilla accumsan cursus. Auctor efficitur si mollis viverra penatibus ultrices potenti. Velit est finibus commodo bibendum auctor eleifend sociosqu etiam sem aenean nisl.</p>
+                <p>{t("FAQS.FAQSLabelSub")}</p>
               </Box>
             </Box>
 
             <Box className={drop5 ? "colapsBox colapsBoxActive" : "colapsBox"} onClick={() => setDrop5(!drop5)} >
               <Box className={drop5 ? "colapsDrop colapsDropActive" : "colapsDrop"}>
-                <Typography>Primis scelerisque placerat mattis netus imperdiet ex finibus?</Typography>
+                <Typography>{t("FAQS.FAQSLabel2")}</Typography>
                 <img src={dropIconB} style={{ transform: drop5 ? "rotate(0deg)" : "rotate(-180deg)" }} />
               </Box>
               <Box className="colapsTextArea">
-                <p>Nisl tortor torquent sociosqu dictumst egestas felis senectus aliquet fringilla accumsan cursus. Auctor efficitur si mollis viverra penatibus ultrices potenti. Velit est finibus commodo bibendum auctor eleifend sociosqu etiam sem aenean nisl.</p>
+                <p>{t("FAQS.FAQSLabelSub")}</p>
               </Box>
             </Box>
           </Box>

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material';
 import "./style.css"
+import { useTranslation } from 'react-i18next';
+
 
 //images
 import featuresBgLine from "../../Assets/Images/featuresBgLine.png";
@@ -14,7 +16,11 @@ import starIcon from "../.././Assets/Images/starIcon.png"
 
 
 
+
+
+
 export default function Footer() {
+  const [t, i18n] = useTranslation("global")
   return (
     <>
       <Box className="footer">
@@ -25,9 +31,7 @@ export default function Footer() {
             <Typography sx={{
               textAlign: "center"
             }}
-
-              className='footerText'>
-              Get the perfect funding to achieve your business dreams! Explore loan products right for your industry and increase your chances of getting the funding you need to grow!
+              className='footerText'>{t("Foote.footerSummery")}
             </Typography>
             <Box className="socialIcon">
               <img src={facebookIcon} />
@@ -38,43 +42,40 @@ export default function Footer() {
           </Box>
 
           <Box className="footerTextBox">
-            <Typography className='footerSubText'>Find Us</Typography>
-            <Typography className='footerText'>B-101, Tirupati Complex, Sai Dham, Saravali, Boisar – 401501</Typography>
+            <Typography className='footerSubText'>{t("Foote.foLabel1")}</Typography>
+            <Typography className='footerText'>{t("Foote.foAddress")}</Typography>
             <Box className="gapBox"></Box>
-            <Typography className='footerSubText'>Email Us</Typography>
-            <Typography sx={{ textDecoration: "underline" }} className='footerText pointer'>info@financekarado.com</Typography>
+            <Typography className='footerSubText'>{t("Foote.foLabel2")}</Typography>
+            <Typography sx={{ textDecoration: "underline" }} className='footerText pointer'>{t("Foote.foEmail")}</Typography>
             <Box className="gapBox"></Box>
-            <Typography className='footerSubText'>Call us</Typography>
+            <Typography className='footerSubText'>{t("Foote.foLabel3")}</Typography>
             <Typography className='footerText'>+91 8850596802</Typography>
             <Typography className='footerText'>+91 8291420806</Typography>
           </Box>
 
-
-
           <Box className="footerTextBox lFBox">
             <Box>
               <img src={starIcon} />
-              <Typography className='footerText pointer'>Terms and Conditions</Typography>
+              <Typography className='footerText pointer'>{t("Foote.foLabel4")}</Typography>
             </Box>
             <Box className="gapBox"></Box>
             <Box>
               <img src={starIcon} />
-              <Typography className='footerText pointer'>Privacy Policy</Typography>
+              <Typography className='footerText pointer'>{t("Foote.foLabel5")}</Typography>
             </Box>
             <Box className="gapBox"></Box>
             <Box>
               <img src={starIcon} />
-              <Typography className='footerText pointer'>Apply Now</Typography>
+              <Typography className='footerText pointer'>{t("Foote.foLabel6")}</Typography>
             </Box>
           </Box>
         </Box>
 
 
         <Box className="footerBottomBox">
-          <Typography>Copyright © 2024 . All Rights Reserved . FINANCEKARADO.COM | Created by Sociohub Media .</Typography>
+          <Typography>{t("Foote.footerBottomText")}</Typography>
         </Box>
         <img className='featuresBgLine' src={featuresBgLine} />
-        {/* <img className='footerBg' src={footerBackround} /> */}
       </Box>
     </>
   )
