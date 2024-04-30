@@ -65,7 +65,7 @@ export default function Home() {
 
 
   const languageList = [
-    "English", "Hindi", "Marathi", "Gujarati", "Malyalam", "Telugu", " Kannada"
+    "English", "Hindi", "Marathi", "Gujarati", "Malayalam", "Telugu", "Kannada"
   ]
 
   const handelChangeLanguage = (lang) => {

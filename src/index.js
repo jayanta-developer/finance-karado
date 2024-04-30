@@ -32,7 +32,7 @@ i18next.init({
     Gujarati: {
       global: global_gu,
     },
-    Malyalam: {
+    Malayalam: {
       global: global_mu,
     },
     Telugu: {
