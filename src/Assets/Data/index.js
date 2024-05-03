@@ -14,7 +14,7 @@ export const ChooseData = () => {
     {
       img: img1,
       text: t("Choose.ChCardHeader1"),
-      subText: t("Choose.ChCardSubHeader2"),
+      subText: t("Choose.ChCardSubHeader1"),
     },
     {
       img: img2,
@@ -24,32 +24,32 @@ export const ChooseData = () => {
     {
       img: img3,
       text: t("Choose.ChCardHeader3"),
-      subText: t("Choose.ChCardSubHeader2"),
+      subText: t("Choose.ChCardSubHeader3"),
     },
     {
       img: img4,
       text: t("Choose.ChCardHeader4"),
-      subText: t("Choose.ChCardSubHeader2"),
+      subText: t("Choose.ChCardSubHeader4"),
     },
     {
       img: img5,
       text: t("Choose.ChCardHeader5"),
-      subText: t("Choose.ChCardSubHeader2"),
+      subText: t("Choose.ChCardSubHeader5"),
     },
     {
       img: img6,
       text: t("Choose.ChCardHeader6"),
-      subText: t("Choose.ChCardSubHeader2"),
+      subText: t("Choose.ChCardSubHeader6"),
     },
     {
       img: img7,
       text: t("Choose.ChCardHeader7"),
-      subText: t("Choose.ChCardSubHeader2"),
+      subText: t("Choose.ChCardSubHeader7"),
     },
     {
       img: img1,
       text: t("Choose.ChCardHeader8"),
-      subText: t("Choose.ChCardSubHeader2"),
+      subText: t("Choose.ChCardSubHeader8"),
     },
   ];
 };

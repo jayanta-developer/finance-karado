@@ -1,7 +1,7 @@
 {
   "header": {
     "pageHeader": "We provide funds for all your business needs",
-    "pageSubHeader": "We provide funds for all your business needs"
+    "pageSubHeader": "Give us a call, request a callback or drop us an email, we’re here to help."
   },
   "businessCard1": {
     "title": "Business loan up to",
@@ -31,8 +31,8 @@
     "fromBottomText3": "Finance"
   },
   "Trust": {
-    "trustHeader": "Trust Indicators",
-    "trustSubHeader": "Powered by Open, Trusted by 30,00,000+ Businesses",
+    "trustHeader": "Trusted Partners",
+    "trustSubHeader": "Our Partners from across the industry",
     "trustCardHeader1": "Global customer",
     "trustCardHeaderSub1": "Almost over 250 thousand active users",
     "trustCardHeader2": "Active users ",
@@ -42,12 +42,11 @@
     "loanHeader": "Loan Features",
     "loanSubHeader": "We have best team and best process",
     "loanSubHeader2": "Give us a call, request a callback or drop us an email, we’re here to help. There are many variations of passages of Lorem Ipsum available,",
-    "loanLabel1": "Wise busy past both park when an ye no. Nay likely her length sooner thrown sex lively income.",
-    "loanLabel2": "Wise busy past both park when an ye no.",
-    "loanLabel3": "Nay likely her length sooner thrown sex lively income.",
-    "loanLabel4": "Wise busy past both park when an ye no. Nay likely her length sooner thrown sex lively income.",
-    "loanLabel5": "Wise busy past both park when an ye no.",
-    "loanLabel6": "Nay likely her length sooner thrown sex lively income."
+    "loanLabel1": "Pre-loan calculations: We can start the process of loan application only after a set of calculations is completed.",
+    "loanLabel2": "Application: While this step appears to be straightforward, providing inaccurate information on crucial documents could prolong your loan request by extended periods of time.",
+    "loanLabel3": "Document verification: We have a multi-layered verification system, and timeframes for the same can range from a week to about 15 days.",
+    "loanLabel4": "Loan Approval and Disbursement: This process takes place after the verification of your documents",
+    "loanLabel5": "Loan Repayment and Loan Closure: Borrowers must make sure to pay their Installments on time or avoid risking having their credit score negatively impacted"
   },
   "Calculator": {
     "calHeader": "Calculator",
@@ -86,21 +85,28 @@
   },
   "Choose": {
     "chooseHeader": "Why Choose us",
-    "chooseSubHeader": "Why Choose Open ",
-    "chooseSubHeader2": "Capital?",
-    "ChCardHeader1": "Fast Mobility",
-    "ChCardSubHeader2": "Quis dapibus volutpat condi",
-    "ChCardHeader2": "Easy Experience",
-    "ChCardHeader3": "Term Loan",
-    "ChCardHeader4": "Safe and protected",
-    "ChCardHeader5": "Wordwide Locations",
-    "ChCardHeader6": "One term fees",
-    "ChCardHeader7": "Merchant Payment",
-    "ChCardHeader8": "Fast Mobility"
+    "chooseSubHeader": "Why choose Finance",
+    "chooseSubHeader2": "Karado?",
+    "ChCardHeader1": "Higher Business Loans",
+    "ChCardSubHeader1": "We offer Business Loans up to Rs 15 crores",
+    "ChCardHeader2": "Lower Interest rates",
+    "ChCardSubHeader2": "Get Interest rates as low as 1%",
+    "ChCardHeader3": "Immediate Processing",
+    "ChCardSubHeader3": "Get money in your bank under 48 hours",
+    "ChCardHeader4": "100% Guaranteed Returns",
+    "ChCardSubHeader4": "Claim returns upto 7.2% completely tax free",
+    "ChCardHeader5": "Health Insurance",
+    "ChCardSubHeader5": "For the protection of you and your loved ones",
+    "ChCardHeader6": "Direct Mutual Funds",
+    "ChCardSubHeader6": "Get higher returns on your mutual funds",
+    "ChCardHeader7": "Safe and Secure",
+    "ChCardSubHeader7": "Your data is completely protected with us",
+    "ChCardHeader8": "Customer First Policy",
+    "ChCardSubHeader8": "Our Team finds the best finance for you"
   },
   "Eligibility": {
     "EHeader": "Eligibility & Documentation",
-    "EHeaderSub": "Give us a call, request a callback or drop us an email, we’re here to help. There are many variations of passages of Lorem Ipsum available,",
+    "EHeaderSub": "What are the documents required for a Personal Loan?",
     "ELabelA1": "The following documents are required:",
     "ELA2": "PAN card photocopy or Form 60",
     "ELA3": "Colour photograph",
@@ -110,7 +116,7 @@
     "ELB3": "Ration Card",
     "ELB4": "Electricity bill",
     "ELB5": "Landline telephone bill",
-    "ENoteText": "Please note that this list is only indicative. Documents required may vary on a case-to-case basis.",
+    "ENoteText": "Identity proof- Accepted documents include passport copy, voter ID card, driving license or Aadhar card.",
     "EDis": "Disclaimer",
     "EDisLabel": "The credit card decision would be communicated within 21 working days"
   },

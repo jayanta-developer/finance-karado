@@ -266,10 +266,6 @@ export default function Home() {
                 <img src={tik} />
                 <Typography className='homeSubText'>{t("Loan.loanLabel5")}</Typography>
               </Box>
-              <Box mb={4} className="tikTextBox">
-                <img src={tik} />
-                <Typography className='homeSubText'>{t("Loan.loanLabel6")}</Typography>
-              </Box>
               <AppBtn btnText={t("button.applyBtn")} />
             </Box>
           </Box>
