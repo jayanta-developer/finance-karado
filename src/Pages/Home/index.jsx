@@ -46,8 +46,6 @@ import Footer from '../../Components/Footer';
 import { useTranslation } from 'react-i18next';
 
 
-
-
 export default function Home() {
   const choose_Data = ChooseData();
   const [t, i18n] = useTranslation("global");
