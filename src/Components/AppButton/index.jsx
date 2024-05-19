@@ -2,9 +2,9 @@ import { Button } from '@mui/material';
 import "./style.css"
 
 
-export const AppBtn = ({ btnText, width, bgColor }) => {
+export const AppBtn = ({ btnText, width, bgColor, onClick }) => {
   return (
-    <Button sx={{ width: width, background: bgColor || "#305ccd" }} variant="contained" className='appBtn'>
+    <Button onClick={onClick} sx={{ width: width, background: bgColor || "#305ccd" }} variant="contained" className='appBtn'>
       {btnText}
     </Button>
   )

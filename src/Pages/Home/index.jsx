@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Typography } from '@mui/material';
+import axios from 'axios';
 import "./style.css"
 import { styled } from '@mui/material/styles';
 import { CircularProgressbar } from 'react-circular-progressbar';
@@ -32,14 +33,12 @@ import step2 from "../../Assets/Images/step2.png"
 import step3 from "../../Assets/Images/step3.png";
 import stars from "../../Assets/Images/stars.png";
 import cote from "../../Assets/Images/cote.png";
-
-import storesBg from "../../Assets/Images/RectangleBg.png"
+import storesBg from "../../Assets/Images/RectangleBg.png";
 
 //Data
-import { ChooseData } from "../../Assets/Data"
+import { ChooseData } from "../../Assets/Data";
 
 //components
-import AppSlider from "../../Components/Slider"
 import { AppBtn } from '../../Components/AppButton';
 import Slider, { SliderThumb } from '@mui/material/Slider';
 import Tooltip from '@mui/material/Tooltip';
@@ -50,18 +49,46 @@ import { useTranslation } from 'react-i18next';
 
 
 export default function Home() {
-  const choose_Data = ChooseData()
-  const [t, i18n] = useTranslation("global")
-  const [langDrop, setLangDrop] = useState(false)
-  const [langDropVal, setLangDropVal] = useState("English")
-  const [time, setTime] = useState(0)
+  const choose_Data = ChooseData();
+  const [t, i18n] = useTranslation("global");
+  const [langDrop, setLangDrop] = useState(false);
+  const [langDropVal, setLangDropVal] = useState("English");
+  const [time, setTime] = useState(0);
+  const [drop1, setDrop1] = useState(false);
+  const [drop2, setDrop2] = useState(false);
+  const [drop3, setDrop3] = useState(false);
+  const [drop4, setDrop4] = useState(false);
+  const [drop5, setDrop5] = useState(false);
+  const [value, setValue] = useState({});
 
-  const [drop1, setDrop1] = useState(false)
-  const [drop2, setDrop2] = useState(false)
-  const [drop3, setDrop3] = useState(false)
-  const [drop4, setDrop4] = useState(false)
-  const [drop5, setDrop5] = useState(false)
+  const token = `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxNjAyMTA3MCwianRpIjoiMzIzMTdhMTMtYTc0YS00YmYyLWI3MmEtNzI4YzRlYmUwYmZkIiwidHlwZSI6ImFjY2VzcyIsImlkZW50aXR5IjoiZGV2LnVzZXJuYW1lXzJ4bnZ3ZmtkZjNuYnUzYnkxNjdkcWxzcDdtY0BzdXJlcGFzcy5pbyIsIm5iZiI6MTcxNjAyMTA3MCwiZXhwIjoyMDMxMzgxMDcwLCJlbWFpbCI6InVzZXJuYW1lXzJ4bnZ3ZmtkZjNuYnUzYnkxNjdkcWxzcDdtY0BzdXJlcGFzcy5pbyIsInRlbmFudF9pZCI6Im1haW4iLCJ1c2VyX2NsYWltcyI6eyJzY29wZXMiOlsidXNlciJdfX0.nIfhCjWuXgtXFpe7tDy2BoSTla6-876mmZXrLpEShSU`;
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValue((prevValue) => ({
+      ...prevValue,
+      [name]: value,
+    }));
+  };
+
+  const SubmitData = async () => {
+    try {
+      const response = await axios.post('https://kyc-api.surepass.io/api/v1/credit-report-v2/fetch-pdf-report', {
+        name: value.name,
+        pan: value.pan,
+        mobile: value.mobile,
+        consent: "Y"
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      console.log('Response:', response.data);
+    } catch (error) {
+      console.error('Error fetching PDF report:', error);
+    }
+  }
 
 
   const languageList = [
@@ -170,12 +197,12 @@ export default function Home() {
 
               <Box className="input2Box">
                 <Box className="inputBox">
-                  <input placeholder="Name *" />
-                  <img src={userIcon} />
+                  <input name='name' placeholder="Name *" onChange={handleChange} />
+                  {value?.name ? null : <img src={userIcon} />}
                 </Box>
                 <Box className="inputBox">
-                  <input type="email" placeholder="Email ID *" />
-                  <img src={emailIcon} />
+                  <input type="email" placeholder="Email ID *" name='email' onChange={handleChange} />
+                  {value?.email ? null : <img src={emailIcon} />}
                 </Box>
               </Box>
 
@@ -185,11 +212,11 @@ export default function Home() {
               </Box>
 
               <Box className="inputBox">
-                <input placeholder="Pan No *" />
+                <input placeholder="Pan No *" name='pan' onChange={handleChange} />
                 <img src={panIcon} />
               </Box>
               <Box className="inputBox">
-                <input placeholder="Mobile No *" />
+                <input placeholder="Mobile No *" name='mobile' onChange={handleChange} />
                 <Box className="sendOtpBtn">
                   <p>{t("button.otpSend")}</p>
                 </Box>
@@ -206,7 +233,7 @@ export default function Home() {
                 <input placeholder="Loan Amount *" />
                 <img src={rupayIcon} />
               </Box>
-              <AppBtn btnText={t("button.eligibilityBtn")} width="100%" />
+              <AppBtn btnText={t("button.eligibilityBtn")} width="100%" onClick={SubmitData} />
 
               <Box className="check">
                 <input type="checkBox" />
