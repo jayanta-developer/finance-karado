@@ -44,6 +44,7 @@ import Slider, { SliderThumb } from '@mui/material/Slider';
 import Tooltip from '@mui/material/Tooltip';
 import Footer from '../../Components/Footer';
 import { useTranslation } from 'react-i18next';
+import ReactSpeedometer from "react-d3-speedometer"
 
 
 export default function Home() {
@@ -58,6 +59,9 @@ export default function Home() {
   const [drop4, setDrop4] = useState(false);
   const [drop5, setDrop5] = useState(false);
   const [value, setValue] = useState({});
+  const [pop, setPop] = useState(false)
+  const [data, setData] = useState()
+
 
   const token = `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxNjAyMTA3MCwianRpIjoiMzIzMTdhMTMtYTc0YS00YmYyLWI3MmEtNzI4YzRlYmUwYmZkIiwidHlwZSI6ImFjY2VzcyIsImlkZW50aXR5IjoiZGV2LnVzZXJuYW1lXzJ4bnZ3ZmtkZjNuYnUzYnkxNjdkcWxzcDdtY0BzdXJlcGFzcy5pbyIsIm5iZiI6MTcxNjAyMTA3MCwiZXhwIjoyMDMxMzgxMDcwLCJlbWFpbCI6InVzZXJuYW1lXzJ4bnZ3ZmtkZjNuYnUzYnkxNjdkcWxzcDdtY0BzdXJlcGFzcy5pbyIsInRlbmFudF9pZCI6Im1haW4iLCJ1c2VyX2NsYWltcyI6eyJzY29wZXMiOlsidXNlciJdfX0.nIfhCjWuXgtXFpe7tDy2BoSTla6-876mmZXrLpEShSU`;
 
@@ -68,16 +72,6 @@ export default function Home() {
       [name]: value,
     }));
   };
-
-
-  // var client = new HttpClient();
-  // var request = new HttpRequestMessage(HttpMethod.Post, "https://kyc-api.surepass.io/api/v1/credit-report-v2/fetch-report");
-  // request.Headers.Add("Authorization", "Bearer ");
-  // var content = new StringContent("{\n    \"name\": \"ranveer  singh maan\",\n    \"pan\": \"DITPM1142K\",\n    \"mobile\": \"7814472414\",\n    \"consent\": \"Y\"\n}", null, "application/json");
-  // request.Content = content;
-  // var response = await client.SendAsync(request);
-  // response.EnsureSuccessStatus
-
 
 
   const SubmitData = async () => {
@@ -93,7 +87,10 @@ export default function Home() {
           'Authorization': `Bearer ${token}`,
         }
       });
-      console.log('Response:', response.data);
+      // console.log('Response:', response?.data);
+      setData(response?.data)
+      setPop(true)
+      document.body.style.overflow = 'hidden';
     } catch (error) {
       console.error('Error fetching PDF report:', error);
     }
@@ -140,11 +137,34 @@ export default function Home() {
     );
   }
 
+  const handlePopClose = (e) => {
+    if (e?.target?.id === "creditPop") {
+      setPop(false)
+      document.body.style.overflow = '';
+    }
+  }
+
+
+  const CreditScorePop = () => {
+    return (
+      <Box id="creditPop" onClick={handlePopClose} className="popBackDrop" sx={{ display: pop ? "flex" : "none" }}>
+        <Box className="popInnerBox">
+          <Typography className='popHeader'>Welcome {data?.data?.name}</Typography>
+          <Typography className='popSubText'>Your Credit Score</Typography>
+          <Box className="scoreMeter">
+            <ReactSpeedometer height={200} minValue={300} maxValue={900} value={data?.data?.credit_score || 300} />
+          </Box>
+        </Box>
+      </Box>
+    )
+  }
+
 
 
   return (
     <>
       <Box className="homeContainer">
+        <CreditScorePop />
         <Box className="heroSection">
           <img className='homeBg1' src={background1} />
           <img className='homeBg2' src={background2} />
