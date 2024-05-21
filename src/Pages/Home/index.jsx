@@ -69,9 +69,20 @@ export default function Home() {
     }));
   };
 
+
+  // var client = new HttpClient();
+  // var request = new HttpRequestMessage(HttpMethod.Post, "https://kyc-api.surepass.io/api/v1/credit-report-v2/fetch-report");
+  // request.Headers.Add("Authorization", "Bearer ");
+  // var content = new StringContent("{\n    \"name\": \"ranveer  singh maan\",\n    \"pan\": \"DITPM1142K\",\n    \"mobile\": \"7814472414\",\n    \"consent\": \"Y\"\n}", null, "application/json");
+  // request.Content = content;
+  // var response = await client.SendAsync(request);
+  // response.EnsureSuccessStatus
+
+
+
   const SubmitData = async () => {
     try {
-      const response = await axios.post('https://kyc-api.surepass.io/api/v1/credit-report-v2/fetch-pdf-report', {
+      const response = await axios.post('https://kyc-api.surepass.io/api/v1/credit-report-v2/fetch-report', {
         name: value.name,
         pan: value.pan,
         mobile: value.mobile,
@@ -79,7 +90,7 @@ export default function Home() {
       }, {
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${token}`,
         }
       });
       console.log('Response:', response.data);
