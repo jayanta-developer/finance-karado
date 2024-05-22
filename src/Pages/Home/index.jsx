@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import axios from 'axios';
 import "./style.css"
-import { styled } from '@mui/material/styles';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -21,6 +20,7 @@ import emailIcon from "../../Assets/Images/mailIcon.png";
 import gstIcon from "../../Assets/Images/gstIcon.png";
 import panIcon from "../../Assets/Images/panIcon.png";
 import rupayIcon from "../../Assets/Images/repeIcon.png";
+import callIcon from "../../Assets/Images/call-48.png"
 import featuresBgLine from "../../Assets/Images/featuresBgLine.png";
 import featuresBgImg from "../../Assets/Images/portrait-indian-asian-young-family-four-sitting-white-flour-against-white-background-looking-camera 1 copy copy 1.png";
 import tik from "../../Assets/Images/tik.png";
@@ -40,7 +40,7 @@ import { ChooseData } from "../../Assets/Data";
 
 //components
 import { AppBtn } from '../../Components/AppButton';
-import Slider, { SliderThumb } from '@mui/material/Slider';
+import Slider from '@mui/material/Slider';
 import Tooltip from '@mui/material/Tooltip';
 import Footer from '../../Components/Footer';
 import { useTranslation } from 'react-i18next';
@@ -59,8 +59,8 @@ export default function Home() {
   const [drop4, setDrop4] = useState(false);
   const [drop5, setDrop5] = useState(false);
   const [value, setValue] = useState({});
-  const [pop, setPop] = useState(false)
-  const [data, setData] = useState()
+  const [pop, setPop] = useState(false);
+  const [data, setData] = useState();
 
 
   const token = `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxNjAyMTA3MCwianRpIjoiMzIzMTdhMTMtYTc0YS00YmYyLWI3MmEtNzI4YzRlYmUwYmZkIiwidHlwZSI6ImFjY2VzcyIsImlkZW50aXR5IjoiZGV2LnVzZXJuYW1lXzJ4bnZ3ZmtkZjNuYnUzYnkxNjdkcWxzcDdtY0BzdXJlcGFzcy5pbyIsIm5iZiI6MTcxNjAyMTA3MCwiZXhwIjoyMDMxMzgxMDcwLCJlbWFpbCI6InVzZXJuYW1lXzJ4bnZ3ZmtkZjNuYnUzYnkxNjdkcWxzcDdtY0BzdXJlcGFzcy5pbyIsInRlbmFudF9pZCI6Im1haW4iLCJ1c2VyX2NsYWltcyI6eyJzY29wZXMiOlsidXNlciJdfX0.nIfhCjWuXgtXFpe7tDy2BoSTla6-876mmZXrLpEShSU`;
@@ -87,9 +87,9 @@ export default function Home() {
           'Authorization': `Bearer ${token}`,
         }
       });
-      // console.log('Response:', response?.data);
       setData(response?.data)
       setPop(true)
+      window.scrollTo({ top: 0, behavior: "smooth" });
       document.body.style.overflow = 'hidden';
     } catch (error) {
       console.error('Error fetching PDF report:', error);
@@ -236,7 +236,7 @@ export default function Home() {
               </Box>
 
               <Box className="inputBox">
-                <input placeholder="GST Number *" />
+                <input placeholder="GST Number" name='gst' onChange={handleChange} />
                 <img src={gstIcon} />
               </Box>
 
@@ -244,22 +244,14 @@ export default function Home() {
                 <input placeholder="Pan No *" name='pan' onChange={handleChange} />
                 <img src={panIcon} />
               </Box>
+
               <Box className="inputBox">
                 <input placeholder="Mobile No *" name='mobile' onChange={handleChange} />
-                <Box className="sendOtpBtn">
-                  <p>{t("button.otpSend")}</p>
-                </Box>
-              </Box>
-
-              <Box className="inputBox otpBox">
-                <input type="number" />
-                <input type="number" />
-                <input type="number" />
-                <input type="number" />
+                <img src={callIcon} />
               </Box>
 
               <Box className="inputBox">
-                <input placeholder="Loan Amount *" />
+                <input placeholder="Loan Amount *" name='loan_amount' onChange={handleChange} />
                 <img src={rupayIcon} />
               </Box>
               <AppBtn btnText={t("button.eligibilityBtn")} width="100%" onClick={SubmitData} />
