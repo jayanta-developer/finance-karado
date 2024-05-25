@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import axios from 'axios';
-import "./style.css"
+import "./style.css";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-
 
 //images
 import background1 from "../../Assets/Images/topBackground.png";
@@ -44,7 +43,9 @@ import Slider from '@mui/material/Slider';
 import Tooltip from '@mui/material/Tooltip';
 import Footer from '../../Components/Footer';
 import { useTranslation } from 'react-i18next';
-import ReactSpeedometer from "react-d3-speedometer"
+import ReactSpeedometer from "react-d3-speedometer";
+import Loader from "../../Components/Loader";
+import ErrorPop from "../../Components/ErrorPop";
 
 
 export default function Home() {
@@ -61,8 +62,10 @@ export default function Home() {
   const [value, setValue] = useState({});
   const [pop, setPop] = useState(false);
   const [data, setData] = useState();
-
-
+  const [loader, serLoader] = useState(false)
+  const [errorPop, setErrorPop] = useState(false)
+  const [errorMsg, setErrorMsg] = useState();
+  const [submitBtn, setSubmitBtn] = useState(true);
   const token = `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxNjAyMTA3MCwianRpIjoiMzIzMTdhMTMtYTc0YS00YmYyLWI3MmEtNzI4YzRlYmUwYmZkIiwidHlwZSI6ImFjY2VzcyIsImlkZW50aXR5IjoiZGV2LnVzZXJuYW1lXzJ4bnZ3ZmtkZjNuYnUzYnkxNjdkcWxzcDdtY0BzdXJlcGFzcy5pbyIsIm5iZiI6MTcxNjAyMTA3MCwiZXhwIjoyMDMxMzgxMDcwLCJlbWFpbCI6InVzZXJuYW1lXzJ4bnZ3ZmtkZjNuYnUzYnkxNjdkcWxzcDdtY0BzdXJlcGFzcy5pbyIsInRlbmFudF9pZCI6Im1haW4iLCJ1c2VyX2NsYWltcyI6eyJzY29wZXMiOlsidXNlciJdfX0.nIfhCjWuXgtXFpe7tDy2BoSTla6-876mmZXrLpEShSU`;
 
   const handleChange = (e) => {
@@ -75,6 +78,8 @@ export default function Home() {
 
 
   const SubmitData = async () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    serLoader(true)
     try {
       const response = await axios.post('https://kyc-api.surepass.io/api/v1/credit-report-v2/fetch-report', {
         name: value.name,
@@ -87,15 +92,42 @@ export default function Home() {
           'Authorization': `Bearer ${token}`,
         }
       });
-      setData(response?.data)
-      setPop(true)
-      window.scrollTo({ top: 0, behavior: "smooth" });
       document.body.style.overflow = 'hidden';
+      setData(response?.data?.data)
+      serLoader(false)
+      setPop(true)
+
+      await axios.post("http://localhost:5000/update-server", {
+        submissionDate: new Date(),
+        name: response?.data?.data?.name,
+        phone: response?.data?.data?.mobile,
+        email: value.email,
+        pan: response?.data?.data?.pan,
+        loanAmount: value.loan_amount,
+        cibilScore: response?.data?.data?.credit_score,
+        gstNumber: value?.gst,
+      }).catch((err) => {
+        console.log(err);
+        serLoader(false)
+        setErrorPop(true)
+        setErrorMsg(err)
+      })
+      setValue({
+        name: "",
+        email: "",
+        pan: "",
+        gst: "",
+        mobile: "",
+        loan_amount: ""
+      })
+
     } catch (error) {
       console.error('Error fetching PDF report:', error);
+      serLoader(false)
+      setErrorPop(true)
+      setErrorMsg(error)
     }
   }
-
 
   const languageList = [
     "English", "Hindi", "Marathi", "Gujarati", "Malayalam", "Telugu", "Kannada"
@@ -149,22 +181,28 @@ export default function Home() {
     return (
       <Box id="creditPop" onClick={handlePopClose} className="popBackDrop" sx={{ display: pop ? "flex" : "none" }}>
         <Box className="popInnerBox">
-          <Typography className='popHeader'>Welcome {data?.data?.name}</Typography>
+          <Typography className='popHeader'>Welcome {data?.name}</Typography>
           <Typography className='popSubText'>Your Credit Score</Typography>
           <Box className="scoreMeter">
-            <ReactSpeedometer height={200} minValue={300} maxValue={900} value={data?.data?.credit_score || 300} />
+            <ReactSpeedometer height={200} minValue={300} maxValue={900} value={data?.credit_score || 300} />
           </Box>
         </Box>
       </Box>
     )
   }
 
-
+  useEffect(() => {
+    if (value.name && value.email && value.pan && value.mobile && value.loan_amount) {
+      setSubmitBtn(false)
+    }
+  }, [value])
 
   return (
     <>
       <Box className="homeContainer">
         <CreditScorePop />
+        <Loader visiblety={loader} />
+        <ErrorPop errorActive={errorPop} setErrorPop={setErrorPop} errorMsg={errorMsg} />
         <Box className="heroSection">
           <img className='homeBg1' src={background1} />
           <img className='homeBg2' src={background2} />
@@ -226,35 +264,35 @@ export default function Home() {
 
               <Box className="input2Box">
                 <Box className="inputBox">
-                  <input name='name' placeholder="Name *" onChange={handleChange} />
+                  <input value={value.name} name='name' placeholder="Name *" onChange={handleChange} />
                   {value?.name ? null : <img src={userIcon} />}
                 </Box>
                 <Box className="inputBox">
-                  <input type="email" placeholder="Email ID *" name='email' onChange={handleChange} />
+                  <input value={value.email} type="email" placeholder="Email ID *" name='email' onChange={handleChange} />
                   {value?.email ? null : <img src={emailIcon} />}
                 </Box>
               </Box>
 
               <Box className="inputBox">
-                <input placeholder="GST Number" name='gst' onChange={handleChange} />
+                <input value={value.gst} placeholder="GST Number" name='gst' onChange={handleChange} />
                 <img src={gstIcon} />
               </Box>
 
               <Box className="inputBox">
-                <input placeholder="Pan No *" name='pan' onChange={handleChange} />
+                <input value={value.pan} placeholder="Pan No *" name='pan' onChange={handleChange} />
                 <img src={panIcon} />
               </Box>
 
               <Box className="inputBox">
-                <input placeholder="Mobile No *" name='mobile' onChange={handleChange} />
+                <input value={value.mobile} placeholder="Mobile No *" name='mobile' onChange={handleChange} />
                 <img src={callIcon} />
               </Box>
 
               <Box className="inputBox">
-                <input placeholder="Loan Amount *" name='loan_amount' onChange={handleChange} />
+                <input value={value.loan_amount} placeholder="Loan Amount *" name='loan_amount' onChange={handleChange} />
                 <img src={rupayIcon} />
               </Box>
-              <AppBtn btnText={t("button.eligibilityBtn")} width="100%" onClick={SubmitData} />
+              <AppBtn submitBtn={submitBtn} btnText={t("button.eligibilityBtn")} width="100%" onClick={SubmitData} />
 
               <Box className="check">
                 <input type="checkBox" />

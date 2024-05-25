@@ -1,0 +1,20 @@
+.errorPop {
+  width: 400px;
+  height: 200px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.errorPop h2 {
+  text-align: center;
+}
+.blueCross {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
