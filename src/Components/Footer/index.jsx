@@ -6,21 +6,17 @@ import { useTranslation } from 'react-i18next';
 
 //images
 import featuresBgLine from "../../Assets/Images/featuresBgLine.png";
-import footerBackround from "../../Assets/Images/footerBackground.png"
-import CLogo from "../../Assets/Images/ClogoWhite.png"
-import facebookIcon from "../../Assets/Images/facebook-logo.png"
-import twitterIcon from "../../Assets/Images/twitter.png"
-import linkedinIcon from "../../Assets/Images/linkedin-letters.png"
-import instaIcon from "../../Assets/Images/instagram-filled.png"
-import starIcon from "../.././Assets/Images/starIcon.png"
-
-
-
+import CLogo from "../../Assets/Images/ClogoWhite.png";
+import facebookIcon from "../../Assets/Images/facebook-logo.png";
+import twitterIcon from "../../Assets/Images/twitter.png";
+import linkedinIcon from "../../Assets/Images/linkedin-letters.png";
+import instaIcon from "../../Assets/Images/instagram-filled.png";
+import starIcon from "../.././Assets/Images/starIcon.png";
 
 
 
 export default function Footer() {
-  const [t, i18n] = useTranslation("global")
+  const [t] = useTranslation("global")
   return (
     <>
       <Box className="footer">
@@ -43,16 +39,15 @@ export default function Footer() {
 
           <Box className="footerTextBox">
             <Typography className='footerSubText'>{t("Foote.foLabel1")}</Typography>
-            <Typography className='footerText'>{t("Foote.foAddress")}</Typography>
+            <Typography className='footerText'>Mahakali Caves Road, Lodha Supremus, Mumbai, Maharashtra 400069</Typography>
             <Box className="gapBox"></Box>
             <Typography className='footerSubText'>{t("Foote.foLabel2")}</Typography>
-            <Typography sx={{ textDecoration: "underline" }} className='footerText pointer'>{t("Foote.foEmail")}</Typography>
+            <Typography sx={{ textDecoration: "underline" }} className='footerText pointer'>tech@financekarado.com</Typography>
             <Box className="gapBox"></Box>
             <Typography className='footerSubText'>{t("Foote.foLabel3")}</Typography>
-            <Typography className='footerText'>+91 8850596802</Typography>
+            <Typography className='footerText'>+91 7304140237</Typography>
             <Typography className='footerText'>+91 8291420806</Typography>
           </Box>
-
           <Box className="footerTextBox lFBox">
             <Box>
               <img src={starIcon} />
@@ -70,8 +65,6 @@ export default function Footer() {
             </Box>
           </Box>
         </Box>
-
-
         <Box className="footerBottomBox">
           <Typography>{t("Foote.footerBottomText")}</Typography>
         </Box>

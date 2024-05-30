@@ -5,6 +5,7 @@ import "./style.css";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
+
 //images
 import background1 from "../../Assets/Images/topBackground.png";
 import background2 from "../../Assets/Images/bottomBackground.png";
@@ -62,10 +63,13 @@ export default function Home() {
   const [value, setValue] = useState({});
   const [pop, setPop] = useState(false);
   const [data, setData] = useState();
-  const [loader, serLoader] = useState(false)
+  const [loader, setLoader] = useState(false)
   const [errorPop, setErrorPop] = useState(false)
   const [errorMsg, setErrorMsg] = useState();
   const [submitBtn, setSubmitBtn] = useState(true);
+  const [termsCheck, setTermsCheck] = useState(false)
+  const [termsCheck2, setTermsCheck2] = useState(false)
+
   const token = `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxNjAyMTA3MCwianRpIjoiMzIzMTdhMTMtYTc0YS00YmYyLWI3MmEtNzI4YzRlYmUwYmZkIiwidHlwZSI6ImFjY2VzcyIsImlkZW50aXR5IjoiZGV2LnVzZXJuYW1lXzJ4bnZ3ZmtkZjNuYnUzYnkxNjdkcWxzcDdtY0BzdXJlcGFzcy5pbyIsIm5iZiI6MTcxNjAyMTA3MCwiZXhwIjoyMDMxMzgxMDcwLCJlbWFpbCI6InVzZXJuYW1lXzJ4bnZ3ZmtkZjNuYnUzYnkxNjdkcWxzcDdtY0BzdXJlcGFzcy5pbyIsInRlbmFudF9pZCI6Im1haW4iLCJ1c2VyX2NsYWltcyI6eyJzY29wZXMiOlsidXNlciJdfX0.nIfhCjWuXgtXFpe7tDy2BoSTla6-876mmZXrLpEShSU`;
 
   const handleChange = (e) => {
@@ -76,10 +80,11 @@ export default function Home() {
     }));
   };
 
-
-  const SubmitData = async () => {
+  const SubmitData = async (e) => {
+    e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
-    serLoader(true)
+    setLoader(true);
+
     try {
       const response = await axios.post('https://kyc-api.surepass.io/api/v1/credit-report-v2/fetch-report', {
         name: value.name,
@@ -93,45 +98,45 @@ export default function Home() {
         }
       });
       document.body.style.overflow = 'hidden';
-      setData(response?.data?.data)
-      serLoader(false)
-      setPop(true)
-
-      await axios.post("http://localhost:5000/update-server", {
-        submissionDate: new Date(),
-        name: response?.data?.data?.name,
-        phone: response?.data?.data?.mobile,
-        email: value.email,
-        pan: response?.data?.data?.pan,
-        loanAmount: value.loan_amount,
-        cibilScore: response?.data?.data?.credit_score,
-        gstNumber: value?.gst,
-      }).catch((err) => {
-        console.log(err);
-        serLoader(false)
-        setErrorPop(true)
-        setErrorMsg(err)
-      })
-      setValue({
-        name: "",
-        email: "",
-        pan: "",
-        gst: "",
-        mobile: "",
-        loan_amount: ""
-      })
-
+      setData(response.data.data);
+      setPop(true);
+      await updateGoogleSheet(response.data.data);
     } catch (error) {
-      console.error('Error fetching PDF report:', error);
-      serLoader(false)
-      setErrorPop(true)
-      setErrorMsg(error)
+      console.error('Error fetching PDF report or updating Google Sheet:', error);
+      setErrorPop(true);
+      setErrorMsg(error.message);
+    } finally {
+      setLoader(false);
     }
-  }
+  };
 
-  const languageList = [
-    "English", "Hindi", "Marathi", "Gujarati", "Malayalam", "Telugu", "Kannada"
-  ]
+  const updateGoogleSheet = async (data) => {
+    try {
+      await axios.post("https://sheet.best/api/sheets/58f32eca-cf1c-437d-9e49-36a01f4fadfc", {
+        submissionDate: new Date(),
+        name: data.name,
+        phone: data.mobile,
+        email: value.email,
+        pan: data.pan,
+        loanAmount: value.loan_amount,
+        cibilScore: data.credit_score,
+        gstNumber: value?.gst,
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    }
+
+    catch (err) {
+      console.log('Error updating Google Sheet:', err);
+      setErrorPop(true);
+      setErrorMsg(err.message);
+      throw err;  // Rethrow to ensure the main try-catch block catches it
+    }
+  };
+
+  const languageList = ["English", "Hindi", "Marathi", "Gujarati", "Malayalam", "Telugu", "Kannada"];
 
   const handelChangeLanguage = (lang) => {
     i18n.changeLanguage(lang)
@@ -192,10 +197,14 @@ export default function Home() {
   }
 
   useEffect(() => {
-    if (value.name && value.email && value.pan && value.mobile && value.loan_amount) {
+    if (value.name && value.email && value.pan && value.mobile && value.loan_amount && termsCheck && termsCheck2) {
       setSubmitBtn(false)
+    } else {
+      setSubmitBtn(true)
     }
-  }, [value])
+    console.log(termsCheck);
+    console.log(termsCheck2);
+  }, [value, termsCheck, termsCheck2])
 
   return (
     <>
@@ -295,12 +304,12 @@ export default function Home() {
               <AppBtn submitBtn={submitBtn} btnText={t("button.eligibilityBtn")} width="100%" onClick={SubmitData} />
 
               <Box className="check">
-                <input type="checkBox" />
+                <input value={termsCheck} type="checkBox" onChange={(e) => setTermsCheck(e.target.checked)} />
                 <Typography>{t("form.check1")}</Typography>
               </Box>
 
               <Box className="check">
-                <input type="checkBox" />
+                <input value={termsCheck2} type="checkBox" onChange={(e) => setTermsCheck2(e.target.checked)} />
                 <Typography>{t("form.check2")}</Typography>
               </Box>
 
