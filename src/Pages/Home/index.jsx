@@ -125,7 +125,16 @@ export default function Home() {
         headers: {
           'Content-Type': 'application/json'
         }
-      });
+      }).then(() => {
+        setValue({
+          name: "",
+          email: "",
+          gst: "",
+          pan: "",
+          mobile: "",
+          loan_amount: "",
+        })
+      })
     }
 
     catch (err) {
