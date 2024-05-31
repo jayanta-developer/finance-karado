@@ -113,14 +113,14 @@ export default function Home() {
   const updateGoogleSheet = async (data) => {
     try {
       await axios.post("https://sheet.best/api/sheets/58f32eca-cf1c-437d-9e49-36a01f4fadfc", {
-        submissionDate: new Date(),
-        name: data.name,
-        phone: data.mobile,
-        email: value.email,
-        pan: data.pan,
-        loanAmount: value.loan_amount,
-        cibilScore: data.credit_score,
-        gstNumber: value?.gst,
+        SubmissionDate: new Date(),
+        Name: data.name,
+        Phone: data.mobile,
+        Email: value.email,
+        PAN: data.pan,
+        LoanAmount: value.loan_amount,
+        CibilScore: data.credit_score,
+        GSTNumber: value?.gst,
       }, {
         headers: {
           'Content-Type': 'application/json'
@@ -134,6 +134,8 @@ export default function Home() {
           mobile: "",
           loan_amount: "",
         })
+        setTermsCheck(false)
+        setTermsCheck2(false)
       })
     }
 
