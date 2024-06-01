@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 //images
 import featuresBgLine from "../../Assets/Images/featuresBgLine.png";
 import CLogo from "../../Assets/Images/ClogoWhite.png";
-import facebookIcon from "../../Assets/Images/facebook-logo.png";
+import facebookIcon from "../../Assets/Images/facebookIcon.png";
 import twitterIcon from "../../Assets/Images/twitter.png";
 import linkedinIcon from "../../Assets/Images/linkedin-letters.png";
 import instaIcon from "../../Assets/Images/instagram-filled.png";
@@ -30,9 +30,11 @@ export default function Footer() {
               className='footerText'>{t("Foote.footerSummery")}
             </Typography>
             <Box className="socialIcon">
-              <img src={facebookIcon} />
+              <img style={{ width: "22px", height: "22px" }} src={facebookIcon} />
               <img src={twitterIcon} />
-              <img src={linkedinIcon} />
+              <a href="https://www.linkedin.com/company/finance-karado/" target='_blank'>
+                <img src={linkedinIcon} alt="LinkedIn" />
+              </a>
               <img src={instaIcon} />
             </Box>
           </Box>
