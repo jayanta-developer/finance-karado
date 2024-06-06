@@ -213,8 +213,6 @@ export default function Home() {
     } else {
       setSubmitBtn(true)
     }
-    console.log(termsCheck);
-    console.log(termsCheck2);
   }, [value, termsCheck, termsCheck2])
 
   return (

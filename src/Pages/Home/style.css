@@ -925,7 +925,7 @@
   top: 0px;
   left: 0px;
   background: rgb(67 67 67 / 58%);
-  z-index: 9;
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;

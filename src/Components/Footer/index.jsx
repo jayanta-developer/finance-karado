@@ -30,12 +30,15 @@ export default function Footer() {
               className='footerText'>{t("Foote.footerSummery")}
             </Typography>
             <Box className="socialIcon">
-              <img style={{ width: "22px", height: "22px" }} src={facebookIcon} />
-              <img src={twitterIcon} />
+              <a href="https://www.facebook.com/financekarado" target='_blank'>
+                <img style={{ width: "22px", height: "22px" }} src={facebookIcon} />
+              </a>
               <a href="https://www.linkedin.com/company/finance-karado/" target='_blank'>
                 <img src={linkedinIcon} alt="LinkedIn" />
               </a>
-              <img src={instaIcon} />
+              <a href="https://www.instagram.com/financekarado/" target='_blank'>
+                <img src={instaIcon} alt="LinkedIn" />
+              </a>
             </Box>
           </Box>
 
