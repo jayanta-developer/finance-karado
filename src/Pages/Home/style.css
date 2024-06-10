@@ -715,6 +715,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 25px;
 }
 
 .questionSection .sectionBoldLabel {
@@ -1097,6 +1098,7 @@
 
   .questionBox {
     width: 60%;
+    margin-bottom: 0px;
   }
   .questionSection .sectionBoldLabel {
     margin-bottom: 0px !important;
