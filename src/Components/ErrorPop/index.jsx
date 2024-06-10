@@ -7,7 +7,7 @@ export default function ErrorPop({ errorActive, setErrorPop, errorMsg }) {
     <div className='loaderBox' style={{ display: errorActive ? "flex" : "none" }}>
       <div className='errorPop'>
         <img src={cross} className='blueCross' onClick={() => setErrorPop(false)} />
-        <h2>Somthing went very wrong <br /> please tray again!</h2>
+        <h2>Something went wrong  <br /> please try again!</h2>
       </div>
     </div>
   )

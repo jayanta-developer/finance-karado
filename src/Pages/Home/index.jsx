@@ -13,7 +13,7 @@ import Clogo from "../../Assets/Images/CLogo.png";
 import earthLogo from "../../Assets/Images/earthIcon.png";
 import dropIcon from "../../Assets/Images/WDropIcon.png";
 import Bs1 from "../../Assets/Images/Bs1.png";
-import Bs2 from "../../Assets/Images/Bs1.png";
+import Bs2 from "../../Assets/Images/bs2.png";
 import Bs3 from "../../Assets/Images/bs3.png";
 import userIcon from "../../Assets/Images/userIcon.png";
 import emailIcon from "../../Assets/Images/mailIcon.png";
@@ -109,10 +109,12 @@ export default function Home() {
       setLoader(false);
     }
   };
+  // https://sheet.best/api/sheets/58f32eca-cf1c-437d-9e49-36a01f4fadfc 
+  // https://sheet.best/api/sheets/59795767-c8a7-4712-9c43-e1af13def0c1 
 
   const updateGoogleSheet = async (data) => {
     try {
-      await axios.post("https://sheet.best/api/sheets/58f32eca-cf1c-437d-9e49-36a01f4fadfc", {
+      await axios.post("https://sheet.best/api/sheets/59795767-c8a7-4712-9c43-e1af13def0c1", {
         SubmissionDate: new Date(),
         Name: data.name,
         Phone: data.mobile,
@@ -143,7 +145,7 @@ export default function Home() {
       console.log('Error updating Google Sheet:', err);
       setErrorPop(true);
       setErrorMsg(err.message);
-      throw err;  // Rethrow to ensure the main try-catch block catches it
+      throw err;
     }
   };
 
@@ -189,6 +191,7 @@ export default function Home() {
     if (e?.target?.id === "creditPop") {
       setPop(false)
       document.body.style.overflow = '';
+      window.location.reload()
     }
   }
 
@@ -587,7 +590,7 @@ export default function Home() {
               <img src={blackStar} />
               <Typography>{t("Eligibility.ELB5")}</Typography>
             </Box>
-            <Typography className='homeSubText '>{t("Eligibility.ENoteText")}</Typography>
+            {/* <Typography className='homeSubText '>{t("Eligibility.ENoteText")}</Typography> */}
             <Typography className='appSubHeaderText'>{t("Eligibility.EDis")}:  <span>{t("Eligibility.EDisLabel")}</span></Typography>
           </Box>
         </Box>
@@ -616,8 +619,8 @@ export default function Home() {
                 <img src={stars} />
               </Box>
               <Box className="cote"><img src={cote} /></Box>
-              <Typography>{t("Testimonials.TCardLabe1")}</Typography>
-              <span>{t("Testimonials.TCardL1")}</span>
+              <Typography>{t("Testimonials.TCardLabe2")}</Typography>
+              <span>{t("Testimonials.TCardL2")}</span>
               <samp>{t("Testimonials.TCBL1")}</samp>
             </Box>
 
@@ -627,8 +630,8 @@ export default function Home() {
                 <img src={stars} />
               </Box>
               <Box className="cote"><img src={cote} /></Box>
-              <Typography>{t("Testimonials.TCardLabe1")}</Typography>
-              <span>{t("Testimonials.TCardL1")}</span>
+              <Typography>{t("Testimonials.TCardLabe3")}</Typography>
+              <span>{t("Testimonials.TCardL3")}</span>
               <samp>{t("Testimonials.TCBL1")}</samp>
             </Box>
           </Box>
@@ -647,7 +650,7 @@ export default function Home() {
                 <img src={dropIconB} style={{ transform: drop1 ? "rotate(0deg)" : "rotate(-180deg)" }} />
               </Box>
               <Box className="colapsTextArea">
-                <p>{t("FAQS.FAQSLabelSub")}</p>
+                <p>{t("FAQS.FAQSLabelSub1")}</p>
               </Box>
             </Box>
 
@@ -657,37 +660,37 @@ export default function Home() {
                 <img src={dropIconB} style={{ transform: drop2 ? "rotate(0deg)" : "rotate(-180deg)" }} />
               </Box>
               <Box className="colapsTextArea">
-                <p>{t("FAQS.FAQSLabelSub")}</p>
+                <p>{t("FAQS.FAQSLabelSub2")}</p>
               </Box>
             </Box>
 
             <Box className={drop3 ? "colapsBox colapsBoxActive" : "colapsBox"} onClick={() => setDrop3(!drop3)} >
               <Box className={drop3 ? "colapsDrop colapsDropActive" : "colapsDrop"}>
-                <Typography>{t("FAQS.FAQSLabel2")}</Typography>
+                <Typography>{t("FAQS.FAQSLabel3")}</Typography>
                 <img src={dropIconB} style={{ transform: drop3 ? "rotate(0deg)" : "rotate(-180deg)" }} />
               </Box>
               <Box className="colapsTextArea">
-                <p>{t("FAQS.FAQSLabelSub")}</p>
+                <p>{t("FAQS.FAQSLabelSub3")}</p>
               </Box>
             </Box>
 
             <Box className={drop4 ? "colapsBox colapsBoxActive" : "colapsBox"} onClick={() => setDrop4(!drop4)} >
               <Box className={drop4 ? "colapsDrop colapsDropActive" : "colapsDrop"}>
-                <Typography>{t("FAQS.FAQSLabel2")}</Typography>
+                <Typography>{t("FAQS.FAQSLabel4")}</Typography>
                 <img src={dropIconB} style={{ transform: drop4 ? "rotate(0deg)" : "rotate(-180deg)" }} />
               </Box>
               <Box className="colapsTextArea">
-                <p>{t("FAQS.FAQSLabelSub")}</p>
+                <p>{t("FAQS.FAQSLabelSub4")}</p>
               </Box>
             </Box>
 
             <Box className={drop5 ? "colapsBox colapsBoxActive" : "colapsBox"} onClick={() => setDrop5(!drop5)} >
               <Box className={drop5 ? "colapsDrop colapsDropActive" : "colapsDrop"}>
-                <Typography>{t("FAQS.FAQSLabel2")}</Typography>
+                <Typography>{t("FAQS.FAQSLabel5")}</Typography>
                 <img src={dropIconB} style={{ transform: drop5 ? "rotate(0deg)" : "rotate(-180deg)" }} />
               </Box>
               <Box className="colapsTextArea">
-                <p>{t("FAQS.FAQSLabelSub")}</p>
+                <p>{t("FAQS.FAQSLabelSub5")}</p>
               </Box>
             </Box>
           </Box>

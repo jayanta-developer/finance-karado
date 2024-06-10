@@ -47,11 +47,11 @@ export default function Footer() {
             <Typography className='footerText'>Mahakali Caves Road, Lodha Supremus, Mumbai, Maharashtra 400069</Typography>
             <Box className="gapBox"></Box>
             <Typography className='footerSubText'>{t("Foote.foLabel2")}</Typography>
-            <Typography sx={{ textDecoration: "underline" }} className='footerText pointer'>tech@financekarado.com</Typography>
+            <Typography sx={{ textDecoration: "underline" }} className='footerText pointer'>info@financekarado.com</Typography>
             <Box className="gapBox"></Box>
             <Typography className='footerSubText'>{t("Foote.foLabel3")}</Typography>
-            <Typography className='footerText'>+91 7304140237</Typography>
-            <Typography className='footerText'>+91 8291420806</Typography>
+            <Typography className='footerText'>+91 8655629887</Typography>
+            {/* <Typography className='footerText'>+91 8291420806</Typography> */}
           </Box>
           <Box className="footerTextBox lFBox">
             <Box>
