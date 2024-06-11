@@ -9,3 +9,14 @@ export const AppBtn = ({ btnText, width, bgColor, onClick, submitBtn }) => {
     </Button>
   )
 }
+
+// export const GoTop = () => {
+//   return window.scrollTo({ top: "0", behavior: "smooth" });
+// };
+
+export const scrollToSection = () => {
+  const section = document.getElementById('InputSection');
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+};

@@ -13,6 +13,9 @@ import linkedinIcon from "../../Assets/Images/linkedin-letters.png";
 import instaIcon from "../../Assets/Images/instagram-filled.png";
 import starIcon from "../.././Assets/Images/starIcon.png";
 
+//components
+import { scrollToSection } from "../../Components/AppButton"
+
 
 
 export default function Footer() {
@@ -66,7 +69,7 @@ export default function Footer() {
             <Box className="gapBox"></Box>
             <Box>
               <img src={starIcon} />
-              <Typography className='footerText pointer'>{t("Foote.foLabel6")}</Typography>
+              <Typography className='footerText pointer' onClick={scrollToSection}>{t("Foote.foLabel6")}</Typography>
             </Box>
           </Box>
         </Box>

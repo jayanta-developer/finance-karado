@@ -39,7 +39,7 @@ import storesBg from "../../Assets/Images/RectangleBg.png";
 import { ChooseData } from "../../Assets/Data";
 
 //components
-import { AppBtn } from '../../Components/AppButton';
+import { AppBtn, scrollToSection } from '../../Components/AppButton';
 import Slider from '@mui/material/Slider';
 import Tooltip from '@mui/material/Tooltip';
 import Footer from '../../Components/Footer';
@@ -210,6 +210,7 @@ export default function Home() {
     )
   }
 
+
   useEffect(() => {
     if (value.name && value.email && value.pan && value.mobile && value.loan_amount && termsCheck && termsCheck2) {
       setSubmitBtn(false)
@@ -275,11 +276,11 @@ export default function Home() {
                 })}
               </Box>
               <Box className="topBtnBox">
-                <AppBtn btnText={t("button.applyBtn")} width="222px" />
+                <AppBtn btnText={t("button.applyBtn")} width="222px" onClick={scrollToSection} />
               </Box>
             </Box>
 
-            <Box className="applyInputBox homeMainSubBox">
+            <Box id="InputSection" className="applyInputBox homeMainSubBox">
               <Typography className='applyHeaderText'>{t("form.header1")}<span>{t("form.header2")}<br /> </span>
                 {t("form.header3")}</Typography>
 
@@ -333,7 +334,7 @@ export default function Home() {
         </Box>
 
 
-        <Box className="TrustSection AppBox">
+        {/* <Box className="TrustSection AppBox">
           <Typography className='sectionBlueLabel'>{t("Trust.trustHeader")}</Typography>
           <Typography className='sectionBoldLabel'>{t("Trust.trustSubHeader")}</Typography>
           <Box className="trustCardBox">
@@ -342,7 +343,7 @@ export default function Home() {
             {trustCard({ num: "120+", title: t("Trust.trustCardHeader1"), subTitle: t("Trust.trustCardHeaderSub1"), color: "#FFD9D3" })}
             {trustCard({ num: "120+", title: t("Trust.trustCardHeader1"), subTitle: t("Trust.trustCardHeaderSub1"), color: "#D9FEE2", marginClass: "topMargin" })}
           </Box>
-        </Box>
+        </Box> */}
 
         <Box className="featuresBox AppBox">
           <Box className="featureInnerBox">
@@ -373,7 +374,7 @@ export default function Home() {
                 <img src={tik} />
                 <Typography className='homeSubText'>{t("Loan.loanLabel5")}</Typography>
               </Box>
-              <AppBtn btnText={t("button.applyBtn")} />
+              <AppBtn btnText={t("button.applyBtn")} onClick={scrollToSection} />
             </Box>
           </Box>
         </Box>
@@ -500,7 +501,7 @@ export default function Home() {
                 <Typography className='lineBarLabel'>{t("Calculator.YEAmount")}</Typography>
                 <Typography className='lineBarLabel'>₹5,507*</Typography>
               </Box>
-              <AppBtn btnText={t("button.applyBtn")} bgColor="#2BE158" width="80%" />
+              <AppBtn btnText={t("button.applyBtn")} bgColor="#2BE158" width="80%" onClick={scrollToSection} />
             </Box>
           </Box>
         </Box>
