@@ -54,7 +54,6 @@ export default function Home() {
   const [t, i18n] = useTranslation("global");
   const [langDrop, setLangDrop] = useState(false);
   const [langDropVal, setLangDropVal] = useState("English");
-  const [time, setTime] = useState(0);
   const [drop1, setDrop1] = useState(false);
   const [drop2, setDrop2] = useState(false);
   const [drop3, setDrop3] = useState(false);
@@ -63,13 +62,54 @@ export default function Home() {
   const [value, setValue] = useState({});
   const [pop, setPop] = useState(false);
   const [data, setData] = useState();
-  const [loader, setLoader] = useState(false)
-  const [errorPop, setErrorPop] = useState(false)
+  const [loader, setLoader] = useState(false);
+  const [errorPop, setErrorPop] = useState(false);
   const [errorMsg, setErrorMsg] = useState();
   const [submitBtn, setSubmitBtn] = useState(true);
-  const [termsCheck, setTermsCheck] = useState(false)
-  const [termsCheck2, setTermsCheck2] = useState(false)
+  const [termsCheck, setTermsCheck] = useState(false);
+  const [termsCheck2, setTermsCheck2] = useState(false);
+  const [yearDrop, setYearDrop] = useState(false);
+  const [yearDropVal, setYearDropVal] = useState(0);
+  const [monthDrop, setMonthDrop] = useState(false);
+  const [monthDropVal, setMonthDropVal] = useState(0);
 
+  const [loonAmoutnValue, setLoonAmountValue] = useState(200000)
+  const [interestRates, setInterestRates] = useState(1)
+  const [loadDuration, setLoadDuration] = useState(0)
+
+
+
+  const handleLoAmChange = (event, newValue) => {
+    if (typeof newValue === 'number') {
+      setLoonAmountValue(newValue);
+    }
+  };
+  console.log(loonAmoutnValue);
+
+
+  const handleInterestReteChange = (event, newValue) => {
+    if (typeof newValue === 'number') {
+      setInterestRates(newValue);
+    }
+  };
+  console.log(interestRates);
+
+
+  const handleLoanDurationChange = (event, newValue) => {
+    if (typeof newValue === 'number') {
+      setLoadDuration(newValue);
+    }
+  };
+  console.log(loadDuration);
+
+
+
+
+
+
+
+  const years = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   const token = `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxNjAyMTA3MCwianRpIjoiMzIzMTdhMTMtYTc0YS00YmYyLWI3MmEtNzI4YzRlYmUwYmZkIiwidHlwZSI6ImFjY2VzcyIsImlkZW50aXR5IjoiZGV2LnVzZXJuYW1lXzJ4bnZ3ZmtkZjNuYnUzYnkxNjdkcWxzcDdtY0BzdXJlcGFzcy5pbyIsIm5iZiI6MTcxNjAyMTA3MCwiZXhwIjoyMDMxMzgxMDcwLCJlbWFpbCI6InVzZXJuYW1lXzJ4bnZ3ZmtkZjNuYnUzYnkxNjdkcWxzcDdtY0BzdXJlcGFzcy5pbyIsInRlbmFudF9pZCI6Im1haW4iLCJ1c2VyX2NsYWltcyI6eyJzY29wZXMiOlsidXNlciJdfX0.nIfhCjWuXgtXFpe7tDy2BoSTla6-876mmZXrLpEShSU`;
 
   const handleChange = (e) => {
@@ -209,6 +249,7 @@ export default function Home() {
       </Box>
     )
   }
+
 
 
   useEffect(() => {
@@ -390,10 +431,41 @@ export default function Home() {
               <Typography className='calHeaderText'>{t("Calculator.calBoxHeader")}</Typography>
               <Typography className='subText'>{t("Calculator.calBoxSubHeader")}</Typography>
 
-              <Box className="yearsBox">
-                <Box onClick={() => setTime(0)} className={time === 0 ? "yearsBoxItem yearsBoxItemActive" : "yearsBoxItem"}><p>{t("Calculator.calYear")}</p></Box>
-                <Box onClick={() => setTime(1)} className={time === 1 ? "yearsBoxItem yearsBoxItemActive" : "yearsBoxItem"}><p>{t("Calculator.calMonth")}</p></Box>
-                <Box onClick={() => setTime(2)} className={time === 2 ? "yearsBoxItem yearsBoxItemActive" : "yearsBoxItem"}><p>{t("Calculator.calWeek")}</p></Box>
+              <Box className="dateBox">
+
+                <Box className="dateInputBox">
+                  <Typography className='TimeDLabel'>Years</Typography>
+                  <Box onClick={() => setYearDrop(!yearDrop)} className="dropInputBox">
+                    <p style={{ marginLeft: "16px" }} className='lineBarLabel'>{loadDuration} {loadDuration === 1 ? " year" : " years"}</p>
+                  </Box>
+                  <Box className="DropBox" sx={{ display: yearDrop ? "flex" : 'none' }}>
+                    {years?.map((el, i) => (
+                      <Box onClick={() => {
+                        setLoadDuration(el)
+                        setYearDrop(false)
+                      }} className="dropItem" key={i}>
+                        <Typography>{el} {el === 1 ? " year" : " years"}</Typography>
+                      </Box>
+                    ))}
+                  </Box>
+                </Box>
+
+                <Box className="dateInputBox">
+                  <Typography className='TimeDLabel'>Months</Typography>
+                  <Box onClick={() => setMonthDrop(!monthDrop)} className="dropInputBox">
+                    <p style={{ marginLeft: "16px" }} className='lineBarLabel'>{monthDropVal} {monthDropVal === 1 ? " month" : " months"}</p>
+                  </Box>
+                  <Box className="DropBox" sx={{ display: monthDrop ? "flex" : 'none' }}>
+                    {months?.map((el, i) => (
+                      <Box onClick={() => {
+                        setMonthDropVal(el)
+                        setMonthDrop(false)
+                      }} className="dropItem" key={i}>
+                        <Typography>{el} {el === 1 ? " month" : " months"}</Typography>
+                      </Box>
+                    ))}
+                  </Box>
+                </Box>
               </Box>
 
 
@@ -401,14 +473,15 @@ export default function Home() {
               <Box className="lineBarBox">
                 <Slider
                   valueLabelDisplay="auto"
-                  slots={{
-                    valueLabel: ValueLabelComponent,
-                  }}
+                  slots={{ valueLabel: ValueLabelComponent }}
                   aria-label="custom thumb label"
-                  defaultValue={20}
+                  min={100000}
+                  max={2000000}
+                  onChange={handleLoAmChange}
+                  value={loonAmoutnValue}
                 />
                 <Box className="valueBox">
-                  <Typography className='lineBarLabel'>20,590</Typography>
+                  <input type="number" value={loonAmoutnValue} onChange={(e) => setLoonAmountValue(e.target.value)} max="2000000" />
                   <Typography className='lineBarLabel'>₹</Typography>
                 </Box>
               </Box>
@@ -417,14 +490,15 @@ export default function Home() {
               <Box className="lineBarBox">
                 <Slider
                   valueLabelDisplay="auto"
-                  slots={{
-                    valueLabel: ValueLabelComponent,
-                  }}
+                  slots={{ valueLabel: ValueLabelComponent }}
                   aria-label="custom thumb label"
-                  defaultValue={20}
+                  min={1}
+                  max={25}
+                  onChange={handleInterestReteChange}
+                  value={interestRates}
                 />
                 <Box className="valueBox">
-                  <Typography className='lineBarLabel'>8</Typography>
+                  <input type="number" value={interestRates} onChange={(e) => setInterestRates(e.target.value)} />
                   <Typography className='lineBarLabel'>%</Typography>
                 </Box>
               </Box>
@@ -433,37 +507,20 @@ export default function Home() {
               <Box className="lineBarBox">
                 <Slider
                   valueLabelDisplay="auto"
-                  slots={{
-                    valueLabel: ValueLabelComponent,
-                  }}
+                  slots={{ valueLabel: ValueLabelComponent }}
                   aria-label="custom thumb label"
-                  defaultValue={20}
+                  min={0}
+                  max={10}
+                  onChange={handleLoanDurationChange}
+                  value={loadDuration}
                 />
                 <Box className="valueBox">
-                  <Typography className='lineBarLabel'>5</Typography>
+                  <input type="number" value={loadDuration} onChange={(e) => setLoadDuration(e.target.value)} />
                   <Typography className='lineBarLabel'>Y</Typography>
                 </Box>
               </Box>
 
-
-              <Box className="dateBox">
-
-                <Box className="dateInputBox">
-                  <Typography className='lineBarLabel'>{t("Calculator.startD")}</Typography>
-                  <Box>
-                    <p className='lineBarLabel'>{t("Calculator.selectD")}</p>
-                  </Box>
-                </Box>
-
-                <Box className="dateInputBox">
-                  <Typography className='lineBarLabel'>{t("Calculator.startD")}</Typography>
-                  <Box>
-                    <p className='lineBarLabel'>{t("Calculator.selectD")}</p>
-                  </Box>
-                </Box>
-              </Box>
             </Box>
-
 
 
             <Box className="metter">

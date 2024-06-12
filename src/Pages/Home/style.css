@@ -498,7 +498,23 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px;
+  position: relative;
+}
+.valueBox input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: rgba(255, 0, 0, 0);
+  padding-left: 10px;
+  color: #fff;
+}
+.valueBox input:focus {
+  outline: none;
+}
+.valueBox p {
+  position: absolute;
+  top: 3px;
+  right: 10px;
 }
 .lineBarLabel {
   font-size: 14px !important;
@@ -508,6 +524,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  margin: 20px 0;
 }
 .dateBox {
   width: 100%;
@@ -517,8 +534,9 @@
 }
 .dateInputBox {
   width: 40%;
+  position: relative;
 }
-.dateInputBox > div {
+.dropInputBox {
   width: 100%;
   height: 37px;
   display: flex;
@@ -527,9 +545,28 @@
   border: 1px solid #ffffffb6;
   border-radius: 5px;
   margin-top: 10px;
-  padding: 0 16px;
+  cursor: pointer;
 }
-.dateInputBox p {
+.DropBox {
+  width: 100%;
+  max-height: 180px;
+  flex-direction: column;
+  overflow: scroll;
+  border-radius: 7px;
+  border: 1px solid rgba(128, 128, 128, 0.61);
+  position: absolute;
+  top: 105px;
+  z-index: 9;
+}
+.dropItem {
+  width: 100%;
+  min-height: 40px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.61);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #fff;
+  cursor: pointer;
 }
 .lineBarBox .css-188mx6n-MuiSlider-root {
   height: 5px;
@@ -956,6 +993,11 @@
   justify-content: center;
   margin-top: 20px;
 }
+.TimeDLabel {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  color: #fff;
+}
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .Clogo {
@@ -1036,7 +1078,7 @@
   .calculatorBox .metter {
     width: 50%;
   }
-  .dateInputBox > div {
+  .dropInputBox {
     height: 50px;
   }
   .featuresBox {
@@ -1168,7 +1210,7 @@
   .metterTextRow {
     width: 80%;
   }
-  .dateInputBox > div {
+  .dropInputBox {
     height: 60px;
   }
   .stepItem {
