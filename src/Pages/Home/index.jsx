@@ -69,7 +69,6 @@ export default function Home() {
   const [termsCheck, setTermsCheck] = useState(false);
   const [termsCheck2, setTermsCheck2] = useState(false);
   const [yearDrop, setYearDrop] = useState(false);
-  const [yearDropVal, setYearDropVal] = useState(0);
   const [monthDrop, setMonthDrop] = useState(false);
   const [monthDropVal, setMonthDropVal] = useState(0);
 
@@ -77,6 +76,8 @@ export default function Home() {
   const [interestRates, setInterestRates] = useState(1)
   const [loadDuration, setLoadDuration] = useState(0)
 
+  const [result, setResult] = useState()
+  console.log(result);
 
 
   const handleLoAmChange = (event, newValue) => {
@@ -84,28 +85,17 @@ export default function Home() {
       setLoonAmountValue(newValue);
     }
   };
-  console.log(loonAmoutnValue);
-
 
   const handleInterestReteChange = (event, newValue) => {
     if (typeof newValue === 'number') {
       setInterestRates(newValue);
     }
   };
-  console.log(interestRates);
-
-
   const handleLoanDurationChange = (event, newValue) => {
     if (typeof newValue === 'number') {
       setLoadDuration(newValue);
     }
   };
-  console.log(loadDuration);
-
-
-
-
-
 
 
   const years = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -251,7 +241,59 @@ export default function Home() {
   }
 
 
+  //Emi calculate
+  function calculateEMI(loanAmount, annualRate, tenureMonths) {
+    // Convert annual interest rate to monthly interest rate
+    let monthlyRate = annualRate / (12 * 100);
 
+    // Calculate EMI using the formula
+    let EMI = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, tenureMonths)) /
+      (Math.pow(1 + monthlyRate, tenureMonths) - 1);
+
+    // Calculate the total amount payable
+    let totalAmount = EMI * tenureMonths;
+
+    let emiDetails = [];
+    let remainingPrincipal = loanAmount;
+
+    for (let month = 1; month <= tenureMonths; month++) {
+      let interestForMonth = remainingPrincipal * monthlyRate;
+      let principalForMonth = EMI - interestForMonth;
+      remainingPrincipal -= principalForMonth;
+
+      emiDetails.push({
+        month: month,
+        principalComponent: principalForMonth.toFixed(2),
+        interestComponent: interestForMonth.toFixed(2),
+        totalEMI: EMI.toFixed(2)
+      });
+    }
+
+
+
+    return {
+      EMI: EMI.toFixed(2),
+      totalAmount: totalAmount.toFixed(2),
+      emiDetails: emiDetails
+    };
+  }
+
+  const handelCalculate = () => {
+    const tenureMonths = (loadDuration * 12) + monthDropVal;
+    const result = calculateEMI(
+      loonAmoutnValue,
+      interestRates,
+      tenureMonths
+    )
+    setResult(result);
+  }
+
+  const totalVal = Math.floor(result?.totalAmount * 1) || 0;
+  const text = `₹ ${totalVal}`;
+
+  const progressValue = Math.min(((Math.floor(result?.totalAmount * 1) - loonAmoutnValue) / result?.EMI) * 100, 100);
+
+  console.log(progressValue);
   useEffect(() => {
     if (value.name && value.email && value.pan && value.mobile && value.loan_amount && termsCheck && termsCheck2) {
       setSubmitBtn(false)
@@ -316,12 +358,12 @@ export default function Home() {
                   subText: t("businessCard3.subText"),
                 })}
               </Box>
-              <Box className="topBtnBox">
+              <Box className="topBtnBox FappBtn">
                 <AppBtn btnText={t("button.applyBtn")} width="222px" onClick={scrollToSection} />
               </Box>
             </Box>
 
-            <Box id="InputSection" className="applyInputBox homeMainSubBox">
+            <Box id="InputSection" className="applyInputBox homeMainSubBox FappBtn">
               <Typography className='applyHeaderText'>{t("form.header1")}<span>{t("form.header2")}<br /> </span>
                 {t("form.header3")}</Typography>
 
@@ -390,7 +432,7 @@ export default function Home() {
           <Box className="featureInnerBox">
             <img className='featuresBgLine' src={featuresBgLine} />
             <img className='featuresBgImg' src={featuresBgImg} />
-            <Box className="loanTextBox">
+            <Box className="loanTextBox FappBtn">
               <Typography className='sectionBlueLabel'>{t("Loan.loanHeader")}</Typography>
               <Typography className='sectionBoldLabel'>{t("Loan.loanSubHeader")}</Typography>
               <Typography className='homeSubText'>{t("Loan.loanSubHeader2")}</Typography>
@@ -520,43 +562,46 @@ export default function Home() {
                 </Box>
               </Box>
 
+              <Box className='calculateBtnBox'>
+                <AppBtn bgColor="#2BE158" btnText="Calculate" onClick={handelCalculate} />
+              </Box>
+
             </Box>
 
 
             <Box className="metter">
               <Box className="metterBg"></Box>
               <Box mt={2} className="greenCircul">
-                <CircularProgressbar value={66} />
-                <Typography>{t("Calculator.TAmount")}</Typography>
-                <span>$27,535*</span>
+                <CircularProgressbar value={64} text={text} />
               </Box>
+              <Typography className='totalAmoutLabel'>{t("Calculator.TAmount")}</Typography>
               <Box mt={3} className="emiIndecatorBox">
                 <Box className="emiIndecatorItem">
                   <Box sx={{ background: "#2BE158" }}></Box>
-                  <Typography className='lineBarLabel'>{t("Calculator.EAmount")}</Typography>
+                  <Typography className='lineBarLabel'>{t("Calculator.IPayable")}</Typography>
                 </Box>
                 <Box className="emiIndecatorItem">
                   <Box sx={{ background: "#FFFFFF" }}></Box>
-                  <Typography className='lineBarLabel'>{t("Calculator.IPayable")}</Typography>
+                  <Typography className='lineBarLabel'>{t("Calculator.EAmount")}</Typography>
                 </Box>
               </Box>
 
-              <Box className="metterTextRow">
+              {/* <Box className="metterTextRow">
                 <Typography className='lineBarLabel'>{t("Calculator.EMIA")}</Typography>
-                <Typography className='lineBarLabel'> ₹27,535*</Typography>
-              </Box>
+                <Typography className='lineBarLabel'> ₹ 5,000*</Typography>
+              </Box> */}
               <Box className="metterTextRow">
                 <Typography className='lineBarLabel'>{t("Calculator.IPayable")}</Typography>
-                <Typography className='lineBarLabel'>₹2,040*</Typography>
+                <Typography className='lineBarLabel'>₹ {Math.floor(result?.totalAmount * 1) - loonAmoutnValue}*</Typography>
               </Box>
               <Box className="metterTextRow">
                 <Typography className='lineBarLabel'>{t("Calculator.LDuration")}</Typography>
-                <Typography className='lineBarLabel'>5 Year</Typography>
+                <Typography className='lineBarLabel'>{loadDuration} Year {monthDropVal} Month</Typography>
               </Box>
               <Box className="borderLine"></Box>
               <Box className="metterTextRow trowMargin">
                 <Typography className='lineBarLabel'>{t("Calculator.YEAmount")}</Typography>
-                <Typography className='lineBarLabel'>₹5,507*</Typography>
+                <Typography className='lineBarLabel'>₹ {result?.EMI}*</Typography>
               </Box>
               <AppBtn btnText={t("button.applyBtn")} bgColor="#2BE158" width="80%" onClick={scrollToSection} />
             </Box>

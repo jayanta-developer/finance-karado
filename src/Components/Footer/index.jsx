@@ -54,17 +54,16 @@ export default function Footer() {
             <Box className="gapBox"></Box>
             <Typography className='footerSubText'>{t("Foote.foLabel3")}</Typography>
             <Typography className='footerText'>+91 8655629887</Typography>
-            {/* <Typography className='footerText'>+91 8291420806</Typography> */}
           </Box>
           <Box className="footerTextBox lFBox">
             <Box>
               <img src={starIcon} />
-              <Typography className='footerText pointer'>{t("Foote.foLabel4")}</Typography>
+              <Typography color={"gray"} className='footerText '>{t("Foote.foLabel4")}</Typography>
             </Box>
             <Box className="gapBox"></Box>
             <Box>
               <img src={starIcon} />
-              <Typography className='footerText pointer'>{t("Foote.foLabel5")}</Typography>
+              <Typography color={"gray"} className='footerText '>{t("Foote.foLabel5")}</Typography>
             </Box>
             <Box className="gapBox"></Box>
             <Box>

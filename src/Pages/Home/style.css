@@ -583,11 +583,14 @@
   color: #2be158 !important;
 }
 .greenCircul {
-  width: 50%;
+  width: 100%;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .CircularProgressbar {
-  width: 100% !important;
+  width: 50% !important;
 }
 
 .emiIndecatorBox {
@@ -618,20 +621,19 @@
 .metter .CircularProgressbar .CircularProgressbar-path {
   stroke: #2be158;
 }
-.greenCircul p {
-  font-size: 15px !important;
-  color: #fff;
+.greenCircul .CircularProgressbar-text {
+  font-size: 16px !important;
+  fill: #fff !important;
   position: absolute;
   top: 37%;
-  left: 24%;
+  left: 37%;
+  text-align: center;
 }
-.greenCircul span {
+.totalAmoutLabel {
   font-size: 25px !important;
   color: #fff;
   font-weight: 600;
-  position: absolute;
-  top: 50%;
-  left: 23%;
+  text-align: center;
 }
 .metterTextRow {
   width: 90%;
@@ -639,7 +641,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: 18px;
+  margin-top: 30px;
 }
 .borderLine {
   width: 100%;
@@ -998,6 +1000,12 @@
   font-weight: 800 !important;
   color: #fff;
 }
+.calculateBtnBox {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .Clogo {

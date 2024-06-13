@@ -10,8 +10,13 @@
   font-weight: 700 !important;
   text-transform: none !important;
 }
+
+.FappBtn .appBtn:hover {
+  background: #1565c0 !important;
+}
+
 .appBtn:hover {
-  background: #305ccd !important;
+  background: #2be158 !important;
 }
 
 .css-1e6y48t-MuiButtonBase-root-MuiButton-root:hover {
