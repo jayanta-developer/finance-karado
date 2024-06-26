@@ -384,12 +384,12 @@ export default function Home() {
               </Box>
 
               <Box className="inputBox">
-                <input value={value.pan} placeholder="Pan No *" name='pan' onChange={handleChange} />
+                <input value={value.pan} placeholder="PAN number*" name='pan' onChange={handleChange} />
                 <img src={panIcon} />
               </Box>
 
               <Box className="inputBox">
-                <input value={value.mobile} placeholder="Mobile No *" name='mobile' onChange={handleChange} />
+                <input value={value.mobile} placeholder="Mobile number link to PAN*" name='mobile' onChange={handleChange} />
                 <img src={callIcon} />
               </Box>
 
