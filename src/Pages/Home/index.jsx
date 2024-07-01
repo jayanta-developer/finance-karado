@@ -4,7 +4,7 @@ import axios from 'axios';
 import "./style.css";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-
+import { useNavigate } from "react-router-dom";
 
 //images
 import background1 from "../../Assets/Images/topBackground.png";
@@ -49,7 +49,8 @@ import Loader from "../../Components/Loader";
 import ErrorPop from "../../Components/ErrorPop";
 
 
-export default function Home() {
+export default function Home({ data, setData }) {
+  const navigate = useNavigate();
   const choose_Data = ChooseData();
   const [t, i18n] = useTranslation("global");
   const [langDrop, setLangDrop] = useState(false);
@@ -61,7 +62,6 @@ export default function Home() {
   const [drop5, setDrop5] = useState(false);
   const [value, setValue] = useState({});
   const [pop, setPop] = useState(false);
-  const [data, setData] = useState();
   const [loader, setLoader] = useState(false);
   const [errorPop, setErrorPop] = useState(false);
   const [errorMsg, setErrorMsg] = useState();
@@ -71,13 +71,10 @@ export default function Home() {
   const [yearDrop, setYearDrop] = useState(false);
   const [monthDrop, setMonthDrop] = useState(false);
   const [monthDropVal, setMonthDropVal] = useState(0);
-
   const [loonAmoutnValue, setLoonAmountValue] = useState(200000)
   const [interestRates, setInterestRates] = useState(1)
   const [loadDuration, setLoadDuration] = useState(0)
-
   const [result, setResult] = useState()
-  console.log(result);
 
 
   const handleLoAmChange = (event, newValue) => {
@@ -129,7 +126,7 @@ export default function Home() {
       });
       document.body.style.overflow = 'hidden';
       setData(response.data.data);
-      setPop(true);
+      navigate("/credit-score")
       await updateGoogleSheet(response.data.data);
     } catch (error) {
       console.error('Error fetching PDF report or updating Google Sheet:', error);
@@ -226,19 +223,19 @@ export default function Home() {
   }
 
 
-  const CreditScorePop = () => {
-    return (
-      <Box id="creditPop" onClick={handlePopClose} className="popBackDrop" sx={{ display: pop ? "flex" : "none" }}>
-        <Box className="popInnerBox">
-          <Typography className='popHeader'>Welcome {data?.name}</Typography>
-          <Typography className='popSubText'>Your Credit Score</Typography>
-          <Box className="scoreMeter">
-            <ReactSpeedometer height={200} minValue={300} maxValue={900} value={data?.credit_score || 300} />
-          </Box>
-        </Box>
-      </Box>
-    )
-  }
+  // const CreditScorePop = () => {
+  //   return (
+  //     <Box id="creditPop" onClick={handlePopClose} className="popBackDrop" sx={{ display: pop ? "flex" : "none" }}>
+  //       <Box className="popInnerBox">
+  //         <Typography className='popHeader'>Welcome {data?.name}</Typography>
+  //         <Typography className='popSubText'>Your Credit Score</Typography>
+  //         <Box className="scoreMeter">
+  //           <ReactSpeedometer height={200} minValue={300} maxValue={900} value={data?.credit_score || 300} />
+  //         </Box>
+  //       </Box>
+  //     </Box>
+  //   )
+  // }
 
 
   //Emi calculate
@@ -291,9 +288,7 @@ export default function Home() {
   const totalVal = Math.floor(result?.totalAmount * 1) || 0;
   const text = `₹ ${totalVal}`;
 
-  const progressValue = Math.min(((Math.floor(result?.totalAmount * 1) - loonAmoutnValue) / result?.EMI) * 100, 100);
 
-  console.log(progressValue);
   useEffect(() => {
     if (value.name && value.email && value.pan && value.mobile && value.loan_amount && termsCheck && termsCheck2) {
       setSubmitBtn(false)
@@ -305,7 +300,7 @@ export default function Home() {
   return (
     <>
       <Box className="homeContainer">
-        <CreditScorePop />
+        {/* <CreditScorePop /> */}
         <Loader visiblety={loader} />
         <ErrorPop errorActive={errorPop} setErrorPop={setErrorPop} errorMsg={errorMsg} />
         <Box className="heroSection">

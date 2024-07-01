@@ -156,5 +156,10 @@
     "foLabel5": "Privacy Policy",
     "foLabel6": "Apply Now",
     "footerBottomText": "Copyright © 2024 . All Rights Reserved . FINANCEKARADO.COM | Created by Sociohub Media ."
+  },
+  "credit": {
+    "message": "Thank you for submitting your information. Our team will review it and contact you shortly.",
+    "Welcome": "Welcome",
+    "YourScore": "Your Credit Score"
   }
 }
