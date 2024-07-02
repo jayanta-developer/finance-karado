@@ -138,10 +138,11 @@ export default function Home({ data, setData }) {
   };
   // https://sheet.best/api/sheets/58f32eca-cf1c-437d-9e49-36a01f4fadfc 
   // https://sheet.best/api/sheets/59795767-c8a7-4712-9c43-e1af13def0c1 
+  // https://sheet.best/api/sheets/c66a9da1-4f83-47ce-a1a4-bd13785c5adb
 
   const updateGoogleSheet = async (data) => {
     try {
-      await axios.post("https://sheet.best/api/sheets/59795767-c8a7-4712-9c43-e1af13def0c1", {
+      await axios.post("https://sheet.best/api/sheets/c66a9da1-4f83-47ce-a1a4-bd13785c5adb", {
         SubmissionDate: new Date(),
         Name: data.name,
         Phone: data.mobile,
