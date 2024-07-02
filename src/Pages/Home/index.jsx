@@ -44,7 +44,6 @@ import Slider from '@mui/material/Slider';
 import Tooltip from '@mui/material/Tooltip';
 import Footer from '../../Components/Footer';
 import { useTranslation } from 'react-i18next';
-import ReactSpeedometer from "react-d3-speedometer";
 import Loader from "../../Components/Loader";
 import ErrorPop from "../../Components/ErrorPop";
 
@@ -224,21 +223,6 @@ export default function Home({ data, setData }) {
   }
 
 
-  // const CreditScorePop = () => {
-  //   return (
-  //     <Box id="creditPop" onClick={handlePopClose} className="popBackDrop" sx={{ display: pop ? "flex" : "none" }}>
-  //       <Box className="popInnerBox">
-  //         <Typography className='popHeader'>Welcome {data?.name}</Typography>
-  //         <Typography className='popSubText'>Your Credit Score</Typography>
-  //         <Box className="scoreMeter">
-  //           <ReactSpeedometer height={200} minValue={300} maxValue={900} value={data?.credit_score || 300} />
-  //         </Box>
-  //       </Box>
-  //     </Box>
-  //   )
-  // }
-
-
   //Emi calculate
   function calculateEMI(loanAmount, annualRate, tenureMonths) {
     // Convert annual interest rate to monthly interest rate
@@ -412,17 +396,6 @@ export default function Home({ data, setData }) {
           </Box>
         </Box>
 
-
-        {/* <Box className="TrustSection AppBox">
-          <Typography className='sectionBlueLabel'>{t("Trust.trustHeader")}</Typography>
-          <Typography className='sectionBoldLabel'>{t("Trust.trustSubHeader")}</Typography>
-          <Box className="trustCardBox">
-            {trustCard({ num: "120+", title: t("Trust.trustCardHeader1"), subTitle: t("Trust.trustCardHeaderSub1"), color: "#DFF3FF" })}
-            {trustCard({ num: "120+", title: t("Trust.trustCardHeader2"), subTitle: t("Trust.trustCardHeaderSub2"), color: "#E0E9FF", marginClass: "topMargin" })}
-            {trustCard({ num: "120+", title: t("Trust.trustCardHeader1"), subTitle: t("Trust.trustCardHeaderSub1"), color: "#FFD9D3" })}
-            {trustCard({ num: "120+", title: t("Trust.trustCardHeader1"), subTitle: t("Trust.trustCardHeaderSub1"), color: "#D9FEE2", marginClass: "topMargin" })}
-          </Box>
-        </Box> */}
 
         <Box className="featuresBox AppBox">
           <Box className="featureInnerBox">
