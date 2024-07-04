@@ -161,5 +161,9 @@
     "message": "Thank you for submitting your information. Our team will review it and contact you shortly.",
     "Welcome": "Welcome",
     "YourScore": "Your Credit Score"
+  },
+  "errorMsg": {
+    "l1": "Something went wrong",
+    "l2": "please enter correct data."
   }
 }
